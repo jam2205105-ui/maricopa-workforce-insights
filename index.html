@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17202a">
+  <meta name="description" content="Explore Phoenix-area career wages, Maricopa Community Colleges pathways, occupational demand evidence and workforce trends from documented federal data sources.">
+  <title>Maricopa Workforce Insights | LMI Hub</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script>
+  <script src="interest_match.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="student.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Maricopa Workforce Insights home">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span><strong>Maricopa Workforce Insights</strong><small>Labor market intelligence hub · Unofficial pilot</small></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#careers">Explore careers</a><a href="#educators">Educators</a><a href="#industry">Community &amp; industry</a><a href="#methodology">About the data</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero-shell" id="home">
+      <div class="hero-visual" role="img" aria-label="Workforce data dashboard visualization"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Maricopa County &amp; Greater Phoenix</p>
+        <h1>Good workforce decisions start with clear data.</h1>
+        <p class="hero-copy">Explore career pay, compare training pathways, and make sense of the regional job market—all with visible sources and update dates.</p>
+        <div class="hero-actions"><a class="button primary" href="#careers">Explore careers</a><a class="button secondary" href="#educators">Program intelligence</a></div>
+        <p class="hero-footnote">Independent demonstration for Maricopa Community Colleges. Not an official MCCCD service.</p>
+      </div>
+    </section>
+
+    <section class="metric-strip" aria-label="Regional labor market indicators">
+      <article><span class="label">Maricopa County unemployment</span><strong id="unemployment-rate">—</strong><small id="unemployment-date">Awaiting BLS data</small></article>
+      <article><span class="label">Phoenix metro nonfarm jobs</span><strong id="metro-jobs">—</strong><small id="metro-jobs-date">Awaiting BLS data</small></article>
+      <article><span class="label">Phoenix metro median occupation pay</span><strong id="metro-wage">—</strong><small id="metro-wage-date">BLS OEWS · all occupations</small></article>
+      <article><span class="label">Data refresh status</span><strong id="update-status" class="status-value">Pending</strong><small id="update-time">Last successful fetch not yet available</small></article>
+    </section>
+    <div class="update-banner section-slim" role="status" id="data-banner">The hub will show published values after its first successful data refresh. Missing values are never replaced with estimates.</div>
+
+    <section class="section audience-grid" aria-label="Choose your starting point">
+      <a class="audience-card student" href="#careers"><span class="card-icon">01</span><h2>Students</h2><p>Discover your interests, get tailored career matches, compare pay, and save a next-step plan.</p><span class="card-link">Explore careers →</span></a>
+      <a class="audience-card educator" href="#educators"><span class="card-icon">02</span><h2>Educators</h2><p>Build repeatable, source-backed program scans and export wage and employment snapshots.</p><span class="card-link">Build a program scan →</span></a>
+      <a class="audience-card industry" href="#industry"><span class="card-icon">03</span><h2>Community &amp; industry</h2><p>See regional labor-market trends and export a brief for employer and community partners.</p><span class="card-link">View regional trends →</span></a>
+    </section>
+
+    <section id="careers" class="section feature-section student-zone">
+      <div class="section-head"><div><p class="eyebrow">For students &amp; career advisors</p><h2>Your career journey starts here.</h2><p>Learn what energizes you, explore careers that match your interests, and compare possible Maricopa pathways—at your pace.</p></div><span class="chip">No account required</span></div>
+      <div class="student-stepbar" role="group" aria-label="Career exploration steps">
+        <button class="student-step active" id="step-assess" type="button" data-student-tab="assess" aria-pressed="true"><span class="step-number">01</span><span><strong>Discover your interests</strong><small>Take an assessment or bring your scores</small></span></button>
+        <button class="student-step" id="step-results" type="button" data-student-tab="matches" aria-pressed="false"><span class="step-number">02</span><span><strong>Explore your matches</strong><small>See careers and what they pay</small></span></button>
+        <button class="student-step" id="step-saved" type="button" data-student-tab="saved" aria-pressed="false"><span class="step-number">03</span><span><strong>Build your shortlist</strong><small>Compare and export next steps</small></span></button>
+      </div>
+      <div id="student-panel-assess" class="student-panel">
+        <div class="assessment-intro"><div><p class="eyebrow">Step 1 · Interest discovery</p><h3>Find the kind of work you enjoy</h3><p>Take O*NET's official Interest Profiler, then use your six interest scores to explore careers and local pay right here. You are exploring possibilities—not passing a test.</p></div><div class="assessment-stats"><strong>6</strong><span>career interest areas</span><strong>100%</strong><span>no site login required</span></div></div>
+        <div class="assessment-option-grid">
+          <article class="assessment-option primary-option"><span class="option-label">Recommended · Official assessment</span><h4>Take the O*NET Interest Profiler</h4><p>Use the official hosted profiler below (once configured) or open it in a new tab. Return with your six RIASEC scores to explore local careers.</p><button id="start-mini-ip" class="button primary" type="button">Open Interest Profiler &amp; score import</button><small id="mini-ip-status" role="status">GitHub Pages edition · scores compared privately in your browser</small></article>
+          <article class="assessment-option"><span class="option-label">Already have results?</span><h4>Apply your RIASEC scores</h4><p>Enter your Realistic, Investigative, Artistic, Social, Enterprising, and Conventional scores. The hub compares your interest pattern with published O*NET occupation profiles.</p><button id="show-widget" class="button light" type="button">Enter my six interest scores</button><small>Exploratory occupational profile similarity—not official O*NET API fit ratings.</small></article>
+        </div>
+        <div id="widget-area" class="assessment-workspace" hidden>
+          <h3>O*NET Interest Profiler</h3><div id="onet-widget-container" class="widget-container"><div class="empty-state"><strong>Hosted widget not yet configured</strong><p>Your O*NET developer account provides an approved iframe embed. Until it is added, <a href="https://onetinterestprofiler.org/" target="_blank" rel="noopener noreferrer">take the official Interest Profiler at O*NET ↗</a> and bring your six scores back here.</p></div></div>
+          <h4>Apply your Interest Profiler results</h4><p class="muted-text">Enter the six scores shown on your results. You can use scores from the 30- or 60-question O*NET profiler. The hub will compare your interest pattern with published O*NET occupational interest profiles in this browser.</p>
+          <form id="interest-import-form"><div class="riasec-form" id="riasec-inputs"></div><div class="assessment-controls"><button class="button primary" type="submit">Apply my results to careers</button><button id="clear-profile" class="button light" type="button">Clear profile</button></div><p id="interest-import-status" class="inline-message" role="status"></p></form>
+        </div>
+        <div class="privacy-inline"><span aria-hidden="true">✳</span> Your imported scores stay in this browser session unless you choose to save them on this device. This site does not send your scores to Maricopa or an API. The independent O*NET profiler has its own privacy practices.</div>
+      </div>
+      <div id="student-panel-matches" class="student-panel" hidden>
+        <div class="section-head"><div><p class="eyebrow">Step 2 · Explore matches</p><h3>Your interest profile &amp; recommended careers</h3><p id="profile-caption">Import your six scores to explore locally calculated occupation-interest similarities.</p></div><button id="edit-interests" class="button light" type="button">Edit / retake assessment</button></div>
+        <div id="profile-summary" class="profile-summary"><div class="empty-state">No interest profile yet. You can still browse all careers below.</div></div>
+        <div id="personal-results" class="personal-results" aria-live="polite"></div>
+        <label class="remember-profile"><input id="remember-profile" type="checkbox"> Remember my profile on this device (optional; not recommended on shared computers)</label>
+        <div class="button-row"><button id="profile-to-careers" class="button navy" type="button">Explore matching Maricopa careers ↓</button><button id="download-profile" class="button light" type="button" disabled>Download interest summary</button></div>
+      </div>
+      <div id="student-panel-saved" class="student-panel" hidden>
+        <div class="section-head"><div><p class="eyebrow">Step 3 · Decide what to explore</p><h3>Your career shortlist</h3><p>Save up to three careers to compare local wages and possible education pathways. This is your planning tool, not an admissions application.</p></div><button id="export-shortlist" class="button light" type="button" disabled>Download my plan</button></div>
+        <div id="shortlist-grid" class="shortlist-grid" aria-live="polite"></div>
+        <div class="planning-note"><strong>Your next step</strong><p>Check official program availability, admission requirements, costs and campus offerings with a Maricopa advisor. Wages are regional estimates, not guarantees.</p><a href="https://www.maricopa.edu/degrees-certificates" target="_blank" rel="noopener noreferrer">Explore official Maricopa degrees &amp; certificates ↗</a></div>
+      </div>
+      <div class="student-divider"><p class="eyebrow">Career explorer</p><h3>Browse careers and potential Maricopa pathways</h3><p>Search the full O*NET occupation directory, filter by preparation level, and connect interest results to regional wages and verified education links when available.</p></div>
+      <div id="match-toolbar" class="match-toolbar" hidden><div><strong id="match-toolbar-title">Your profile is ready</strong><span id="match-toolbar-detail">Showing career recommendations</span></div><label class="checkbox-line"><input type="checkbox" id="show-matches-only"> Only careers aligned with my interests</label><button type="button" class="text-action" id="reset-matches">Remove match filter</button></div>
+      <div class="search-toolbar"><label class="field wide">Search careers, alternate job titles, programs or SOC codes<input id="career-search" type="search" placeholder="Try nursing, data scientist, welder, or 15-2051" autocomplete="off"></label><label class="field">Career area<select id="sector-filter"><option value="">All career areas</option></select></label><label class="field">Preparation level<select id="zone-filter"><option value="">Any level</option><option value="1">Zone 1 · little preparation</option><option value="2">Zone 2 · some preparation</option><option value="3">Zone 3 · medium preparation</option><option value="4">Zone 4 · considerable preparation</option><option value="5">Zone 5 · extensive preparation</option></select></label><label class="field">Sort results<select id="career-sort"><option value="title">Name A–Z</option><option value="match">Closest interest alignment</option><option value="wage">Highest median wage</option><option value="employment">Most local jobs</option></select></label></div>
+      <div class="catalog-toolbar"><label><input id="programs-only" type="checkbox"> Show careers with potential Maricopa pathways</label><label><input id="wages-only" type="checkbox"> Show careers with published metro wages</label><button type="button" class="text-action" id="clear-career-filters">Clear filters</button><button type="button" class="text-action" id="export-catalog">Download occupation catalog (CSV)</button></div>
+      <p id="catalog-status" class="catalog-status" role="status">Loading official occupation directory…</p>
+      <div class="results-summary"><strong id="career-count">Loading career catalog…</strong><span>Wages: Phoenix–Mesa–Chandler MSA (Maricopa + Pinal), not the county alone.</span></div>
+      <div class="career-grid" id="career-results" aria-live="polite"></div><div class="load-more-wrapper"><button class="button navy" type="button" id="load-more-careers" hidden>Show 24 more careers</button></div>
+      <p class="small-note">Occupation titles and descriptions: <a href="https://www.onetcenter.org/database.html" target="_blank" rel="noopener noreferrer">O*NET® 31.0 Database</a>, U.S. Department of Labor/Employment and Training Administration, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>; source fields are used with attribution. Imported interest scores are compared locally with public O*NET occupational interest profiles (not official Web Services fit ratings); O*NET is sponsored by the U.S. Department of Labor/Employment and Training Administration. Fit results reflect occupational interests, not hiring probabilities or job guarantees. The program mappings are editorial starting points—not an approved districtwide CIP–SOC crosswalk. Occupations without a mapped program link to the official MCCCD catalog rather than claiming an unavailable program. <a href="https://www.maricopa.edu/degrees-certificates" target="_blank" rel="noopener noreferrer">Verify programs in the official Maricopa catalog ↗</a>.</p>
+    </section>
+
+    <section id="educators" class="section feature-section alternate">
+      <div class="section-head"><div><p class="eyebrow">For faculty, deans &amp; planners</p><h2>Program demand scan builder</h2><p>Generate a reproducible occupation snapshot from the entire directory, with wage and employment evidence, data limitations, and source references.</p></div><span class="chip">Public LMI · no student records</span></div>
+      <div class="split-layout"><div class="tool-panel"><label for="scan-occupation-search">Find occupation for a program scan</label><input id="scan-occupation-search" type="search" placeholder="Search by title or code" aria-label="Filter scan occupations"><label for="scan-occupation">Occupation to analyze</label><select id="scan-occupation"></select><label for="scan-notes">Local context / questions (optional)</label><textarea id="scan-notes" rows="4" maxlength="1500" placeholder="Example: Discuss employer advisory input and program relevance…"></textarea><div class="button-row"><button class="button primary" id="build-scan" type="button">Generate scan</button><button class="button light" id="download-scan" type="button" disabled>Download scan (.html)</button></div><p class="small-note">This is a descriptive scan, not a viability recommendation. Program retention, completions, regional openings, and posting trends require additional approved feeds.</p></div><div id="scan-preview" class="report-preview" aria-live="polite"><div class="empty-state"><strong>Select an occupation to build a scan</strong><p>The preview will include source year, geography, wages, local employment, suggested programs, and caveats.</p></div></div></div>
+    </section>
+
+    <section id="industry" class="section feature-section">
+      <div class="section-head"><div><p class="eyebrow">For community, employers &amp; industry</p><h2>Regional workforce pulse</h2><p>Monthly unemployment and nonfarm employment series from BLS, with downloadable, source-dated tables.</p></div><div class="button-row"><button class="button light" id="export-trends" type="button">Download trend CSV</button><button class="button light" id="download-brief" type="button">Download brief (.html)</button></div></div>
+      <div class="chart-grid"><article class="chart-card"><div class="chart-header"><h3>Maricopa County unemployment rate</h3><small>LAU · not seasonally adjusted · %</small></div><svg id="unemployment-chart" class="trend-chart" viewBox="0 0 560 228" role="img" aria-label="Maricopa County monthly unemployment rate chart"><text x="20" y="115">Waiting for data refresh</text></svg><div class="chart-note" id="unemployment-caption">BLS source data not loaded</div></article><article class="chart-card"><div class="chart-header"><h3>Phoenix metro payroll jobs</h3><small>CES · seasonally adjusted · thousands</small></div><svg id="jobs-chart" class="trend-chart" viewBox="0 0 560 228" role="img" aria-label="Phoenix metro jobs over time"><text x="20" y="115">Waiting for data refresh</text></svg><div class="chart-note" id="jobs-caption">BLS source data not loaded</div></article></div>
+      <div class="subsection"><div class="section-head"><div><h3>Regional employment by industry</h3><p>Official Phoenix metro payroll jobs by industry, in thousands; not seasonally adjusted. Year-over-year changes use the same month in the prior year.</p></div></div><div id="industry-summary" class="sector-summary"></div></div>
+      <div class="subsection"><div class="section-head"><div><h3>Occupation snapshots by career area</h3><p>Published metro employment counts for selected occupations only—not industry totals or projected job openings.</p></div></div><div id="sector-summary" class="sector-summary"></div></div>
+      <div id="census-summary" class="census-note" hidden></div>
+      <div class="subsection callout-row"><div><h3>What about job postings, projections and student outcomes?</h3><p>Those products require additional Arizona OEO, licensed job posting, and MCCCD institutional datasets. This build deliberately does not present them as live until integrated.</p></div><a href="#methodology" class="button navy">See data coverage</a></div>
+    </section>
+
+    <section id="methodology" class="section feature-section alternate">
+      <div class="section-head"><div><p class="eyebrow">Transparency &amp; reliability</p><h2>Data sources &amp; update health</h2><p>We distinguish when data were <em>collected</em>, <em>published</em>, and <em>refreshed</em>. New website deployments never invent missing values.</p></div><a class="external" href="https://www.bls.gov/data/" target="_blank" rel="noopener noreferrer">BLS data hub ↗</a></div>
+      <div class="source-grid" id="source-grid"></div>
+      <div class="glossary-grid"><article><h3>Interest Profiler &amp; career alignment</h3><p>The official O*NET Interest Profiler measures six RIASEC interest areas. After you import your scores, the hub compares the pattern with published occupational interest ratings. Results are exploratory similarities, not official O*NET API fit ratings, an aptitude test or hiring predictions.</p></article><article><h3>Median wage</h3><p>Half of workers earn more; half earn less. Not an entry-level or guaranteed starting salary.</p></article><article><h3>Employment estimate</h3><p>Estimated local workers in an occupation, not job openings or job postings.</p></article><article><h3>Geography matters</h3><p>Phoenix–Mesa–Chandler MSA includes both Maricopa and Pinal counties. The unemployment rate shown is specifically for Maricopa County.</p></article><article><h3>How fresh is “live”?</h3><p>The scheduled pipeline checks labor-market data daily and refreshes the O*NET directory from its published database. Official reporting periods differ: OEWS wages are annual, BLS monthly indicators are monthly, and O*NET database versions are periodic.</p></article></div>
+      <details class="method-box"><summary>Pipeline, methodology and known limitations</summary><p>Automated source ingestion downloads the complete O*NET occupation directory, monthly BLS LAU/CES time series, annual BLS OEWS metropolitan occupation wages, and optional Census ACS data when an API key is configured. Each feed is validated before publishing. A failed refresh preserves previous successfully published observations with a warning, never fabricated replacements.</p><p>For program planning, the candidate career-to-program associations need faculty approval and official CIP/SOC crosswalks. Unmapped occupations link to the official MCCCD catalog rather than making an unsupported program assertion. This version does not contain actual MCCCD enrollments, persistence, completions, or confidential student data. Job postings do not equal openings, and OEWS cannot be interpreted as employment projections. The official hosted O*NET widget cannot send scores directly to this cross-origin website. Students manually import their six scores, which are compared on-device with O*NET public occupational interest profiles using Pearson correlation. These are exploratory pattern similarities, not official O*NET Web Services match labels.</p><p><a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener noreferrer">OEWS tables</a> · <a href="https://www.bls.gov/developers/" target="_blank" rel="noopener noreferrer">BLS API</a> · <a href="https://www.census.gov/programs-surveys/acs/data/data-via-api.html" target="_blank" rel="noopener noreferrer">Census API</a> · <a href="https://oeo.az.gov/labor-market" target="_blank" rel="noopener noreferrer">Arizona OEO</a></p></details>
+    </section>
+  </main>
+  <footer><strong>Maricopa Workforce Insights · demonstration build</strong><span>Not an official MCCCD website · Data sources are attributed on each product</span><a href="#home">Back to top ↑</a></footer>
+  <dialog id="career-dialog" aria-labelledby="career-detail-title"><button class="dialog-close" id="close-dialog" aria-label="Close occupation details">×</button><div id="career-detail"></div></dialog>
+</body>
+</html>

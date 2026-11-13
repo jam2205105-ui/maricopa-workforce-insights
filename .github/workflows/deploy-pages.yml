@@ -1,0 +1,64 @@
+name: Refresh labor-market data and publish GitHub Pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # 07:17 Arizona local time year-round; checks for new official releases.
+    - cron: '17 14 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Configure Node for tests
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install refresh dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run automated tests
+        run: |
+          python -m unittest discover -s tests -q
+          node --test tests/catalog.test.mjs tests/interest_match.test.mjs
+      - name: Download official O*NET occupations and interest profiles
+        run: python scripts/refresh_catalog.py
+      - name: Update BLS / optional Census published indicators
+        env:
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
+          CENSUS_API_KEY: ${{ secrets.CENSUS_API_KEY }}
+        run: |
+          # If an external source is temporarily down, keep the site usable
+          # and show the feed's actual error/unavailable status.
+          python scripts/refresh_data.py || echo 'BLS/Census refresh incomplete; no fabricated values were published.'
+      - name: Validate data and assemble only public website files
+        run: python scripts/build_site.py
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

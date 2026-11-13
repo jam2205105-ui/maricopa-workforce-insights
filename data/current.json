@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": null,
+  "metrics": {},
+  "industryMetrics": {},
+  "trends": {},
+  "occupations": {},
+  "census": {},
+  "sources": {
+    "bls_lau": {"status":"pending","note":"Run the scheduled updater to retrieve published county unemployment data."},
+    "bls_ces": {"status":"pending","note":"Run the scheduled updater to retrieve published Phoenix metro jobs data."},
+    "bls_industry": {"status":"pending","note":"Monthly industry employment feed pending."},
+    "bls_oews": {"status":"pending","note":"Run the scheduled updater to retrieve BLS metro occupation wage data."},
+    "census": {"status":"pending","note":"Optional: configure CENSUS_API_KEY to retrieve ACS county indicators."}
+  }
+}

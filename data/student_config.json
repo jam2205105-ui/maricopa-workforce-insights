@@ -1,0 +1,4 @@
+{
+  "onetWidgetIframeSrc": "",
+  "notes": "Optional public, approved O*NET Interest Profiler iframe src from developer account. Never store secrets or credentials here. Due to cross-origin isolation, the student manually imports six interest scores. Matching happens entirely in their browser against official public occupational interest ratings."
+}
