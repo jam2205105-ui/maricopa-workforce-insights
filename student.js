@@ -1,5 +1,5 @@
 'use strict';
-/* Student flow: official hosted widget + private browser-side exploratory occupational interest comparison. */
+/* Student flow: on-site Mini-IP and private browser-side exploratory occupational interest comparison. */
 (() => {
   const areas = [
     {code:'realistic',label:'Realistic',short:'R',desc:'Hands-on work, tools & practical problems'},
@@ -11,7 +11,7 @@
   ];
   const miniState={bank:null,answers:Array(30).fill(null),page:0,loading:false};
   const state = {scores:null,matches:[],matchStatus:'none',mode:null,
-    saved:[],profileNote:'',widgetConfigured:false,widgetUrl:null};
+    saved:[],profileNote:''};
   const byId = id => document.getElementById(id);
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const moneyFmt = n => n == null || !Number.isFinite(+n) ? 'Not available' : new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(+n);
@@ -28,17 +28,10 @@
     if(tab==='matches') renderProfile();
   }
   function setAssessMode(which){
-    const show=which==='native'||which==='widget'||which==='scores';
+    const show=which==='native'||which==='scores';
     byId('widget-area').hidden=!show;
     byId('mini-ip-panel').hidden=which!=='native';
     byId('start-mini-ip').setAttribute('aria-expanded',String(which==='native'));
-    if(which==='widget'){
-      if(state.widgetConfigured)byId('onet-widget-container').hidden=false;
-      else void configureWidget();
-    }else{
-      byId('onet-widget-container').hidden=true;
-      byId('onet-widget-status').textContent='';
-    }
   }
   function scoresValid(scores){return areas.every(a=>Number.isInteger(scores[a.code]) && scores[a.code]>=0 && scores[a.code]<=50) &&
     Object.values(scores).some(v=>v>0);}
@@ -217,7 +210,7 @@
       if(!LmiMiniIP.validateBank(bank))throw new Error('The assessment dataset is incomplete.');
       miniState.bank=bank;renderMiniPage();
     }catch{
-      byId('mini-ip-message').textContent='The on-site questions are not available yet. An authorized O*NET Web Services API key must be configured for the GitHub refresh. You can still use the official website or import your scores below.';
+      byId('mini-ip-message').textContent='The on-site questions are not available yet. An authorized O*NET Web Services API key must be configured for the GitHub refresh. You can still import previously obtained RIASEC scores below.';
     }finally{miniState.loading=false;}
   }
   function finishMiniAssessment(){
@@ -240,54 +233,6 @@
     if(miniState.bank)renderMiniPage();
   }
 
-  let widgetLoadStarted=false;
-  async function configureWidget(){
-    if(widgetLoadStarted)return;
-    widgetLoadStarted=true;
-    const container=byId('onet-widget-container');
-    const status=byId('onet-widget-status');
-    const help=byId('onet-widget-help').querySelector('strong');
-    status.textContent='Loading the embedded O*NET Interest Profiler…';
-    try{
-      const response=await fetch('data/student_config.json',{cache:'no-store'});
-      if(!response.ok)throw new Error('Widget configuration unavailable');
-      const cfg=await response.json();
-      const scriptUrl=String(cfg.onetWidgetScriptSrc||'').trim();
-      const iframeUrl=String(cfg.onetWidgetIframeSrc||'').trim();
-      const url=scriptUrl||iframeUrl;
-      if(!url)throw new Error('Widget not configured');
-      const parsed=new URL(url),h=parsed.hostname.toLowerCase();
-      if(parsed.protocol!=='https:' || parsed.username || parsed.password || parsed.hash)throw new Error('Invalid widget source');
-      if(scriptUrl){
-        if(h!=='services.onetcenter.org' || parsed.pathname!=='/embed/onet-ip.js' || !parsed.searchParams.get('x-api-key'))throw new Error('Unrecognized widget script');
-        // Make the target visible before executing the official O*NET loader.
-        const target=document.createElement('div');target.className='embed-onet-ip';
-        container.replaceChildren(target);
-        container.hidden=false;
-        const script=document.createElement('script');script.src=url;script.async=true;
-        script.addEventListener('load',()=>{status.textContent='O*NET assessment loaded. After completing it, apply your six scores below.';});
-        script.addEventListener('error',()=>{
-          container.hidden=true;
-          status.textContent='The embedded assessment did not load. Use the backup O*NET link below.';
-          help.textContent='The embedded assessment is unavailable right now.';
-        });
-        container.appendChild(script);
-      }else{
-        if(!['onetcenter.org','onetinterestprofiler.org','mynextmove.org'].some(d=>h===d||h.endsWith('.'+d)))throw new Error('Unrecognized widget host');
-        const frame=document.createElement('iframe');frame.src=url;
-        frame.title='Official O*NET Interest Profiler';frame.loading='eager';
-        frame.referrerPolicy='strict-origin-when-cross-origin';frame.setAttribute('allowfullscreen','');
-        container.replaceChildren(frame);container.hidden=false;
-        status.textContent='The embedded assessment is displayed above. Apply your six scores below when finished.';
-      }
-      state.widgetConfigured=true;state.widgetUrl=url;
-      help.textContent='Take the official profiler here, then apply your six scores below.';
-    }catch{
-      container.hidden=true;
-      status.textContent='The embedded assessment is not available. Use the backup O*NET link below, then enter your scores.';
-      help.textContent='The embedded assessment is unavailable right now.';
-    }
-  }
   function init(){
     renderScoreInputs();
     const saved=tryRead('lmi_saved_careers_v2');state.saved=Array.isArray(saved)?saved.map(normalizeKey).filter(x=>/^\d\d-\d{4}\.\d{2}$/.test(x)).slice(0,3):[];
@@ -303,7 +248,6 @@
     document.querySelectorAll('[data-student-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.studentTab)));
     byId('show-widget').addEventListener('click',()=>{setTab('assess');setAssessMode('scores');byId('interest-import-form').scrollIntoView({behavior:'smooth',block:'nearest'});});
     byId('start-mini-ip').addEventListener('click',openMiniAssessment);
-    byId('show-hosted-profiler').addEventListener('click',()=>{setTab('assess');setAssessMode('widget');byId('widget-area').scrollIntoView({behavior:'smooth',block:'start'});});
     byId('mini-ip-questions').addEventListener('change',event=>{
       const input=event.target.closest('input[data-question-index]');
       if(!input)return;

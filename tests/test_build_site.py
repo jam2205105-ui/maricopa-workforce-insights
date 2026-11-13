@@ -1,54 +1,27 @@
-import sys
+"""Regression checks for the student assessment's on-site-only experience."""
 import unittest
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT/'scripts'))
-from build_site import approved_widget_url, approved_widget_config, choose_widget_config
 
-
-class WidgetBuildTest(unittest.TestCase):
-    def test_official_assessment_without_credentials(self):
+class StudentAssessmentBuildTests(unittest.TestCase):
+    def test_on_site_assessment_and_score_import_remain(self):
         html=(ROOT/'index.html').read_text(encoding='utf-8')
-        self.assertIn('href="https://onetinterestprofiler.org/"',html)
-        self.assertNotIn('Hosted widget not yet configured',html)
-        self.assertIn('id="onet-widget-container" class="widget-container" hidden',html)
         self.assertIn('id="start-mini-ip" class="button primary" type="button"',html)
-        self.assertNotIn('<a id="start-mini-ip"',html)
-        self.assertIn('id="onet-widget-status"',html)
+        self.assertIn('id="mini-ip-panel"',html)
+        self.assertIn('id="interest-import-form"',html)
+        self.assertIn('id="riasec-inputs"',html)
 
-    def test_official_script_embed(self):
-        src='https://services.onetcenter.org/embed/onet-ip.js?x-api-key=DUMMY_PUBLIC_EMBED_TOKEN'
-        snippet=f'<script src="{src}"></script>\n<div class="embed-onet-ip"></div>'
-        self.assertEqual(approved_widget_config(src), {'type':'script','src':src})
-        self.assertEqual(approved_widget_config(snippet), {'type':'script','src':src})
-
-    def test_reject_untrusted_embed_html(self):
-        src='https://services.onetcenter.org/embed/onet-ip.js?x-api-key=DUMMY_PUBLIC_EMBED_TOKEN'
-        bad=[
-            f'<script src="{src}" onload="alert(1)"></script><div class="embed-onet-ip"></div>',
-            f'<script src="{src}"></script><div class="embed-onet-ip" onclick="alert(1)"></div>',
-            f'<script src="{src}"></script><div class="embed-onet-ip"></div><img src=x>',
-            '<script src="https://evil.example.org/whatever.js"></script><div class="embed-onet-ip"></div>',
-            'https://services.onetcenter.org/embed/onet-ip.js',
-            'http://services.onetcenter.org/embed/onet-ip.js?x-api-key=abc',
-        ]
-        for value in bad:
-            with self.subTest(value=value), self.assertRaises(ValueError):
-                approved_widget_config(value)
-
-    def test_invalid_secret_does_not_block_valid_embed(self):
-        valid='https://services.onetcenter.org/embed/onet-ip.js?x-api-key=PUBLIC_TEST_TOKEN'
-        self.assertEqual(choose_widget_config('malformed-widget-secret', valid), {'type':'script','src':valid})
-        self.assertEqual(choose_widget_config('malformed-widget-secret'), {'type':'none','src':''})
-
-    def test_widget_url_requires_official_https_hostname(self):
-        self.assertEqual(approved_widget_url('https://www.mynextmove.org/explore/ip'), 'https://www.mynextmove.org/explore/ip')
-        self.assertEqual(approved_widget_url('https://widget.onetcenter.org/ip?a=1'), 'https://widget.onetcenter.org/ip?a=1')
-        self.assertEqual(approved_widget_url(''), '')
-        for bad in ['https://evil.example.org/form','javascript:alert(1)','http://onetcenter.org/','https://onetcenter.org.evil.org/','https://user:pass@onetcenter.org/ip','https://onetcenter.org:8181/ip']:
-            with self.subTest(url=bad), self.assertRaises(ValueError):
-                approved_widget_url(bad)
+    def test_no_hosted_widget_controls_or_loader(self):
+        html=(ROOT/'index.html').read_text(encoding='utf-8')
+        js=(ROOT/'student.js').read_text(encoding='utf-8')
+        build=(ROOT/'scripts'/'build_site.py').read_text(encoding='utf-8')
+        for token in ('show-hosted-profiler','onet-widget-container','onet-widget-help','onet-widget-status','Use hosted O*NET widget'):
+            self.assertNotIn(token,html)
+        for token in ('configureWidget','widgetLoadStarted',"setAssessMode('widget')",'onetWidgetScriptSrc','show-hosted-profiler'):
+            self.assertNotIn(token,js)
+        self.assertNotIn('student_config.json',build)
+        self.assertNotIn('ONET_WIDGET_EMBED_CODE',build)
 
 if __name__=='__main__':
     unittest.main()

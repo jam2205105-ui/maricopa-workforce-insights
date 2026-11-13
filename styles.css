@@ -63,15 +63,6 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .likert-option:has(input:checked) .likert-value{background:var(--teal);color:white}
 .assessment-controls{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 0}
 .inline-message{margin:11px 0 0;font-size:.83rem;color:#585f65}
-.widget-container{margin:14px 0;max-width:900px}
-.widget-container[hidden]{display:none!important}
-.widget-help{margin:15px 0 5px;padding:18px 20px;background:#fff;border:1px solid #c3dada;border-radius:10px;line-height:1.6}
-.widget-help strong{color:var(--ink)}
-.widget-help p{font-size:.9rem;margin:8px 0 0;color:var(--muted)}
-.widget-help a{font-weight:800;color:var(--teal-dark)}
-.widget-help .widget-help-small{font-size:.78rem}
-.widget-container iframe{display:block;width:100%;height:620px;border:1px solid var(--line);background:#fff;border-radius:9px}
-.widget-container .empty-state{max-width:860px}
 .muted-text{color:var(--muted);font-size:.85rem}
 .riasec-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0 0}
 .score-field{display:grid;grid-template-columns:38px minmax(0,1fr) 92px;gap:10px;align-items:center;padding:11px;border:1px solid var(--line);background:#fff;border-radius:9px}
@@ -142,7 +133,7 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .planning-note p{font-size:.84rem;color:var(--muted);margin:6px 0}
 .planning-note a{color:var(--teal-dark);font-weight:850;font-size:.85rem}
 @media(max-width:970px){.suggestion-grid,.shortlist-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.student-step small{font-size:.69rem}}
-@media(max-width:760px){.student-stepbar{grid-template-columns:1fr}.student-step{padding:12px}.student-step small{font-size:.75rem}.assessment-intro{flex-direction:column;align-items:start;gap:12px}.assessment-stats{display:flex;align-items:center;gap:8px;flex:none}.assessment-option-grid,.profile-summary,.riasec-form{grid-template-columns:1fr}.student-panel{padding:17px}.assessment-workspace{padding:17px}.likert-options{grid-template-columns:1fr;gap:7px}.likert-option{min-height:50px;flex-direction:row;justify-content:flex-start;padding:10px 12px 10px 35px;text-align:left}.likert-option input{left:12px;top:50%;transform:translateY(-50%)}.likert-value{margin:0;width:28px;height:28px;font-size:.8rem}.suggestion-grid,.shortlist-grid,.external-match-list{grid-template-columns:1fr}.widget-container iframe{height:620px}}
+@media(max-width:760px){.student-stepbar{grid-template-columns:1fr}.student-step{padding:12px}.student-step small{font-size:.75rem}.assessment-intro{flex-direction:column;align-items:start;gap:12px}.assessment-stats{display:flex;align-items:center;gap:8px;flex:none}.assessment-option-grid,.profile-summary,.riasec-form{grid-template-columns:1fr}.student-panel{padding:17px}.assessment-workspace{padding:17px}.likert-options{grid-template-columns:1fr;gap:7px}.likert-option{min-height:50px;flex-direction:row;justify-content:flex-start;padding:10px 12px 10px 35px;text-align:left}.likert-option input{left:12px;top:50%;transform:translateY(-50%)}.likert-value{margin:0;width:28px;height:28px;font-size:.8rem}.suggestion-grid,.shortlist-grid,.external-match-list{grid-template-columns:1fr}}
 @media(max-width:430px){.score-field{grid-template-columns:34px minmax(0,1fr) 74px;gap:7px;padding:8px}.score-letter{width:34px;height:34px}.score-field input{max-width:74px}.assessment-stats strong{font-size:1.15rem}.assessment-stats span{font-size:.69rem}}
 /* Full official occupational directory controls */
 .search-toolbar{grid-template-columns:minmax(220px,1.75fr) repeat(3,minmax(150px,1fr))}
@@ -159,11 +150,6 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .tool-panel input[type=search]{display:block;width:100%;min-height:44px;margin:6px 0 12px;border:1px solid #b8c7d0;border-radius:8px;padding:9px 12px}
 @media(max-width:1060px){.search-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.search-toolbar{grid-template-columns:1fr}.catalog-toolbar{align-items:flex-start;flex-direction:column;gap:13px}.catalog-toolbar button{margin-left:0}}
-
-/* Responsive official O*NET widget (embedded inside student assessment panel). */
-.widget-container .embed-onet-ip{max-width:100%;min-height:620px}
-.widget-container .embed-onet-ip iframe{display:block;width:100%!important;max-width:100%;min-height:620px;border:0;border-radius:9px}
-#onet-widget-status{margin:6px 0 14px}
 
 /* On-site Mini-IP question experience */
 .mini-assessment[hidden]{display:none!important}

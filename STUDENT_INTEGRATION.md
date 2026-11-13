@@ -1,27 +1,17 @@
-# GitHub-only Interest Profiler integration
+# Student interest assessment — GitHub Pages
 
-**No backend**: The official assessment always opens through a working direct link. GitHub Pages can also host the public O*NET Interest Profiler **widget** if O*NET provides an authorized iframe URL that permits framing. The page cannot read values from that cross-origin iframe. Students manually enter their six RIASEC scores, and the hub compares those scores locally with published public O*NET occupational interest profiles. No O*NET API key is needed for this matching approach.
+The student experience uses an **on-site, 30-question activity assessment** sourced from O*NET Mini Interest Profiler questions. The hosted O*NET widget and its launch option have been removed from the student interface.
 
-1. **Works now, without any widget code:** Students select **Take Interest Profiler here** to reveal the on-page O*NET widget when configured. The off-site O*NET link remains as a backup when the embed is unavailable. When done, they return and enter their six R/I/A/S/E/C scores to see local career matches, wages, and Maricopa pathways.
-2. **Optional true embedded iframe:** Sign in to your O*NET Web Services developer account and retrieve the **Interest Profiler Widget iframe code** from **My Account**. This is separate from your API key. Copy only the iframe's approved HTTPS `src` URL.
-3. In GitHub **Settings → Secrets and variables → Actions → Variables**, add repository variable `ONET_WIDGET_IFRAME_SRC` with that `src` URL. Alternatively, set `onetWidgetIframeSrc` in `data/student_config.json` for a public URL. Do NOT put the API key in any public file or a widget URL.
-4. Run **Refresh labor-market data and publish GitHub Pages**. When approved and configured, the iframe displays above the score import. If not, students still have the fully working direct link.
-5. A cross-origin iframe cannot pass assessment results into the site's JavaScript automatically. Students enter scores manually; the site then computes exploratory alignments with the published O*NET occupational profiles. Getting official API match ratings on-site requires a secure service, which GitHub Pages by itself does not provide.
+## Student flow
 
-Unlike the former Netlify edition, this version **does not administer O*NET's 30-question Mini-IP inside its own JavaScript**, because GitHub Pages cannot securely authenticate the O*NET Web Services scoring calls. We do not copy O*NET questionnaire items or call our local similarities “official fit.” O*NET's hosted widget remains the official assessment. Its browser results handoff is manual.
+1. Select **Start on-site assessment** to answer 30 questions across six pages.
+2. The browser calculates exploratory RIASEC interest scores and shows career matches.
+3. Explore careers, Phoenix-area wages and potential Maricopa pathways without leaving the website.
+4. Alternatively, select **Enter my six interest scores** to import previously obtained results.
+5. Save a shortlist or download an interest-based career plan.
 
-The occupational interest profiles come from O*NET Database `career_interest_types.json`, filtered to `scale_id=OI` and six valid RIASEC numeric ratings. The comparison is Pearson correlation, ordered highest to lowest, limited to 100 careers above an exploratory similarity threshold; it is not equivalent to O*NET API job-zone-specific recommendations or assessment fit labels. Work preparation, regional wages and program links remain separate evidence.
+## Refresh and privacy
 
-**Privacy:** no student name, ID, or email is collected. Scores are processed on-device and not sent to this site’s server. Optional “remember” storage uses that browser’s local storage and should be avoided on shared campus machines.
+`scripts/refresh_interest_questions.py` runs in GitHub Actions and fetches the authorized O*NET Mini-IP questions. Use `ONET_API_KEY` as the Web Services key; the workflow retains a credential fallback from the existing `ONET_WIDGET_EMBED_CODE` secret for question retrieval. The site does **not** mount the hosted O*NET widget or publish its URL. The removed `data/student_config.json` file is no longer included in the website build.
 
-## O*NET official script-loader widget
-
-O*NET's current My Account embed can be a two-element snippet: an official `<script src="https://services.onetcenter.org/embed/onet-ip.js?...">` followed by `<div class="embed-onet-ip"></div>`. This is a script loader, not an iframe `src`. The build accepts this exact snippet (or the approved older HTTPS iframe format), validates the host, and publishes a structured widget configuration. It never copies arbitrary HTML into the page. The site mounts the official loader and leaves the official assessment link available as a fallback.
-
-The **existing** GitHub Actions variable `ONET_WIDGET_IFRAME_SRC` is supported for backward compatibility, including a full two-element snippet. However, repository variables are not masked in public workflow logs: use **GitHub Actions secret `ONET_WIDGET_EMBED_CODE`** instead if you want to avoid exposing the embed configuration in build logs, and remove the older variable. If the key in that older variable was sensitive, rotate it in O*NET. The official JavaScript embed key is unavoidably client-visible once the widget loads, so it should be a widget-approved, domain-restricted credential rather than a private server-side API key.
-
-Students complete the official widget on the site but transfer their six RIASEC results into the score-import form below. There is no documented same-origin result handoff through the widget, and the hub does not claim one.
-
-
-## In-site 30-question pathway (GitHub-only)
-The primary student button starts a native on-page activity assessment. GitHub Actions downloads **the original 30 Mini-IP activity items** from O*NET Web Services v2, using a repository secret `ONET_API_KEY` (recommended). The widget's developer token may work as a fallback, but Web Services v2 may require its own key. Answers never leave the browser; local RIASEC totals (0–20 per area) connect directly to occupational similarity scores and the Maricopa career explorer. These results are **locally computed exploratory estimates**, not responses from the official O*NET Results API or official fit ratings. The O*NET Tools Developer License requires attribution and validation of adapted products; district staff should validate the adapted presentation before institutional adoption. If the official item feed fails, the site reports that on-site questions are unavailable and retains the hosted O*NET alternative.
+Only the validated question text is published; student responses are processed on-device. Local RIASEC totals and career-profile similarities are exploratory and should not be represented as official O*NET Results API scores or validated career-fit recommendations. Review the O*NET Tools Developer License before official institutional adoption.

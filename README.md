@@ -25,11 +25,9 @@ In **Settings → Secrets and variables → Actions → New repository secret**,
 
 These repository secrets are available only during GitHub Actions; GitHub Pages cannot host a secret-backed API endpoint. **Never commit credentials to the repository or place them in `data/*.json`, JavaScript or an iframe URL.**
 
-### Configure the official O*NET Interest Profiler widget
+### Student interest assessment
 
-The site has a student-friendly **official-widget + score import** experience. A licensed O*NET developer account provides an approved embeddable widget snippet. Take its **public iframe `src` URL only**, and place it in `data/student_config.json` as `onetWidgetIframeSrc`. Do **not** include your O*NET API key or other secrets. If the widget cannot be embedded because of framing restrictions or is not configured, the site provides a direct link to the official profiler at https://onetinterestprofiler.org/.
-
-**Result handoff limitation:** O*NET does not document a browser-safe result callback from the cross-origin hosted widget, so students manually copy their **six RIASEC scores** into the hub. The hub then compares those scores with published O*NET occupational interest profiles **entirely in the browser**. This is a pattern comparison, **not** O*NET's official Web Services career-fit algorithm or labels. No O*NET API secret or additional hosting service is necessary.
+Students complete the 30-question O*NET Mini-IP activity assessment **inside the hub**. Questions are downloaded during GitHub Actions refresh using an authorized O*NET Web Services credential. Answers stay in the browser and results connect to exploratory occupational interest comparisons. Students with existing six RIASEC scores can import them. The hosted O*NET widget and its launch control are no longer part of the student experience.
 
 ## Data refresh and website publishing
 
@@ -56,7 +54,7 @@ Open `http://localhost:8000/` (not `file://`). The initial ZIP contains only the
 
 ## What is available
 
-- **Students:** full official O*NET career search (after deployment refresh); alternate titles; preparation filters; wages when available; official hosted Interest Profiler link/optional widget; six-score import; locally ranked exploratory occupational interest alignments; shortlist and downloadable plan.
+- **Students:** full official O*NET career search (after deployment refresh); alternate titles; preparation filters; wages when available; 30-question on-site activity assessment; six-score import; locally ranked exploratory occupational interest alignments; shortlist and downloadable plan.
 - **Educators:** program demand scan builder over the occupation directory; source metadata; wage/occupation employment snapshots; printable report.
 - **Community:** unemployment/payroll trends and sector indicators with source periods; printable regional brief; CSV export.
 - **Automation:** daily source checks and GitHub Pages deployments with no exposed credentials.
@@ -67,7 +65,7 @@ Open `http://localhost:8000/` (not `file://`). The initial ZIP contains only the
 - MCCCD enrollment, retention, completions or student records
 - Arizona OEO projections, job posting data or a live job-vacancy inventory
 - Server-side O*NET Interest Profiler scoring or official O*NET occupation-fit labels
-- Automatic cross-origin transfer of hosted O*NET widget results
+- Official O*NET Results API scores or fit ratings
 
 This design intentionally avoids collecting student names, emails, or institutional IDs. Interest scores stay local to the browser unless students opt to retain them on that device; a saved shortlist stays on the device. Because GitHub Pages is static, server-side identity verification and confidential institutional analytics require a different, authenticated deployment surface.
 
@@ -92,7 +90,7 @@ Maricopa degrees/certificates: https://www.maricopa.edu/degrees-certificates (ed
 | Workflow fails during O*NET download | Source temporarily unavailable / naming changed; try re-running. The prior website stays live. |
 | Only 24 careers locally | Run `python scripts/refresh_catalog.py` or deploy through GitHub Actions. |
 | Salary shown as “not available” | Published BLS OEWS file may be missing/suppressed for that occupation, or the data refresh failed. Inspect **Data sources** section. |
-| Student button doesn't automatically report scores | Hosted O*NET iframe is cross-origin; students import their six RIASEC scores. This is intentional and does not require an API key. |
+| Student assessment questions unavailable | Check the Mini-IP question-refresh step in GitHub Actions and O*NET API access. Existing verified question text is retained. |
 | Works on `/` but not on project path | Keep the bundled relative URLs. Do not change `data/…` into absolute `/data/…`. |
 
 
