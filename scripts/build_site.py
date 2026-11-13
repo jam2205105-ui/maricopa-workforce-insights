@@ -53,6 +53,6 @@ def main():
     cfg['onetWidgetIframeSrc']=embed
     (OUT/'data'/'student_config.json').write_text(json.dumps(cfg,indent=2)+'\n',encoding='utf-8')
     (OUT/'.nojekyll').write_text('',encoding='utf8')
-    print(f'GitHub Pages static site ready: {count} occupations, {interest_count} occupational RIASEC profiles; no API keys or functions in published output.')
+    print(f'GitHub Pages static site ready: {count} occupations, {interest_count} occupational RIASEC profiles; O*NET widget: {"configured" if embed else "not configured"}; no API keys or functions in published output.')
 
 if __name__=='__main__':main()
