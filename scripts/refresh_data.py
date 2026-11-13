@@ -29,7 +29,7 @@ NOW = dt.datetime.now(dt.timezone.utc)
 USER_AGENT = 'Maricopa-Workforce-Insights-Demo/1.0 (public-source data client; https://www.bls.gov/developers/)'
 BLS_ENDPOINT = 'https://api.bls.gov/publicAPI/v2/timeseries/data/'
 OEWS_TABLES = 'https://www.bls.gov/oes/tables.htm'
-METRO_CODE = '38060'  # Phoenix–Mesa–Chandler, AZ: Maricopa + Pinal counties
+OEWS_AREA_CODE = '0038060'  # OEWS seven-digit code; Phoenix–Mesa–Chandler includes Maricopa + Pinal
 SERIES_IDS = {
     'unemployment': 'LAUCN040130000000003',  # Maricopa County, unadjusted unemployment rate
     'jobs': 'SMS04380600000000001',         # Phoenix metro, SA total nonfarm jobs (thousands)
@@ -182,63 +182,95 @@ def latest_oews_vintage(session: requests.Session) -> int:
     return max(valid)
 
 
-def parse_oews_workbook(content: bytes, requested_soc: set[str]) -> dict[str, dict]:
-    """Parse published OEWS metro XLSX from a ZIP, retaining only Phoenix MSA SOC rows.
+def normalize_oews_area(value: Any) -> str:
+    """Preserve BLS OEWS seven-digit areas, including leading zeroes.
 
-    Column names are normalized so upper/lowercase and whitespace variations work.
-    Suppressed and nonnumeric wage values remain null rather than zero.
+    XLSX may store 0038060 as the number 38060; BLS CES series instead use
+    the five-digit MSA code. Never compare those two representations raw.
     """
-    with zipfile.ZipFile(io.BytesIO(content)) as archive:
-        files=[f for f in archive.namelist() if f.lower().endswith('.xlsx') and not f.startswith('__MACOSX/')]
-        if not files:
-            raise ValueError('OEWS archive contains no XLSX workbook')
-        workbook_bytes=archive.read(files[0])
-    book=load_workbook(io.BytesIO(workbook_bytes),read_only=True,data_only=True)
+    if value is None or isinstance(value, bool):
+        return ''
+    area = str(value).strip()
+    if area.endswith('.0'):
+        area = area[:-2]
+    return area.zfill(7) if area.isdecimal() and len(area) <= 7 else area
+
+
+def parse_oews_workbook(content: bytes, requested_soc: set[str]) -> dict[str, dict]:
+    """Read official metro OEWS ZIP archives (possibly multiple XLSX files).
+
+    BLS area 0038060 is Phoenix–Mesa–Chandler; the five-digit MSA number
+    38060 may appear in spreadsheets as a numeric cell with its zeros dropped.
+    Return reported statistics only, preserving BLS suppressed values as null.
+    """
+    results: dict[str, dict] = {}
+    sampled_areas: set[str] = set()
+    scanned_sheets = 0
     try:
-        ws=book.active
-        iterator=ws.iter_rows(values_only=True)
-        columns=None
-        for row in iterator:
-            probe=[str(v).strip().upper().replace(' ','_') if v is not None else '' for v in row]
-            if 'AREA' in probe and 'OCC_CODE' in probe and 'A_MEDIAN' in probe:
-                columns={name:i for i,name in enumerate(probe)}
-                break
-        if columns is None:
-            raise ValueError('OEWS workbook lacks AREA/OCC_CODE/A_MEDIAN columns')
-        def cell(row,key):
-            idx=columns.get(key)
-            return row[idx] if idx is not None and idx<len(row) else None
-        results={}
-        for row in iterator:
-            area=cell(row,'AREA')
-            area=str(area).strip()
-            if area.endswith('.0'):
-                area=area[:-2]
-            if area != METRO_CODE:
-                continue
-            soc=str(cell(row,'OCC_CODE') or '').strip()
-            if soc not in requested_soc:
-                continue
-            group=str(cell(row,'OCC_GROUP') or '').lower().strip()
-            if group and soc!='00-0000' and group not in ('detailed','detail'):
-                continue
-            employment=numeric(cell(row,'TOT_EMP'),0,20_000_000)
-            annual_median=numeric(cell(row,'A_MEDIAN'),5000,1_000_000)
-            annual_p10=numeric(cell(row,'A_PCT10'),1000,1_000_000)
-            annual_p90=numeric(cell(row,'A_PCT90'),1000,2_000_000)
-            hourly_median=numeric(cell(row,'H_MEDIAN'),1,1000)
-            if all(v is None for v in (employment,annual_median,annual_p10,annual_p90,hourly_median)):
-                continue
-            results[soc]={
-                'employment':employment,'annualMedian':annual_median,'annualP10':annual_p10,
-                'annualP90':annual_p90,'hourlyMedian':hourly_median,
-                'soc':soc,'area':'Phoenix–Mesa–Chandler, AZ MSA'
-            }
-        if not results:
-            raise ValueError('No matching Phoenix metro occupation rows found in the file')
-        return results
-    finally:
-        book.close()
+        with zipfile.ZipFile(io.BytesIO(content)) as archive:
+            members = [name for name in archive.namelist()
+                       if name.lower().endswith('.xlsx')
+                       and not name.startswith('__MACOSX/')
+                       and not Path(name).name.startswith('~$')]
+            if not members:
+                raise ValueError('OEWS archive contains no XLSX workbook')
+            # The BLS metro archive may also contain nonmetropolitan workbooks.
+            members.sort(key=lambda name: (not Path(name).name.upper().startswith('MSA_'), name))
+            for filename in members:
+                book = load_workbook(io.BytesIO(archive.read(filename)), read_only=True, data_only=True)
+                try:
+                    for ws in book.worksheets:
+                        iterator = ws.iter_rows(values_only=True)
+                        columns = None
+                        for row in iterator:
+                            probe = [str(v).strip().upper().replace(' ', '_') if v is not None else '' for v in row]
+                            if {'AREA', 'OCC_CODE', 'A_MEDIAN'}.issubset(probe):
+                                columns = {name: i for i, name in enumerate(probe)}
+                                break
+                        if columns is None:
+                            continue  # notes/metadata sheet, or unrelated workbook
+                        scanned_sheets += 1
+
+                        def cell(row, key):
+                            idx = columns.get(key)
+                            return row[idx] if idx is not None and idx < len(row) else None
+
+                        for row in iterator:
+                            area = normalize_oews_area(cell(row, 'AREA'))
+                            if len(sampled_areas) < 12 and area:
+                                sampled_areas.add(area)
+                            if area != OEWS_AREA_CODE:
+                                continue
+                            soc = str(cell(row, 'OCC_CODE') or '').strip()
+                            if soc not in requested_soc:
+                                continue
+                            group = str(cell(row, 'OCC_GROUP') or '').lower().strip()
+                            if group and soc != '00-0000' and group not in ('detailed', 'detail'):
+                                continue
+                            employment = numeric(cell(row, 'TOT_EMP'), 0, 20_000_000)
+                            median = numeric(cell(row, 'A_MEDIAN'), 5000, 1_000_000)
+                            p10 = numeric(cell(row, 'A_PCT10'), 1000, 1_000_000)
+                            p90 = numeric(cell(row, 'A_PCT90'), 1000, 2_000_000)
+                            hourly = numeric(cell(row, 'H_MEDIAN'), 1, 1000)
+                            if all(v is None for v in (employment, median, p10, p90, hourly)):
+                                continue
+                            results[soc] = {
+                                'employment': employment, 'annualMedian': median,
+                                'annualP10': p10, 'annualP90': p90,
+                                'hourlyMedian': hourly, 'soc': soc,
+                                'area': 'Phoenix–Mesa–Chandler, AZ MSA'
+                            }
+                finally:
+                    book.close()
+    except zipfile.BadZipFile as exc:
+        raise ValueError('Downloaded OEWS archive is not a valid ZIP') from exc
+    if not results:
+        raise ValueError(
+            f'No Phoenix OEWS rows for area {OEWS_AREA_CODE}; '
+            f'checked {scanned_sheets} data sheets, sample area codes '
+            f'{sorted(sampled_areas)[:10]}'
+        )
+    return results
 
 
 def update_oews(data: dict, session: requests.Session, selected_soc: set[str]) -> None:
@@ -264,9 +296,10 @@ def update_oews(data: dict, session: requests.Session, selected_soc: set[str]) -
         data['occupations']=records
         data['oewsPeriod']=str(year)
         data['oewsFetchedAt']=NOW.isoformat()
-        data['sources']['bls_oews']={'status':'ok','period':f'May {year}', 'fetchedAt':NOW.isoformat(), 'note':f'{len(records)} selected metropolitan occupation rows fetched from the official annual download.'}
+        data['sources']['bls_oews']={'status':'ok','period':f'May {year}', 'fetchedAt':NOW.isoformat(), 'note':f'{len(records)} selected Phoenix–Mesa–Chandler metro occupation rows fetched from official OEWS May {year}.'}
     except (requests.RequestException,ValueError,KeyError,zipfile.BadZipFile) as exc:
-        data['sources']['bls_oews']={'status':'error','period':f"May {data.get('oewsPeriod')}" if data.get('oewsPeriod') else None,'note':f'Refresh failed; retaining last verified wages: {str(exc)[:180]}'}
+        logging.warning('BLS OEWS update failed: %s', exc)
+        data['sources']['bls_oews']={'status':'error','period':f"May {data.get('oewsPeriod')}" if data.get('oewsPeriod') else None,'note':f'Refresh failed; retaining last verified wages if present: {str(exc)[:180]}'}
 
 
 def update_census(data: dict, session: requests.Session) -> None:

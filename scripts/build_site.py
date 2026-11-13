@@ -17,6 +17,11 @@ def main():
         raise SystemExit('Refusing incomplete O*NET occupational catalog deployment')
     if interest_count < 800:
         raise SystemExit('Refusing deployment without enough complete RIASEC occupational profiles')
+    snapshot=json.loads((ROOT/'data/current.json').read_text(encoding='utf-8'))
+    if len(snapshot.get('occupations', {})) < 100 or not snapshot.get('oewsPeriod'):
+        raise SystemExit('Refusing deployment without verified Phoenix OEWS wages. Check BLS refresh and archived snapshot.')
+    if not snapshot.get('metrics', {}).get('unemployment') or not snapshot.get('metrics', {}).get('jobs'):
+        raise SystemExit('Refusing deployment without published BLS unemployment and payroll indicators')
     if OUT.exists():shutil.rmtree(OUT)
     OUT.mkdir()
     for name in ('index.html','styles.css','catalog.js','interest_match.js','student.js','app.js'):

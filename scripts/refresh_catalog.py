@@ -130,6 +130,13 @@ def main():
     # Do not publish a silently broken interest matching directory.
     if data['interestProfileCount'] < 800:
         raise ValueError(f"Too few complete occupational interest profiles ({data['interestProfileCount']})")
+    try:
+        existing=json.loads(OUTPUT.read_text(encoding='utf8'))
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing={}
+    if existing.get('release')==data['release'] and existing.get('occupations')==data['occupations']:
+        print(f'O*NET {data["release"]}: occupational catalog unchanged; keeping prior verified snapshot.')
+        return 0
     temp=OUTPUT.with_suffix('.json.tmp');temp.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf8');temp.replace(OUTPUT)
     print(f'Published {data["count"]} verified occupations, {data["interestProfileCount"]} complete interest profiles from O*NET {data["release"]} in {OUTPUT}')
     return 0

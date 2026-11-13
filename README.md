@@ -94,3 +94,25 @@ Maricopa degrees/certificates: https://www.maricopa.edu/degrees-certificates (ed
 | Salary shown as “not available” | Published BLS OEWS file may be missing/suppressed for that occupation, or the data refresh failed. Inspect **Data sources** section. |
 | Student button doesn't automatically report scores | Hosted O*NET iframe is cross-origin; students import their six RIASEC scores. This is intentional and does not require an API key. |
 | Works on `/` but not on project path | Keep the bundled relative URLs. Do not change `data/…` into absolute `/data/…`. |
+
+
+## Source reliability (Nov 2026)
+
+- **BLS OEWS wages:** The published 2025 Phoenix-Mesa-Chandler metropolitan
+  geography is `0038060` in OEWS (seven digits, including leading zeroes).
+  BLS CES payroll series use the five-digit metro code `38060`; do not interchange them.
+  OEWS is annual and not a monthly/real-time salary estimate.
+- **BLS LAU, CES and industries:** Monthly reported values; monthly refreshes
+  can have release lags. The Phoenix MSA includes Maricopa and Pinal counties,
+  while the unemployment measure is Maricopa County.
+- **Census ACS:** Requires adding `CENSUS_API_KEY` in GitHub Settings →
+  Secrets and variables → Actions. Without it, the feed is marked skipped.
+- **O*NET:** Source includes all published occupations; only occupations with
+  complete public RIASEC profiles have interest-matching data. Missing profiles
+  are never synthesized.
+- **Persistence:** A successful workflow commits updated, validated public
+  snapshots back to `data/current.json` and `data/occupations.json`, so a
+  temporary upstream outage keeps previously verified values with an error
+  status instead of silently wiping them out. No API keys are committed.
+- **Failure policy:** Builds fail rather than publish when fewer than 100 verified
+  metro OEWS SOC records or required BLS LAU/CES indicators are available.

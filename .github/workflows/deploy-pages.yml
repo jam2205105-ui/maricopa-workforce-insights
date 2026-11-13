@@ -8,7 +8,7 @@ on:
     - cron: '17 14 * * *'
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -53,6 +53,16 @@ jobs:
           python scripts/refresh_data.py || echo 'BLS/Census refresh incomplete; no fabricated values were published.'
       - name: Validate data and assemble only public website files
         run: python scripts/build_site.py
+      - name: Persist last verified data for future refreshes
+        # GITHUB_TOKEN pushes do not trigger a second Pages workflow.
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/current.json data/occupations.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore(data): save verified labor market snapshot [skip ci]'
+            git push origin HEAD:main
+          fi
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact

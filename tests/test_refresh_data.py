@@ -78,7 +78,7 @@ class OEWSParserTests(unittest.TestCase):
         ws.append(['Publication test fixture — NOT REAL DATA'])
         ws.append(['AREA','AREA_TITLE','OCC_CODE','OCC_GROUP','TOT_EMP','A_MEDIAN','A_PCT10','A_PCT90','H_MEDIAN'])
         ws.append([38060,'Phoenix', '29-1141','detailed','44520','92620','65000','120000','44.53'])
-        ws.append([38060,'Phoenix','15-1212','detailed','1800','*','60000','185000','*'])
+        ws.append(['0038060','Phoenix','15-1212','detailed','1800','*','60000','185000','*'])
         ws.append([38060,'Phoenix','00-0000','total','2500000','54520','29200','120000','26.21'])
         ws.append([99999,'Other','29-1141','detailed','5000','88000','55000','99000','40'])
         buffer=io.BytesIO();wb.save(buffer)
@@ -93,6 +93,32 @@ class OEWSParserTests(unittest.TestCase):
         self.assertEqual(rows['29-1141']['annualMedian'],92620)
         self.assertEqual(rows['29-1141']['employment'],44520)
         self.assertIsNone(rows['15-1212']['annualMedian'])
+
+    def test_bls_seven_digit_phoenix_area_code(self):
+        self.assertEqual(m.OEWS_AREA_CODE, '0038060')
+        self.assertEqual(m.normalize_oews_area(38060), '0038060')
+        self.assertEqual(m.normalize_oews_area('0038060'), '0038060')
+        self.assertEqual(m.normalize_oews_area('38060.0'), '0038060')
+        self.assertNotEqual(m.normalize_oews_area(46060), '0038060')
+
+    def test_multiple_workbooks_with_phoenix_in_second_file(self):
+        other=Workbook()
+        other.active.append(['AREA','OCC_CODE','A_MEDIAN'])
+        other.active.append([12345,'29-1141',50000])
+        other_bytes=io.BytesIO();other.save(other_bytes)
+        phoenix=Workbook()
+        phoenix.active.append(['Notes sheet'])
+        ws=phoenix.create_sheet('Metro')
+        ws.append(['AREA','OCC_CODE','OCC_GROUP','TOT_EMP','A_MEDIAN','A_PCT10','A_PCT90','H_MEDIAN'])
+        ws.append(['0038060','29-1141','detailed',45678,95000,65000,145000,45])
+        phoenix_bytes=io.BytesIO();phoenix.save(phoenix_bytes)
+        archive=io.BytesIO()
+        with zipfile.ZipFile(archive,'w') as z:
+            z.writestr('a_other.xlsx',other_bytes.getvalue())
+            z.writestr('MSA_M2025_dl.xlsx',phoenix_bytes.getvalue())
+        rows=m.parse_oews_workbook(archive.getvalue(), {'29-1141'})
+        self.assertEqual(rows['29-1141']['annualMedian'],95000)
+        self.assertEqual(rows['29-1141']['employment'],45678)
 
     def test_zip_without_workbook_fails(self):
         archive=io.BytesIO()
