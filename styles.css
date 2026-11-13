@@ -63,7 +63,13 @@ footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:w
 .likert-option:has(input:checked) .likert-value{background:var(--teal);color:white}
 .assessment-controls{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 0}
 .inline-message{margin:11px 0 0;font-size:.83rem;color:#585f65}
-.widget-container{margin-top:14px;max-width:900px}
+.widget-container{margin:14px 0;max-width:900px}
+.widget-container[hidden]{display:none!important}
+.widget-help{margin:15px 0 5px;padding:18px 20px;background:#fff;border:1px solid #c3dada;border-radius:10px;line-height:1.6}
+.widget-help strong{color:var(--ink)}
+.widget-help p{font-size:.9rem;margin:8px 0 0;color:var(--muted)}
+.widget-help a{font-weight:800;color:var(--teal-dark)}
+.widget-help .widget-help-small{font-size:.78rem}
 .widget-container iframe{display:block;width:100%;height:620px;border:1px solid var(--line);background:#fff;border-radius:9px}
 .widget-container .empty-state{max-width:860px}
 .muted-text{color:var(--muted);font-size:.85rem}

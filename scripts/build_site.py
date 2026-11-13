@@ -3,10 +3,25 @@
 Never publish a truncated O*NET catalog or missing occupation-interest profiles.
 """
 import json
+import os
+from urllib.parse import urlsplit
 import shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'_site'
+
+
+def approved_widget_url(url):
+    """Validate public HTTPS iframe URLs from O*NET My Account."""
+    value=str(url or '').strip()
+    if not value:
+        return ''
+    parsed=urlsplit(value)
+    host=(parsed.hostname or '').lower()
+    trusted=('onetcenter.org','onetinterestprofiler.org','mynextmove.org')
+    if parsed.scheme != 'https' or parsed.username or parsed.password or parsed.port not in (None, 443) or not any(host==domain or host.endswith('.'+domain) for domain in trusted):
+        raise ValueError('Invalid ONET_WIDGET_IFRAME_SRC: provide the HTTPS iframe src from O*NET My Account, never an API key or unrelated URL.')
+    return value
 
 def main():
     catalog=json.loads((ROOT/'data/occupations.json').read_text(encoding='utf-8'))
@@ -28,8 +43,15 @@ def main():
         shutil.copy2(ROOT/name,OUT/name)
     shutil.copytree(ROOT/'assets',OUT/'assets')
     (OUT/'data').mkdir()
-    for name in ('current.json','catalog.json','occupations.json','student_config.json'):
+    for name in ('current.json','catalog.json','occupations.json'):
         shutil.copy2(ROOT/'data'/name,OUT/'data'/name)
+    cfg=json.loads((ROOT/'data'/'student_config.json').read_text(encoding='utf-8'))
+    try:
+        embed=approved_widget_url(os.getenv('ONET_WIDGET_IFRAME_SRC','') or cfg.get('onetWidgetIframeSrc',''))
+    except ValueError as exc:
+        raise SystemExit(str(exc)) from exc
+    cfg['onetWidgetIframeSrc']=embed
+    (OUT/'data'/'student_config.json').write_text(json.dumps(cfg,indent=2)+'\n',encoding='utf-8')
     (OUT/'.nojekyll').write_text('',encoding='utf8')
     print(f'GitHub Pages static site ready: {count} occupations, {interest_count} occupational RIASEC profiles; no API keys or functions in published output.')
 

@@ -1,11 +1,12 @@
 # GitHub-only Interest Profiler integration
 
-**No backend**: GitHub Pages can host the public O*NET Interest Profiler **widget** if O*NET provides an authorized iframe URL that permits framing. The page cannot read values from that cross-origin iframe. Students manually enter their six RIASEC scores, and the hub compares those scores locally with published public O*NET occupational interest profiles. No O*NET API key is needed for this matching approach.
+**No backend**: The official assessment always opens through a working direct link. GitHub Pages can also host the public O*NET Interest Profiler **widget** if O*NET provides an authorized iframe URL that permits framing. The page cannot read values from that cross-origin iframe. Students manually enter their six RIASEC scores, and the hub compares those scores locally with published public O*NET occupational interest profiles. No O*NET API key is needed for this matching approach.
 
-1. Obtain the **widget iframe src URL** from your O*NET developer account.
-2. Set `onetWidgetIframeSrc` in `data/student_config.json`. Do not paste `X-API-Key` or other credentials into public files.
-3. Deploy with the GitHub Actions Pages workflow.
-4. Take the official interest assessment, import the six R/I/A/S/E/C scores, inspect top career alignments, compare pay, save a shortlist and export a plan.
+1. **Works now, without any widget code:** Students select **Start official Interest Profiler** to open `https://onetinterestprofiler.org/` in a new tab. When done, they return and enter their six R/I/A/S/E/C scores to see local career matches, wages, and Maricopa pathways.
+2. **Optional true embedded iframe:** Sign in to your O*NET Web Services developer account and retrieve the **Interest Profiler Widget iframe code** from **My Account**. This is separate from your API key. Copy only the iframe's approved HTTPS `src` URL.
+3. In GitHub **Settings → Secrets and variables → Actions → Variables**, add repository variable `ONET_WIDGET_IFRAME_SRC` with that `src` URL. Alternatively, set `onetWidgetIframeSrc` in `data/student_config.json` for a public URL. Do NOT put the API key in any public file or a widget URL.
+4. Run **Refresh labor-market data and publish GitHub Pages**. When approved and configured, the iframe displays above the score import. If not, students still have the fully working direct link.
+5. A cross-origin iframe cannot pass assessment results into the site's JavaScript automatically. Students enter scores manually; the site then computes exploratory alignments with the published O*NET occupational profiles. Getting official API match ratings on-site requires a secure service, which GitHub Pages by itself does not provide.
 
 Unlike the former Netlify edition, this version **does not administer O*NET's 30-question Mini-IP inside its own JavaScript**, because GitHub Pages cannot securely authenticate the O*NET Web Services scoring calls. We do not copy O*NET questionnaire items or call our local similarities “official fit.” O*NET's hosted widget remains the official assessment. Its browser results handoff is manual.
 

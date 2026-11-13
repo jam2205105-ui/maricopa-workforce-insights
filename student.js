@@ -160,11 +160,12 @@
       const url=String(cfg.onetWidgetIframeSrc||'').trim();
       if(!url)return;
       const parsed=new URL(url);const h=parsed.hostname.toLowerCase();
-      if(parsed.protocol!=='https:' || !['onetcenter.org','onetinterestprofiler.org','mynextmove.org'].some(d=>h===d||h.endsWith('.'+d)))return;
+      if(parsed.protocol!=='https:' || parsed.username || parsed.password || !['onetcenter.org','onetinterestprofiler.org','mynextmove.org'].some(d=>h===d||h.endsWith('.'+d)))return;
       state.widgetConfigured=true;state.widgetUrl=url;
-      byId('onet-widget-container').innerHTML='';
+      const container=byId('onet-widget-container');
       const iframe=document.createElement('iframe');iframe.src=url;iframe.title='Official O*NET Interest Profiler';iframe.loading='lazy';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.setAttribute('allowfullscreen','');
-      byId('onet-widget-container').appendChild(iframe);
+      container.replaceChildren(iframe);container.hidden=false;
+      byId('onet-widget-help').querySelector('strong').textContent='You can take the official profiler here or in a new tab.';
     }catch{/* widget is optional */}
   }
   function init(){
@@ -181,7 +182,7 @@
     }
     document.querySelectorAll('[data-student-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.studentTab)));
     byId('show-widget').addEventListener('click',()=>{setTab('assess');setAssessMode('widget');byId('widget-area').scrollIntoView({behavior:'smooth',block:'nearest'});});
-    byId('start-mini-ip').addEventListener('click',()=>{setTab('assess');setAssessMode('widget');byId('widget-area').scrollIntoView({behavior:'smooth',block:'nearest'});});
+    byId('start-mini-ip').addEventListener('click',()=>{setTab('assess');setAssessMode('widget');byId('widget-area').scrollIntoView({behavior:'smooth',block:'start'});});
     byId('interest-import-form').addEventListener('submit',importScores);
     byId('clear-profile').addEventListener('click',clearProfile);
     byId('edit-interests').addEventListener('click',()=>setTab('assess'));
@@ -192,7 +193,7 @@
     byId('show-matches-only').addEventListener('change',renderCareers);
     byId('reset-matches').addEventListener('click',()=>{byId('show-matches-only').checked=false;byId('career-sort').value='title';renderCareers();});
     renderProfile();renderShortlist();renderCareers();
-    byId('mini-ip-status').textContent='GitHub Pages edition · no API key required · scores stay in your browser';
+    byId('mini-ip-status').textContent='Free official assessment · On-site career matching requires no API key';
   }
   window.studentHub={matchForSoc:careerMatch,matchOrder,hasProfile:()=>!!state.scores,toggleSaved,
     isSaved:soc=>state.saved.includes(soc),isMatchOnly:()=>!!byId('show-matches-only')?.checked,
