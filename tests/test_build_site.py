@@ -13,6 +13,9 @@ class WidgetBuildTest(unittest.TestCase):
         self.assertIn('href="https://onetinterestprofiler.org/"',html)
         self.assertNotIn('Hosted widget not yet configured',html)
         self.assertIn('id="onet-widget-container" class="widget-container" hidden',html)
+        self.assertIn('id="start-mini-ip" class="button primary" type="button"',html)
+        self.assertNotIn('<a id="start-mini-ip"',html)
+        self.assertIn('id="onet-widget-status"',html)
 
     def test_official_script_embed(self):
         src='https://services.onetcenter.org/embed/onet-ip.js?x-api-key=DUMMY_PUBLIC_EMBED_TOKEN'

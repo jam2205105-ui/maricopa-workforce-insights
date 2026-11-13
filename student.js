@@ -27,7 +27,11 @@
     if(tab==='matches') renderProfile();
   }
   function setAssessMode(which){
-    byId('widget-area').hidden=which!=='widget';
+    const show=which==='widget';
+    byId('widget-area').hidden=!show;
+    byId('start-mini-ip').setAttribute('aria-expanded',String(show));
+    // The O*NET loader measures its host element. Load only after the panel is visible.
+    if(show)void configureWidget();
   }
   function scoresValid(scores){return areas.every(a=>Number.isInteger(scores[a.code]) && scores[a.code]>=0 && scores[a.code]<=50) &&
     Object.values(scores).some(v=>v>0);}
@@ -154,38 +158,56 @@
     }),`NEXT STEPS\n1. Research daily tasks and training requirements.\n2. Confirm Maricopa program availability, costs and admission requirements.\n3. Discuss options with an academic or career advisor.\nhttps://www.maricopa.edu/degrees-certificates`,'',`Interest themes: ${state.scores?topAreas(state.scores).join(', '):'Not entered'}`,'Program mappings are editorial exploration links, not approved official CIP–SOC crosswalks.'];
     exportText('my-maricopa-career-plan.txt',lines.join('\n'));
   }
+  let widgetLoadStarted=false;
   async function configureWidget(){
+    if(widgetLoadStarted)return;
+    widgetLoadStarted=true;
+    const container=byId('onet-widget-container');
+    const status=byId('onet-widget-status');
+    const help=byId('onet-widget-help').querySelector('strong');
+    status.textContent='Loading the embedded O*NET Interest Profiler…';
     try{
-      const cfg=await fetch('data/student_config.json',{cache:'no-store'}).then(r=>r.ok?r.json():{});
+      const response=await fetch('data/student_config.json',{cache:'no-store'});
+      if(!response.ok)throw new Error('Widget configuration unavailable');
+      const cfg=await response.json();
       const scriptUrl=String(cfg.onetWidgetScriptSrc||'').trim();
       const iframeUrl=String(cfg.onetWidgetIframeSrc||'').trim();
       const url=scriptUrl||iframeUrl;
-      if(!url)return;
+      if(!url)throw new Error('Widget not configured');
       const parsed=new URL(url),h=parsed.hostname.toLowerCase();
-      if(parsed.protocol!=='https:' || parsed.username || parsed.password || parsed.hash)return;
-      const container=byId('onet-widget-container');
+      if(parsed.protocol!=='https:' || parsed.username || parsed.password || parsed.hash)throw new Error('Invalid widget source');
       if(scriptUrl){
-        if(h!=='services.onetcenter.org' || parsed.pathname!=='/embed/onet-ip.js' || !parsed.searchParams.get('x-api-key'))return;
-        // Use only a vetted official script element, not injected HTML from configuration.
+        if(h!=='services.onetcenter.org' || parsed.pathname!=='/embed/onet-ip.js' || !parsed.searchParams.get('x-api-key'))throw new Error('Unrecognized widget script');
+        // Make the target visible before executing the official O*NET loader.
         const target=document.createElement('div');target.className='embed-onet-ip';
+        container.replaceChildren(target);
+        container.hidden=false;
         const script=document.createElement('script');script.src=url;script.async=true;
+        script.addEventListener('load',()=>{status.textContent='O*NET assessment loaded. After completing it, apply your six scores below.';});
         script.addEventListener('error',()=>{
           container.hidden=true;
-          byId('onet-widget-help').querySelector('strong').textContent='The embedded assessment could not load. Use the official link below.';
+          status.textContent='The embedded assessment did not load. Use the backup O*NET link below.';
+          help.textContent='The embedded assessment is unavailable right now.';
         });
-        container.replaceChildren(target,script);
+        container.appendChild(script);
       }else{
-        if(!['onetcenter.org','onetinterestprofiler.org','mynextmove.org'].some(d=>h===d||h.endsWith('.'+d)))return;
-        const iframe=document.createElement('iframe');iframe.src=url;iframe.title='Official O*NET Interest Profiler';iframe.loading='lazy';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.setAttribute('allowfullscreen','');
-        container.replaceChildren(iframe);
+        if(!['onetcenter.org','onetinterestprofiler.org','mynextmove.org'].some(d=>h===d||h.endsWith('.'+d)))throw new Error('Unrecognized widget host');
+        const frame=document.createElement('iframe');frame.src=url;
+        frame.title='Official O*NET Interest Profiler';frame.loading='eager';
+        frame.referrerPolicy='strict-origin-when-cross-origin';frame.setAttribute('allowfullscreen','');
+        container.replaceChildren(frame);container.hidden=false;
+        status.textContent='The embedded assessment is displayed above. Apply your six scores below when finished.';
       }
       state.widgetConfigured=true;state.widgetUrl=url;
-      container.hidden=false;
-      byId('onet-widget-help').querySelector('strong').textContent='Take the official profiler here, then apply your six scores below.';
-    }catch{/* official direct link remains available */}
+      help.textContent='Take the official profiler here, then apply your six scores below.';
+    }catch{
+      container.hidden=true;
+      status.textContent='The embedded assessment is not available. Use the backup O*NET link below, then enter your scores.';
+      help.textContent='The embedded assessment is unavailable right now.';
+    }
   }
   function init(){
-    renderScoreInputs();configureWidget();
+    renderScoreInputs();
     const saved=tryRead('lmi_saved_careers_v2');state.saved=Array.isArray(saved)?saved.map(normalizeKey).filter(x=>/^\d\d-\d{4}\.\d{2}$/.test(x)).slice(0,3):[];
     const remembered=tryRead('lmi_profile_github_v3');
     if(remembered?.scores && scoresValid(remembered.scores)){
@@ -209,7 +231,7 @@
     byId('show-matches-only').addEventListener('change',renderCareers);
     byId('reset-matches').addEventListener('click',()=>{byId('show-matches-only').checked=false;byId('career-sort').value='title';renderCareers();});
     renderProfile();renderShortlist();renderCareers();
-    byId('mini-ip-status').textContent='Free official assessment · On-site career matching requires no API key';
+    byId('mini-ip-status').textContent='Take the assessment on this page · on-site interest matching';
   }
   window.studentHub={matchForSoc:careerMatch,matchOrder,hasProfile:()=>!!state.scores,toggleSaved,
     isSaved:soc=>state.saved.includes(soc),isMatchOnly:()=>!!byId('show-matches-only')?.checked,
