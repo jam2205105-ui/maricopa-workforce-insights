@@ -1,6 +1,11 @@
 {
-  "census": {},
-  "generatedAt": "2026-11-13T19:29:17.082489+00:00",
+  "census": {
+    "geography": "Maricopa County, AZ",
+    "medianHouseholdIncome": 92169,
+    "population": 4689558,
+    "year": 2025
+  },
+  "generatedAt": "2026-11-13T19:33:40.932010+00:00",
   "industryMetrics": {
     "Construction": {
       "period": "2026-09",
@@ -5861,7 +5866,7 @@
   "schemaVersion": 1,
   "sources": {
     "bls_ces": {
-      "fetchedAt": "2026-11-13T19:29:17.082489+00:00",
+      "fetchedAt": "2026-11-13T19:33:40.932010+00:00",
       "note": "Latest published monthly observation; subject to BLS revision.",
       "period": "Sep 2026",
       "status": "ok"
@@ -5872,20 +5877,22 @@
       "status": "ok"
     },
     "bls_lau": {
-      "fetchedAt": "2026-11-13T19:29:17.082489+00:00",
+      "fetchedAt": "2026-11-13T19:33:40.932010+00:00",
       "note": "Latest published monthly observation; subject to BLS revision.",
       "period": "Sep 2026",
       "status": "ok"
     },
     "bls_oews": {
       "fetchedAt": "2026-11-13T19:29:17.082489+00:00",
-      "note": "643 selected Phoenix–Mesa–Chandler metro occupation rows fetched from official OEWS May 2025.",
+      "note": "Previously fetched official vintage is still the newest published OEWS release.",
       "period": "May 2025",
       "status": "ok"
     },
     "census": {
-      "note": "Optional ACS feed is disabled until CENSUS_API_KEY is configured.",
-      "status": "skipped"
+      "fetchedAt": "2026-11-13T19:33:40.932010+00:00",
+      "note": "ACS 1-year county estimates; household income is not individual worker pay.",
+      "period": "2025",
+      "status": "ok"
     }
   },
   "trends": {
