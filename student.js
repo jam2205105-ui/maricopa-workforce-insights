@@ -204,13 +204,22 @@
     miniState.loading=true;
     byId('mini-ip-message').textContent='Loading the 30 assessment questions…';
     try{
-      const r=await fetch('data/mini_ip_questions.json',{cache:'no-store'});
-      if(!r.ok)throw new Error('Mini-IP data has not yet been published.');
-      const bank=await r.json();
-      if(!LmiMiniIP.validateBank(bank))throw new Error('The assessment dataset is incomplete.');
+      // The verified 30-question bank is embedded in the published HTML.
+      // Avoid a separate fetch that can fail due to cached assets or network filters.
+      const embedded=byId('mini-ip-bank')?.textContent?.trim();
+      let bank;
+      if(embedded){
+        bank=JSON.parse(embedded);
+      }else{
+        // Backward compatibility for local source previews without a built HTML file.
+        const r=await fetch('data/mini_ip_questions.json',{cache:'no-store'});
+        if(!r.ok)throw new Error('The question file could not be retrieved.');
+        bank=await r.json();
+      }
+      if(!LmiMiniIP.validateBank(bank))throw new Error('The 30-question bank is incomplete.');
       miniState.bank=bank;renderMiniPage();
     }catch{
-      byId('mini-ip-message').textContent='The on-site questions are not available yet. An authorized O*NET Web Services API key must be configured for the GitHub refresh. You can still import previously obtained RIASEC scores below.';
+      byId('mini-ip-message').textContent='The questions could not be displayed. Refresh this page and try again. If the issue continues, import previously obtained RIASEC scores below.';
     }finally{miniState.loading=false;}
   }
   function finishMiniAssessment(){

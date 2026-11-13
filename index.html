@@ -6,12 +6,12 @@
   <meta name="theme-color" content="#17202a">
   <meta name="description" content="Explore Phoenix-area career wages, Maricopa Community Colleges pathways, occupational demand evidence and workforce trends from documented federal data sources.">
   <title>Maricopa Workforce Insights | LMI Hub</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3">
   <script src="catalog.js" defer></script>
   <script src="interest_match.js" defer></script>
-  <script src="mini_ip.js" defer></script>
+  <script src="mini_ip.js?v=3" defer></script>
   <script src="app.js" defer></script>
-  <script src="student.js?v=2" defer></script>
+  <script src="student.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -68,6 +68,7 @@
           <div id="mini-ip-panel" class="mini-assessment" hidden>
             <div class="mini-header"><div><strong>30 O*NET Mini-IP activity questions</strong><p>Rate how much you would enjoy each activity. No right or wrong answers.</p></div><span id="mini-ip-progress-label">Question 1 of 30</span></div>
             <progress id="mini-ip-progress" max="30" value="0" aria-label="Assessment progress"></progress>
+            <script id="mini-ip-bank" type="application/json"></script>
             <div id="mini-ip-questions" aria-live="polite"></div>
             <p id="mini-ip-message" class="inline-message" role="status"></p>
             <div class="assessment-controls">

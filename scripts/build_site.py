@@ -31,16 +31,28 @@ def main():
     (OUT/'data').mkdir()
     for name in ('current.json','catalog.json','occupations.json'):
         shutil.copy2(ROOT/'data'/name,OUT/'data'/name)
+    # The assessment must never deploy without its actual questions.
+    # Include the validated public activity text inside HTML so opening the
+    # assessment does not depend on a second JSON network request.
     mini_bank=ROOT/'data'/'mini_ip_questions.json'
-    if mini_bank.exists():
-        from refresh_interest_questions import valid_bank
-        if valid_bank(json.loads(mini_bank.read_text(encoding='utf-8'))):
-            shutil.copy2(mini_bank,OUT/'data'/'mini_ip_questions.json')
-            print('On-site O*NET Mini-IP: 30 validated questions included')
-        else:
-            print('On-site O*NET Mini-IP: invalid question bank excluded')
-    else:
-        print('On-site O*NET Mini-IP: question bank unavailable (web-only backup remains available)')
+    if not mini_bank.is_file():
+        raise SystemExit('Refusing deployment: on-site Mini-IP question bank missing')
+    from refresh_interest_questions import valid_bank
+    bank=json.loads(mini_bank.read_text(encoding='utf-8'))
+    if not valid_bank(bank):
+        raise SystemExit('Refusing deployment: on-site Mini-IP question bank incomplete')
+    shutil.copy2(mini_bank,OUT/'data'/'mini_ip_questions.json')
+    html_file=OUT/'index.html'
+    marker='<script id="mini-ip-bank" type="application/json"></script>'
+    html=html_file.read_text(encoding='utf-8')
+    if html.count(marker)!=1:
+        raise SystemExit('Refusing deployment: Mini-IP HTML data placeholder missing')
+    safe_json=(json.dumps(bank,ensure_ascii=True,separators=(',',':'))
+        .replace('<',chr(92)+'u003c')
+        .replace('>',chr(92)+'u003e')
+        .replace('&',chr(92)+'u0026'))
+    html_file.write_text(html.replace(marker,marker.replace('</script>',safe_json+'</script>')),encoding='utf-8')
+    print('On-site O*NET Mini-IP: 30 verified questions embedded in HTML and mirrored as JSON')
     (OUT/'.nojekyll').write_text('',encoding='utf8')
     print(f'GitHub Pages static site ready: {count} occupations, {interest_count} occupational RIASEC profiles; on-site Mini-IP only; no API keys or functions in published output.')
 

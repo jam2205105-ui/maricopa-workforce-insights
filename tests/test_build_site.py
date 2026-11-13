@@ -9,8 +9,10 @@ class StudentAssessmentBuildTests(unittest.TestCase):
         html=(ROOT/'index.html').read_text(encoding='utf-8')
         self.assertIn('id="start-mini-ip" class="button primary" type="button"',html)
         self.assertIn('id="mini-ip-panel"',html)
+        self.assertIn('id="mini-ip-bank" type="application/json"',html)
         self.assertIn('id="interest-import-form"',html)
         self.assertIn('id="riasec-inputs"',html)
+        self.assertIn('student.js?v=3',html)
 
     def test_no_hosted_widget_controls_or_loader(self):
         html=(ROOT/'index.html').read_text(encoding='utf-8')
