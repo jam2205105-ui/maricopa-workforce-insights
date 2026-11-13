@@ -116,3 +116,6 @@ Maricopa degrees/certificates: https://www.maricopa.edu/degrees-certificates (ed
   status instead of silently wiping them out. No API keys are committed.
 - **Failure policy:** Builds fail rather than publish when fewer than 100 verified
   metro OEWS SOC records or required BLS LAU/CES indicators are available.
+
+### On-site student assessment
+Set `ONET_API_KEY` (O*NET Web Services **v2** key) under GitHub Actions repository secrets. At build time, `scripts/refresh_interest_questions.py` downloads the **30 original Mini-IP questions**, validates five questions for each of six interest areas, and publishes only non-secret question text. The student assessment is completed locally, with browser-only responses. Scores are exploratory local totals (0–20 per area) used for the existing occupation interest pattern comparison; this is **not** the O*NET official Results API or endorsed/validated career fit. See O*NET Tools Developer License for conditions applicable to adapted tools: https://www.onetcenter.org/license_tools.html . If the key is absent or not authorized, only existing verified questions will remain available and the website will explicitly say when the on-site assessment cannot load. Do not put API keys in source code or public site configuration.

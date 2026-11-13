@@ -110,12 +110,22 @@ def main():
         raise SystemExit('Refusing deployment without published BLS unemployment and payroll indicators')
     if OUT.exists():shutil.rmtree(OUT)
     OUT.mkdir()
-    for name in ('index.html','styles.css','catalog.js','interest_match.js','student.js','app.js'):
+    for name in ('index.html','styles.css','catalog.js','interest_match.js','mini_ip.js','student.js','app.js'):
         shutil.copy2(ROOT/name,OUT/name)
     shutil.copytree(ROOT/'assets',OUT/'assets')
     (OUT/'data').mkdir()
     for name in ('current.json','catalog.json','occupations.json'):
         shutil.copy2(ROOT/'data'/name,OUT/'data'/name)
+    mini_bank=ROOT/'data'/'mini_ip_questions.json'
+    if mini_bank.exists():
+        from refresh_interest_questions import valid_bank
+        if valid_bank(json.loads(mini_bank.read_text(encoding='utf-8'))):
+            shutil.copy2(mini_bank,OUT/'data'/'mini_ip_questions.json')
+            print('On-site O*NET Mini-IP: 30 validated questions included')
+        else:
+            print('On-site O*NET Mini-IP: invalid question bank excluded')
+    else:
+        print('On-site O*NET Mini-IP: question bank unavailable (web-only backup remains available)')
     cfg=json.loads((ROOT/'data'/'student_config.json').read_text(encoding='utf-8'))
     candidates=[
         ('ONET_WIDGET_EMBED_CODE',os.getenv('ONET_WIDGET_EMBED_CODE','')),

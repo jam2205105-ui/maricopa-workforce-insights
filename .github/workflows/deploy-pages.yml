@@ -40,9 +40,14 @@ jobs:
       - name: Run automated tests
         run: |
           python -m unittest discover -s tests -q
-          node --test tests/catalog.test.mjs tests/interest_match.test.mjs
+          node --test tests/catalog.test.mjs tests/interest_match.test.mjs tests/mini_ip.test.mjs
       - name: Download official O*NET occupations and interest profiles
         run: python scripts/refresh_catalog.py
+      - name: Refresh on-site O*NET Mini-IP question bank
+        env:
+          ONET_API_KEY: ${{ secrets.ONET_API_KEY }}
+          ONET_WIDGET_EMBED_CODE: ${{ secrets.ONET_WIDGET_EMBED_CODE }}
+        run: python scripts/refresh_interest_questions.py
       - name: Update BLS / optional Census published indicators
         env:
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}
@@ -62,6 +67,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/current.json data/occupations.json
+          if [ -f data/mini_ip_questions.json ]; then git add data/mini_ip_questions.json; fi
           if ! git diff --cached --quiet; then
             git commit -m 'chore(data): save verified labor market snapshot [skip ci]'
             git push origin HEAD:main

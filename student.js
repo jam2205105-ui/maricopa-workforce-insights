@@ -9,6 +9,7 @@
     {code:'enterprising',label:'Enterprising',short:'E',desc:'Leading, persuading & starting things'},
     {code:'conventional',label:'Conventional',short:'C',desc:'Organizing, records & structured processes'}
   ];
+  const miniState={bank:null,answers:Array(30).fill(null),page:0,loading:false};
   const state = {scores:null,matches:[],matchStatus:'none',mode:null,
     saved:[],profileNote:'',widgetConfigured:false,widgetUrl:null};
   const byId = id => document.getElementById(id);
@@ -27,11 +28,17 @@
     if(tab==='matches') renderProfile();
   }
   function setAssessMode(which){
-    const show=which==='widget';
+    const show=which==='native'||which==='widget'||which==='scores';
     byId('widget-area').hidden=!show;
-    byId('start-mini-ip').setAttribute('aria-expanded',String(show));
-    // The O*NET loader measures its host element. Load only after the panel is visible.
-    if(show)void configureWidget();
+    byId('mini-ip-panel').hidden=which!=='native';
+    byId('start-mini-ip').setAttribute('aria-expanded',String(which==='native'));
+    if(which==='widget'){
+      if(state.widgetConfigured)byId('onet-widget-container').hidden=false;
+      else void configureWidget();
+    }else{
+      byId('onet-widget-container').hidden=true;
+      byId('onet-widget-status').textContent='';
+    }
   }
   function scoresValid(scores){return areas.every(a=>Number.isInteger(scores[a.code]) && scores[a.code]>=0 && scores[a.code]<=50) &&
     Object.values(scores).some(v=>v>0);}
@@ -158,6 +165,81 @@
     }),`NEXT STEPS\n1. Research daily tasks and training requirements.\n2. Confirm Maricopa program availability, costs and admission requirements.\n3. Discuss options with an academic or career advisor.\nhttps://www.maricopa.edu/degrees-certificates`,'',`Interest themes: ${state.scores?topAreas(state.scores).join(', '):'Not entered'}`,'Program mappings are editorial exploration links, not approved official CIP–SOC crosswalks.'];
     exportText('my-maricopa-career-plan.txt',lines.join('\n'));
   }
+
+  function makeMiniElement(tag,className,textValue){
+    const el=document.createElement(tag);
+    if(className)el.className=className;
+    if(textValue!==undefined)el.textContent=textValue;
+    return el;
+  }
+  function renderMiniPage(){
+    if(!miniState.bank)return;
+    const page=miniState.page,qs=miniState.bank.questions.slice(page*5,page*5+5);
+    const host=byId('mini-ip-questions');host.replaceChildren();
+    for(const q of qs){
+      const field=makeMiniElement('fieldset','mini-question');
+      field.append(makeMiniElement('legend','',q.index+'. '+q.text));
+      const options=makeMiniElement('div','mini-choice-grid');
+      LmiMiniIP.CHOICES.forEach((choice,i)=>{
+        const label=makeMiniElement('label','mini-choice');
+        const radio=document.createElement('input');
+        radio.type='radio';radio.name='mini-item-'+q.index;radio.value=String(i+1);
+        radio.dataset.questionIndex=String(q.index);
+        radio.checked=miniState.answers[q.index-1]===i+1;
+        label.append(radio,makeMiniElement('span','',choice));
+        options.append(label);
+      });
+      field.append(options);host.append(field);
+    }
+    byId('mini-ip-previous').disabled=page===0;
+    byId('mini-ip-next').textContent=page===5?'See my career matches':'Continue';
+    byId('mini-ip-message').textContent='';
+    updateMiniProgress();
+  }
+  function updateMiniProgress(){
+    const done=miniState.answers.filter(n=>Number.isInteger(n)).length;
+    byId('mini-ip-progress').value=done;
+    byId('mini-ip-progress-label').textContent=done+' of 30 answered · Page '+(miniState.page+1)+' of 6';
+    const visible=miniState.bank?.questions.slice(miniState.page*5,miniState.page*5+5)||[];
+    byId('mini-ip-next').disabled=visible.some(q=>!Number.isInteger(miniState.answers[q.index-1]));
+  }
+  async function openMiniAssessment(){
+    setTab('assess');setAssessMode('native');
+    byId('widget-area').scrollIntoView({behavior:'smooth',block:'start'});
+    if(miniState.bank){renderMiniPage();return;}
+    if(miniState.loading)return;
+    miniState.loading=true;
+    byId('mini-ip-message').textContent='Loading the 30 assessment questions…';
+    try{
+      const r=await fetch('data/mini_ip_questions.json',{cache:'no-store'});
+      if(!r.ok)throw new Error('Mini-IP data has not yet been published.');
+      const bank=await r.json();
+      if(!LmiMiniIP.validateBank(bank))throw new Error('The assessment dataset is incomplete.');
+      miniState.bank=bank;renderMiniPage();
+    }catch{
+      byId('mini-ip-message').textContent='The on-site questions are not available yet. An authorized O*NET Web Services API key must be configured for the GitHub refresh. You can still use the official website or import your scores below.';
+    }finally{miniState.loading=false;}
+  }
+  function finishMiniAssessment(){
+    try{
+      const scores=LmiMiniIP.score(miniState.bank,miniState.answers);
+      for(const area of areas)byId('score-'+area.code).value=String(scores[area.code]);
+      applyProfile(scores,'On-site O*NET Mini-IP questions · local exploratory scoring');
+    }catch(e){
+      byId('mini-ip-message').textContent=e.message;
+    }
+  }
+  function advanceMiniPage(){
+    if(byId('mini-ip-next').disabled)return;
+    if(miniState.page<5){miniState.page++;renderMiniPage();byId('mini-ip-panel').scrollIntoView({behavior:'smooth',block:'start'});}
+    else finishMiniAssessment();
+  }
+  function restartMini(){
+    miniState.answers=Array(30).fill(null);
+    miniState.page=0;
+    if(miniState.bank)renderMiniPage();
+  }
+
   let widgetLoadStarted=false;
   async function configureWidget(){
     if(widgetLoadStarted)return;
@@ -219,8 +301,18 @@
       byId('match-toolbar-detail').textContent='Results restored from this device.';
     }
     document.querySelectorAll('[data-student-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.studentTab)));
-    byId('show-widget').addEventListener('click',()=>{setTab('assess');setAssessMode('widget');byId('widget-area').scrollIntoView({behavior:'smooth',block:'nearest'});});
-    byId('start-mini-ip').addEventListener('click',()=>{setTab('assess');setAssessMode('widget');byId('widget-area').scrollIntoView({behavior:'smooth',block:'start'});});
+    byId('show-widget').addEventListener('click',()=>{setTab('assess');setAssessMode('scores');byId('interest-import-form').scrollIntoView({behavior:'smooth',block:'nearest'});});
+    byId('start-mini-ip').addEventListener('click',openMiniAssessment);
+    byId('show-hosted-profiler').addEventListener('click',()=>{setTab('assess');setAssessMode('widget');byId('widget-area').scrollIntoView({behavior:'smooth',block:'start'});});
+    byId('mini-ip-questions').addEventListener('change',event=>{
+      const input=event.target.closest('input[data-question-index]');
+      if(!input)return;
+      miniState.answers[Number(input.dataset.questionIndex)-1]=Number(input.value);
+      updateMiniProgress();
+    });
+    byId('mini-ip-previous').addEventListener('click',()=>{if(miniState.page>0){miniState.page--;renderMiniPage();}});
+    byId('mini-ip-next').addEventListener('click',advanceMiniPage);
+    byId('mini-ip-restart').addEventListener('click',restartMini);
     byId('interest-import-form').addEventListener('submit',importScores);
     byId('clear-profile').addEventListener('click',clearProfile);
     byId('edit-interests').addEventListener('click',()=>setTab('assess'));
@@ -231,7 +323,7 @@
     byId('show-matches-only').addEventListener('change',renderCareers);
     byId('reset-matches').addEventListener('click',()=>{byId('show-matches-only').checked=false;byId('career-sort').value='title';renderCareers();});
     renderProfile();renderShortlist();renderCareers();
-    byId('mini-ip-status').textContent='Take the assessment on this page · on-site interest matching';
+    byId('mini-ip-status').textContent='On-site 30-question activity assessment · browser-only responses';
   }
   window.studentHub={matchForSoc:careerMatch,matchOrder,hasProfile:()=>!!state.scores,toggleSaved,
     isSaved:soc=>state.saved.includes(soc),isMatchOnly:()=>!!byId('show-matches-only')?.checked,
