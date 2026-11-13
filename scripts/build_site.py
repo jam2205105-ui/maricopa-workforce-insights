@@ -117,12 +117,21 @@ def main():
     for name in ('current.json','catalog.json','occupations.json'):
         shutil.copy2(ROOT/'data'/name,OUT/'data'/name)
     cfg=json.loads((ROOT/'data'/'student_config.json').read_text(encoding='utf-8'))
-    widget=choose_widget_config(
-        os.getenv('ONET_WIDGET_EMBED_CODE',''),
-        os.getenv('ONET_WIDGET_IFRAME_SRC',''),
-        cfg.get('onetWidgetScriptSrc',''),
-        cfg.get('onetWidgetIframeSrc',''),
-    )
+    candidates=[
+        ('ONET_WIDGET_EMBED_CODE',os.getenv('ONET_WIDGET_EMBED_CODE','')),
+        ('ONET_WIDGET_IFRAME_SRC',os.getenv('ONET_WIDGET_IFRAME_SRC','')),
+        ('student_config.json',cfg.get('onetWidgetScriptSrc','') or cfg.get('onetWidgetIframeSrc','')),
+    ]
+    for label, candidate in candidates:
+        if not str(candidate or '').strip():
+            status='unset'
+        else:
+            try:
+                status='valid' if approved_widget_config(candidate)['type']!='none' else 'unset'
+            except ValueError:
+                status='invalid; expected official O*NET embed script URL or snippet'
+        print(f'O*NET config {label}: {status}')  # no key or code is printed
+    widget=choose_widget_config(*(candidate for _, candidate in candidates))
     cfg['onetWidgetIframeSrc']=widget['src'] if widget['type']=='iframe' else ''
     cfg['onetWidgetScriptSrc']=widget['src'] if widget['type']=='script' else ''
     (OUT/'data'/'student_config.json').write_text(json.dumps(cfg,indent=2)+'\n',encoding='utf-8')
