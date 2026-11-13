@@ -69,6 +69,24 @@ def approved_widget_config(value):
     raise ValueError('Unsupported O*NET embed source.')
 
 
+def choose_widget_config(*sources):
+    """Select the first validated optional widget configuration.
+
+    If a malformed secret exists, allow a separately configured approved public
+    widget source. Never print candidate values or credentials.
+    """
+    for raw in sources:
+        if not str(raw or '').strip():
+            continue
+        try:
+            candidate=approved_widget_config(raw)
+        except ValueError:
+            continue
+        if candidate['type']!='none':
+            return candidate
+    return {'type':'none','src':''}
+
+
 def approved_widget_url(url):
     """Backward-compatible iframe URL validator."""
     cfg=approved_widget_config(url)
@@ -99,10 +117,12 @@ def main():
     for name in ('current.json','catalog.json','occupations.json'):
         shutil.copy2(ROOT/'data'/name,OUT/'data'/name)
     cfg=json.loads((ROOT/'data'/'student_config.json').read_text(encoding='utf-8'))
-    try:
-        widget=approved_widget_config(os.getenv('ONET_WIDGET_EMBED_CODE','') or os.getenv('ONET_WIDGET_IFRAME_SRC','') or cfg.get('onetWidgetScriptSrc','') or cfg.get('onetWidgetIframeSrc',''))
-    except ValueError as exc:
-        raise SystemExit(str(exc)) from exc
+    widget=choose_widget_config(
+        os.getenv('ONET_WIDGET_EMBED_CODE',''),
+        os.getenv('ONET_WIDGET_IFRAME_SRC',''),
+        cfg.get('onetWidgetScriptSrc',''),
+        cfg.get('onetWidgetIframeSrc',''),
+    )
     cfg['onetWidgetIframeSrc']=widget['src'] if widget['type']=='iframe' else ''
     cfg['onetWidgetScriptSrc']=widget['src'] if widget['type']=='script' else ''
     (OUT/'data'/'student_config.json').write_text(json.dumps(cfg,indent=2)+'\n',encoding='utf-8')

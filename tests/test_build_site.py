@@ -4,7 +4,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
-from build_site import approved_widget_url, approved_widget_config
+from build_site import approved_widget_url, approved_widget_config, choose_widget_config
 
 
 class WidgetBuildTest(unittest.TestCase):
@@ -36,6 +36,11 @@ class WidgetBuildTest(unittest.TestCase):
         for value in bad:
             with self.subTest(value=value), self.assertRaises(ValueError):
                 approved_widget_config(value)
+
+    def test_invalid_secret_does_not_block_valid_embed(self):
+        valid='https://services.onetcenter.org/embed/onet-ip.js?x-api-key=PUBLIC_TEST_TOKEN'
+        self.assertEqual(choose_widget_config('malformed-widget-secret', valid), {'type':'script','src':valid})
+        self.assertEqual(choose_widget_config('malformed-widget-secret'), {'type':'none','src':''})
 
     def test_widget_url_requires_official_https_hostname(self):
         self.assertEqual(approved_widget_url('https://www.mynextmove.org/explore/ip'), 'https://www.mynextmove.org/explore/ip')
