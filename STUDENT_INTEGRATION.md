@@ -13,3 +13,11 @@ Unlike the former Netlify edition, this version **does not administer O*NET's 30
 The occupational interest profiles come from O*NET Database `career_interest_types.json`, filtered to `scale_id=OI` and six valid RIASEC numeric ratings. The comparison is Pearson correlation, ordered highest to lowest, limited to 100 careers above an exploratory similarity threshold; it is not equivalent to O*NET API job-zone-specific recommendations or assessment fit labels. Work preparation, regional wages and program links remain separate evidence.
 
 **Privacy:** no student name, ID, or email is collected. Scores are processed on-device and not sent to this site’s server. Optional “remember” storage uses that browser’s local storage and should be avoided on shared campus machines.
+
+## O*NET official script-loader widget
+
+O*NET's current My Account embed can be a two-element snippet: an official `<script src="https://services.onetcenter.org/embed/onet-ip.js?...">` followed by `<div class="embed-onet-ip"></div>`. This is a script loader, not an iframe `src`. The build accepts this exact snippet (or the approved older HTTPS iframe format), validates the host, and publishes a structured widget configuration. It never copies arbitrary HTML into the page. The site mounts the official loader and leaves the official assessment link available as a fallback.
+
+The **existing** GitHub Actions variable `ONET_WIDGET_IFRAME_SRC` is supported for backward compatibility, including a full two-element snippet. However, repository variables are not masked in public workflow logs: use **GitHub Actions secret `ONET_WIDGET_EMBED_CODE`** instead if you want to avoid exposing the embed configuration in build logs, and remove the older variable. If the key in that older variable was sensitive, rotate it in O*NET. The official JavaScript embed key is unavoidably client-visible once the widget loads, so it should be a widget-approved, domain-restricted credential rather than a private server-side API key.
+
+Students complete the official widget on the site but transfer their six RIASEC results into the score-import form below. There is no documented same-origin result handoff through the widget, and the hub does not claim one.

@@ -53,6 +53,7 @@ jobs:
           python scripts/refresh_data.py || echo 'BLS/Census refresh incomplete; no fabricated values were published.'
       - name: Validate data and assemble only public website files
         env:
+          ONET_WIDGET_EMBED_CODE: ${{ secrets.ONET_WIDGET_EMBED_CODE }}
           ONET_WIDGET_IFRAME_SRC: ${{ vars.ONET_WIDGET_IFRAME_SRC }}
         run: python scripts/build_site.py
       - name: Persist last verified data for future refreshes

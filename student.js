@@ -157,16 +157,32 @@
   async function configureWidget(){
     try{
       const cfg=await fetch('data/student_config.json',{cache:'no-store'}).then(r=>r.ok?r.json():{});
-      const url=String(cfg.onetWidgetIframeSrc||'').trim();
+      const scriptUrl=String(cfg.onetWidgetScriptSrc||'').trim();
+      const iframeUrl=String(cfg.onetWidgetIframeSrc||'').trim();
+      const url=scriptUrl||iframeUrl;
       if(!url)return;
-      const parsed=new URL(url);const h=parsed.hostname.toLowerCase();
-      if(parsed.protocol!=='https:' || parsed.username || parsed.password || !['onetcenter.org','onetinterestprofiler.org','mynextmove.org'].some(d=>h===d||h.endsWith('.'+d)))return;
-      state.widgetConfigured=true;state.widgetUrl=url;
+      const parsed=new URL(url),h=parsed.hostname.toLowerCase();
+      if(parsed.protocol!=='https:' || parsed.username || parsed.password || parsed.hash)return;
       const container=byId('onet-widget-container');
-      const iframe=document.createElement('iframe');iframe.src=url;iframe.title='Official O*NET Interest Profiler';iframe.loading='lazy';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.setAttribute('allowfullscreen','');
-      container.replaceChildren(iframe);container.hidden=false;
-      byId('onet-widget-help').querySelector('strong').textContent='You can take the official profiler here or in a new tab.';
-    }catch{/* widget is optional */}
+      if(scriptUrl){
+        if(h!=='services.onetcenter.org' || parsed.pathname!=='/embed/onet-ip.js' || !parsed.searchParams.get('x-api-key'))return;
+        // Use only a vetted official script element, not injected HTML from configuration.
+        const target=document.createElement('div');target.className='embed-onet-ip';
+        const script=document.createElement('script');script.src=url;script.async=true;
+        script.addEventListener('error',()=>{
+          container.hidden=true;
+          byId('onet-widget-help').querySelector('strong').textContent='The embedded assessment could not load. Use the official link below.';
+        });
+        container.replaceChildren(target,script);
+      }else{
+        if(!['onetcenter.org','onetinterestprofiler.org','mynextmove.org'].some(d=>h===d||h.endsWith('.'+d)))return;
+        const iframe=document.createElement('iframe');iframe.src=url;iframe.title='Official O*NET Interest Profiler';iframe.loading='lazy';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.setAttribute('allowfullscreen','');
+        container.replaceChildren(iframe);
+      }
+      state.widgetConfigured=true;state.widgetUrl=url;
+      container.hidden=false;
+      byId('onet-widget-help').querySelector('strong').textContent='Take the official profiler here, then apply your six scores below.';
+    }catch{/* official direct link remains available */}
   }
   function init(){
     renderScoreInputs();configureWidget();

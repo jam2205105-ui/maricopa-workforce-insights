@@ -4,24 +4,77 @@ Never publish a truncated O*NET catalog or missing occupation-interest profiles.
 """
 import json
 import os
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, parse_qs
+from html.parser import HTMLParser
 import shutil
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'_site'
 
 
-def approved_widget_url(url):
-    """Validate public HTTPS iframe URLs from O*NET My Account."""
-    value=str(url or '').strip()
-    if not value:
-        return ''
-    parsed=urlsplit(value)
+class OfficialWidgetSnippet(HTMLParser):
+    """Parse the official two-element widget snippet; never emit raw HTML."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.tags=[]
+        self.invalid=False
+
+    def handle_starttag(self, tag, attrs):
+        values=dict(attrs)
+        if len(values)!=len(attrs):
+            self.invalid=True
+        if tag=='script' and set(values)=={'src'}:
+            self.tags.append(('script',values['src']))
+        elif tag=='div' and values=={'class':'embed-onet-ip'}:
+            self.tags.append(('div',None))
+        else:
+            self.invalid=True
+
+    def handle_startendtag(self, tag, attrs):
+        self.invalid=True
+
+    def handle_data(self, data):
+        if data.strip():
+            self.invalid=True
+
+    def handle_comment(self, data):
+        self.invalid=True
+
+
+def approved_widget_config(value):
+    """Accept official O*NET script+container snippet or approved HTTPS iframe URL."""
+    raw=str(value or '').strip()
+    if not raw:
+        return {'type':'none','src':''}
+    src=raw
+    if '<' in raw or '>' in raw:
+        parser=OfficialWidgetSnippet()
+        parser.feed(raw)
+        parser.close()
+        if parser.invalid or len(parser.tags)!=2 or parser.tags[0][0]!='script' or parser.tags[1]!=('div',None):
+            raise ValueError('Invalid O*NET widget embed; use the exact snippet from My Account.')
+        src=parser.tags[0][1]
+    parsed=urlsplit(src)
     host=(parsed.hostname or '').lower()
+    if parsed.scheme!='https' or parsed.username or parsed.password or parsed.port not in (None,443) or parsed.fragment:
+        raise ValueError('Invalid O*NET widget URL; HTTPS without credentials is required.')
+    if host=='services.onetcenter.org' and parsed.path=='/embed/onet-ip.js':
+        query=parse_qs(parsed.query,keep_blank_values=True)
+        if set(query)!={'x-api-key'} or len(query['x-api-key'])!=1 or not query['x-api-key'][0].strip():
+            raise ValueError('Invalid official O*NET widget script parameters.')
+        return {'type':'script','src':src}
     trusted=('onetcenter.org','onetinterestprofiler.org','mynextmove.org')
-    if parsed.scheme != 'https' or parsed.username or parsed.password or parsed.port not in (None, 443) or not any(host==domain or host.endswith('.'+domain) for domain in trusted):
-        raise ValueError('Invalid ONET_WIDGET_IFRAME_SRC: provide the HTTPS iframe src from O*NET My Account, never an API key or unrelated URL.')
-    return value
+    if any(host==d or host.endswith('.'+d) for d in trusted) and '<' not in raw:
+        return {'type':'iframe','src':src}
+    raise ValueError('Unsupported O*NET embed source.')
+
+
+def approved_widget_url(url):
+    """Backward-compatible iframe URL validator."""
+    cfg=approved_widget_config(url)
+    if cfg['type'] not in ('iframe','none'):
+        raise ValueError('Expected an iframe URL, not an O*NET script loader.')
+    return cfg['src']
 
 def main():
     catalog=json.loads((ROOT/'data/occupations.json').read_text(encoding='utf-8'))
@@ -47,12 +100,13 @@ def main():
         shutil.copy2(ROOT/'data'/name,OUT/'data'/name)
     cfg=json.loads((ROOT/'data'/'student_config.json').read_text(encoding='utf-8'))
     try:
-        embed=approved_widget_url(os.getenv('ONET_WIDGET_IFRAME_SRC','') or cfg.get('onetWidgetIframeSrc',''))
+        widget=approved_widget_config(os.getenv('ONET_WIDGET_EMBED_CODE','') or os.getenv('ONET_WIDGET_IFRAME_SRC','') or cfg.get('onetWidgetScriptSrc','') or cfg.get('onetWidgetIframeSrc',''))
     except ValueError as exc:
         raise SystemExit(str(exc)) from exc
-    cfg['onetWidgetIframeSrc']=embed
+    cfg['onetWidgetIframeSrc']=widget['src'] if widget['type']=='iframe' else ''
+    cfg['onetWidgetScriptSrc']=widget['src'] if widget['type']=='script' else ''
     (OUT/'data'/'student_config.json').write_text(json.dumps(cfg,indent=2)+'\n',encoding='utf-8')
     (OUT/'.nojekyll').write_text('',encoding='utf8')
-    print(f'GitHub Pages static site ready: {count} occupations, {interest_count} occupational RIASEC profiles; O*NET widget: {"configured" if embed else "not configured"}; no API keys or functions in published output.')
+    print(f'GitHub Pages static site ready: {count} occupations, {interest_count} occupational RIASEC profiles; O*NET widget: {widget["type"]}; no API keys or functions in published output.')
 
 if __name__=='__main__':main()
