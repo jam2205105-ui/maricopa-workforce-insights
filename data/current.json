@@ -1,16 +1,6027 @@
 {
-  "schemaVersion": 1,
-  "generatedAt": null,
-  "metrics": {},
-  "industryMetrics": {},
-  "trends": {},
-  "occupations": {},
   "census": {},
+  "generatedAt": "2026-11-13T19:29:17.082489+00:00",
+  "industryMetrics": {
+    "Construction": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "SMU04380602000000001",
+      "unit": "thousands",
+      "value": 183.9,
+      "yoyPercent": 3.3
+    },
+    "Financial activities": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "SMU04380605500000001",
+      "unit": "thousands",
+      "value": 205.6,
+      "yoyPercent": -2.5
+    },
+    "Health care and social assistance": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "SMU04380606562000001",
+      "unit": "thousands",
+      "value": 367.9,
+      "yoyPercent": 3.4
+    },
+    "Leisure and hospitality": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "SMU04380607000000001",
+      "unit": "thousands",
+      "value": 255.9,
+      "yoyPercent": -1.8
+    },
+    "Manufacturing": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "SMU04380603000000001",
+      "unit": "thousands",
+      "value": 147.5,
+      "yoyPercent": -0.3
+    },
+    "Professional and business services": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "SMU04380606000000001",
+      "unit": "thousands",
+      "value": 388.3,
+      "yoyPercent": 2.2
+    }
+  },
+  "metrics": {
+    "jobs": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "SMS04380600000000001",
+      "unit": "thousands",
+      "value": 2480.6
+    },
+    "unemployment": {
+      "period": "2026-09",
+      "periodLabel": "Sep 2026",
+      "seriesId": "LAUCN040130000000003",
+      "unit": "percent",
+      "value": 4.1
+    }
+  },
+  "occupations": {
+    "00-0000": {
+      "annualMedian": 51380,
+      "annualP10": 34800,
+      "annualP90": 125130,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2375760,
+      "hourlyMedian": 24.7,
+      "soc": "00-0000"
+    },
+    "11-1011": {
+      "annualMedian": 138900,
+      "annualP10": 62140,
+      "annualP90": 455660,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3140,
+      "hourlyMedian": 66.78,
+      "soc": "11-1011"
+    },
+    "11-1021": {
+      "annualMedian": 98610,
+      "annualP10": 47990,
+      "annualP90": 243280,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 81520,
+      "hourlyMedian": 47.41,
+      "soc": "11-1021"
+    },
+    "11-2021": {
+      "annualMedian": 132580,
+      "annualP10": 87510,
+      "annualP90": 224700,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4060,
+      "hourlyMedian": 63.74,
+      "soc": "11-2021"
+    },
+    "11-2022": {
+      "annualMedian": 148320,
+      "annualP10": 76480,
+      "annualP90": 263490,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 11210,
+      "hourlyMedian": 71.31,
+      "soc": "11-2022"
+    },
+    "11-2032": {
+      "annualMedian": 118590,
+      "annualP10": 81790,
+      "annualP90": 220120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 920,
+      "hourlyMedian": 57.01,
+      "soc": "11-2032"
+    },
+    "11-2033": {
+      "annualMedian": 117790,
+      "annualP10": 65560,
+      "annualP90": 230180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 420,
+      "hourlyMedian": 56.63,
+      "soc": "11-2033"
+    },
+    "11-3012": {
+      "annualMedian": 102860,
+      "annualP10": 62010,
+      "annualP90": 174880,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5250,
+      "hourlyMedian": 49.45,
+      "soc": "11-3012"
+    },
+    "11-3013": {
+      "annualMedian": 102230,
+      "annualP10": 63910,
+      "annualP90": 160810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2470,
+      "hourlyMedian": 49.15,
+      "soc": "11-3013"
+    },
+    "11-3021": {
+      "annualMedian": 169720,
+      "annualP10": 105760,
+      "annualP90": 240140,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 11510,
+      "hourlyMedian": 81.6,
+      "soc": "11-3021"
+    },
+    "11-3031": {
+      "annualMedian": 145940,
+      "annualP10": 84060,
+      "annualP90": 269990,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 12030,
+      "hourlyMedian": 70.16,
+      "soc": "11-3031"
+    },
+    "11-3051": {
+      "annualMedian": 126960,
+      "annualP10": 81660,
+      "annualP90": 202900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2690,
+      "hourlyMedian": 61.04,
+      "soc": "11-3051"
+    },
+    "11-3061": {
+      "annualMedian": 140170,
+      "annualP10": 98600,
+      "annualP90": 220010,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1270,
+      "hourlyMedian": 67.39,
+      "soc": "11-3061"
+    },
+    "11-3071": {
+      "annualMedian": 99710,
+      "annualP10": 70200,
+      "annualP90": 169020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2610,
+      "hourlyMedian": 47.94,
+      "soc": "11-3071"
+    },
+    "11-3111": {
+      "annualMedian": 130010,
+      "annualP10": 80390,
+      "annualP90": 212200,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 440,
+      "hourlyMedian": 62.51,
+      "soc": "11-3111"
+    },
+    "11-3121": {
+      "annualMedian": 145610,
+      "annualP10": 90750,
+      "annualP90": 229350,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3160,
+      "hourlyMedian": 70,
+      "soc": "11-3121"
+    },
+    "11-3131": {
+      "annualMedian": 127900,
+      "annualP10": 82500,
+      "annualP90": 215690,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 970,
+      "hourlyMedian": 61.49,
+      "soc": "11-3131"
+    },
+    "11-9021": {
+      "annualMedian": 118350,
+      "annualP10": 79490,
+      "annualP90": 169900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8170,
+      "hourlyMedian": 56.9,
+      "soc": "11-9021"
+    },
+    "11-9031": {
+      "annualMedian": 48630,
+      "annualP10": 37460,
+      "annualP90": 81150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 790,
+      "hourlyMedian": 23.38,
+      "soc": "11-9031"
+    },
+    "11-9032": {
+      "annualMedian": 99290,
+      "annualP10": 63890,
+      "annualP90": 130200,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3630,
+      "hourlyMedian": null,
+      "soc": "11-9032"
+    },
+    "11-9033": {
+      "annualMedian": 103280,
+      "annualP10": 65580,
+      "annualP90": 226030,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 49.65,
+      "soc": "11-9033"
+    },
+    "11-9039": {
+      "annualMedian": 92920,
+      "annualP10": 57470,
+      "annualP90": 160640,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 140,
+      "hourlyMedian": 44.67,
+      "soc": "11-9039"
+    },
+    "11-9041": {
+      "annualMedian": 169310,
+      "annualP10": 124910,
+      "annualP90": 263890,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3250,
+      "hourlyMedian": 81.4,
+      "soc": "11-9041"
+    },
+    "11-9051": {
+      "annualMedian": 70180,
+      "annualP10": 50490,
+      "annualP90": 106310,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2560,
+      "hourlyMedian": 33.74,
+      "soc": "11-9051"
+    },
+    "11-9071": {
+      "annualMedian": 83620,
+      "annualP10": 57930,
+      "annualP90": 187880,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 120,
+      "hourlyMedian": 40.2,
+      "soc": "11-9071"
+    },
+    "11-9072": {
+      "annualMedian": 76500,
+      "annualP10": 42300,
+      "annualP90": 149850,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 650,
+      "hourlyMedian": 36.78,
+      "soc": "11-9072"
+    },
+    "11-9081": {
+      "annualMedian": 78000,
+      "annualP10": 43840,
+      "annualP90": 128640,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 360,
+      "hourlyMedian": 37.5,
+      "soc": "11-9081"
+    },
+    "11-9111": {
+      "annualMedian": 130070,
+      "annualP10": 78450,
+      "annualP90": 238220,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8370,
+      "hourlyMedian": 62.53,
+      "soc": "11-9111"
+    },
+    "11-9121": {
+      "annualMedian": 130160,
+      "annualP10": 67750,
+      "annualP90": 215110,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 570,
+      "hourlyMedian": 62.58,
+      "soc": "11-9121"
+    },
+    "11-9131": {
+      "annualMedian": 110310,
+      "annualP10": 96260,
+      "annualP90": 140500,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 53.04,
+      "soc": "11-9131"
+    },
+    "11-9141": {
+      "annualMedian": 64290,
+      "annualP10": 44630,
+      "annualP90": 127470,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7670,
+      "hourlyMedian": 30.91,
+      "soc": "11-9141"
+    },
+    "11-9151": {
+      "annualMedian": 79200,
+      "annualP10": 52790,
+      "annualP90": 123320,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2040,
+      "hourlyMedian": 38.08,
+      "soc": "11-9151"
+    },
+    "11-9161": {
+      "annualMedian": 85760,
+      "annualP10": 61590,
+      "annualP90": 148180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 110,
+      "hourlyMedian": 41.23,
+      "soc": "11-9161"
+    },
+    "11-9171": {
+      "annualMedian": 62320,
+      "annualP10": 57520,
+      "annualP90": 114810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 120,
+      "hourlyMedian": 29.96,
+      "soc": "11-9171"
+    },
+    "11-9199": {
+      "annualMedian": 135390,
+      "annualP10": 84670,
+      "annualP90": 212630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5650,
+      "hourlyMedian": 65.09,
+      "soc": "11-9199"
+    },
+    "13-1031": {
+      "annualMedian": 64370,
+      "annualP10": 48550,
+      "annualP90": 99150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 11350,
+      "hourlyMedian": 30.95,
+      "soc": "13-1031"
+    },
+    "13-1041": {
+      "annualMedian": 74240,
+      "annualP10": 47920,
+      "annualP90": 129570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7980,
+      "hourlyMedian": 35.69,
+      "soc": "13-1041"
+    },
+    "13-1051": {
+      "annualMedian": 77590,
+      "annualP10": 37440,
+      "annualP90": 128970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4380,
+      "hourlyMedian": 37.31,
+      "soc": "13-1051"
+    },
+    "13-1071": {
+      "annualMedian": 74640,
+      "annualP10": 48510,
+      "annualP90": 116000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 15430,
+      "hourlyMedian": 35.88,
+      "soc": "13-1071"
+    },
+    "13-1075": {
+      "annualMedian": 97070,
+      "annualP10": 62850,
+      "annualP90": 129990,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 660,
+      "hourlyMedian": 46.67,
+      "soc": "13-1075"
+    },
+    "13-1081": {
+      "annualMedian": 79370,
+      "annualP10": 52280,
+      "annualP90": 127080,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3360,
+      "hourlyMedian": 38.16,
+      "soc": "13-1081"
+    },
+    "13-1082": {
+      "annualMedian": 100780,
+      "annualP10": 64060,
+      "annualP90": 165210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 17790,
+      "hourlyMedian": 48.45,
+      "soc": "13-1082"
+    },
+    "13-1111": {
+      "annualMedian": 94900,
+      "annualP10": 54470,
+      "annualP90": 164970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 13730,
+      "hourlyMedian": 45.62,
+      "soc": "13-1111"
+    },
+    "13-1121": {
+      "annualMedian": 61380,
+      "annualP10": 39670,
+      "annualP90": 95020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2660,
+      "hourlyMedian": 29.51,
+      "soc": "13-1121"
+    },
+    "13-1131": {
+      "annualMedian": 65570,
+      "annualP10": 40790,
+      "annualP90": 99490,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1070,
+      "hourlyMedian": 31.52,
+      "soc": "13-1131"
+    },
+    "13-1141": {
+      "annualMedian": 76720,
+      "annualP10": 45000,
+      "annualP90": 119190,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1750,
+      "hourlyMedian": 36.88,
+      "soc": "13-1141"
+    },
+    "13-1151": {
+      "annualMedian": 66710,
+      "annualP10": 42210,
+      "annualP90": 114210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9910,
+      "hourlyMedian": 32.07,
+      "soc": "13-1151"
+    },
+    "13-1161": {
+      "annualMedian": 74590,
+      "annualP10": 43120,
+      "annualP90": 140740,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 12220,
+      "hourlyMedian": 35.86,
+      "soc": "13-1161"
+    },
+    "13-1199": {
+      "annualMedian": 84190,
+      "annualP10": 53370,
+      "annualP90": 140870,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8820,
+      "hourlyMedian": 40.48,
+      "soc": "13-1199"
+    },
+    "13-2011": {
+      "annualMedian": 80820,
+      "annualP10": 58000,
+      "annualP90": 129170,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 21360,
+      "hourlyMedian": 38.86,
+      "soc": "13-2011"
+    },
+    "13-2031": {
+      "annualMedian": 84810,
+      "annualP10": 61590,
+      "annualP90": 124220,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 440,
+      "hourlyMedian": 40.78,
+      "soc": "13-2031"
+    },
+    "13-2041": {
+      "annualMedian": 77020,
+      "annualP10": 57060,
+      "annualP90": 126630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1990,
+      "hourlyMedian": 37.03,
+      "soc": "13-2041"
+    },
+    "13-2051": {
+      "annualMedian": 94700,
+      "annualP10": 62610,
+      "annualP90": 161650,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4510,
+      "hourlyMedian": 45.53,
+      "soc": "13-2051"
+    },
+    "13-2052": {
+      "annualMedian": 103680,
+      "annualP10": 49250,
+      "annualP90": 216280,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5000,
+      "hourlyMedian": 49.85,
+      "soc": "13-2052"
+    },
+    "13-2053": {
+      "annualMedian": 77740,
+      "annualP10": 58770,
+      "annualP90": 127450,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3030,
+      "hourlyMedian": 37.38,
+      "soc": "13-2053"
+    },
+    "13-2054": {
+      "annualMedian": 101990,
+      "annualP10": 58110,
+      "annualP90": 168100,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1310,
+      "hourlyMedian": 49.03,
+      "soc": "13-2054"
+    },
+    "13-2061": {
+      "annualMedian": 80490,
+      "annualP10": 60200,
+      "annualP90": 128630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1770,
+      "hourlyMedian": 38.7,
+      "soc": "13-2061"
+    },
+    "13-2071": {
+      "annualMedian": 54110,
+      "annualP10": 44000,
+      "annualP90": 66480,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 720,
+      "hourlyMedian": 26.02,
+      "soc": "13-2071"
+    },
+    "13-2072": {
+      "annualMedian": 61850,
+      "annualP10": 35840,
+      "annualP90": 133850,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8350,
+      "hourlyMedian": 29.73,
+      "soc": "13-2072"
+    },
+    "13-2081": {
+      "annualMedian": 95060,
+      "annualP10": 61600,
+      "annualP90": 124920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 170,
+      "hourlyMedian": 45.7,
+      "soc": "13-2081"
+    },
+    "13-2082": {
+      "annualMedian": 44770,
+      "annualP10": 39760,
+      "annualP90": 115700,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1580,
+      "hourlyMedian": 21.52,
+      "soc": "13-2082"
+    },
+    "13-2099": {
+      "annualMedian": 81440,
+      "annualP10": 61440,
+      "annualP90": 137230,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 720,
+      "hourlyMedian": 39.15,
+      "soc": "13-2099"
+    },
+    "15-1211": {
+      "annualMedian": 103770,
+      "annualP10": 58700,
+      "annualP90": 191980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9330,
+      "hourlyMedian": 49.89,
+      "soc": "15-1211"
+    },
+    "15-1212": {
+      "annualMedian": 130360,
+      "annualP10": 79280,
+      "annualP90": 178000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2590,
+      "hourlyMedian": 62.67,
+      "soc": "15-1212"
+    },
+    "15-1221": {
+      "annualMedian": 164460,
+      "annualP10": 62870,
+      "annualP90": 409390,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 160,
+      "hourlyMedian": 79.07,
+      "soc": "15-1221"
+    },
+    "15-1231": {
+      "annualMedian": 72600,
+      "annualP10": 47600,
+      "annualP90": 128980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1070,
+      "hourlyMedian": 34.91,
+      "soc": "15-1231"
+    },
+    "15-1232": {
+      "annualMedian": 62310,
+      "annualP10": 45050,
+      "annualP90": 97370,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 14310,
+      "hourlyMedian": 29.96,
+      "soc": "15-1232"
+    },
+    "15-1241": {
+      "annualMedian": 131990,
+      "annualP10": 82300,
+      "annualP90": 176830,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3330,
+      "hourlyMedian": 63.46,
+      "soc": "15-1241"
+    },
+    "15-1242": {
+      "annualMedian": 104280,
+      "annualP10": 59900,
+      "annualP90": 158930,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 810,
+      "hourlyMedian": 50.14,
+      "soc": "15-1242"
+    },
+    "15-1243": {
+      "annualMedian": 156100,
+      "annualP10": 99730,
+      "annualP90": 175260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 980,
+      "hourlyMedian": 75.05,
+      "soc": "15-1243"
+    },
+    "15-1244": {
+      "annualMedian": 93730,
+      "annualP10": 63630,
+      "annualP90": 140940,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4370,
+      "hourlyMedian": 45.06,
+      "soc": "15-1244"
+    },
+    "15-1251": {
+      "annualMedian": 91110,
+      "annualP10": 62040,
+      "annualP90": 171500,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 43.8,
+      "soc": "15-1251"
+    },
+    "15-1252": {
+      "annualMedian": 131750,
+      "annualP10": 82500,
+      "annualP90": 180460,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 29380,
+      "hourlyMedian": 63.34,
+      "soc": "15-1252"
+    },
+    "15-1253": {
+      "annualMedian": 100740,
+      "annualP10": 63630,
+      "annualP90": 143000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3160,
+      "hourlyMedian": 48.43,
+      "soc": "15-1253"
+    },
+    "15-1254": {
+      "annualMedian": 76230,
+      "annualP10": 42960,
+      "annualP90": 126530,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 750,
+      "hourlyMedian": 36.65,
+      "soc": "15-1254"
+    },
+    "15-1255": {
+      "annualMedian": 104940,
+      "annualP10": 59800,
+      "annualP90": 183000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 640,
+      "hourlyMedian": 50.45,
+      "soc": "15-1255"
+    },
+    "15-1299": {
+      "annualMedian": 110590,
+      "annualP10": 58110,
+      "annualP90": 174230,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3380,
+      "hourlyMedian": 53.17,
+      "soc": "15-1299"
+    },
+    "15-2011": {
+      "annualMedian": 138570,
+      "annualP10": 89150,
+      "annualP90": 202130,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 170,
+      "hourlyMedian": 66.62,
+      "soc": "15-2011"
+    },
+    "15-2031": {
+      "annualMedian": 79190,
+      "annualP10": 52620,
+      "annualP90": 129650,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1880,
+      "hourlyMedian": 38.07,
+      "soc": "15-2031"
+    },
+    "15-2041": {
+      "annualMedian": 85860,
+      "annualP10": 54690,
+      "annualP90": 162990,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 300,
+      "hourlyMedian": 41.28,
+      "soc": "15-2041"
+    },
+    "15-2051": {
+      "annualMedian": 114540,
+      "annualP10": 68880,
+      "annualP90": 165520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3480,
+      "hourlyMedian": 55.07,
+      "soc": "15-2051"
+    },
+    "15-2099": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": null,
+      "soc": "15-2099"
+    },
+    "17-1011": {
+      "annualMedian": 103900,
+      "annualP10": 72240,
+      "annualP90": 138170,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1240,
+      "hourlyMedian": 49.95,
+      "soc": "17-1011"
+    },
+    "17-1012": {
+      "annualMedian": 77670,
+      "annualP10": 65260,
+      "annualP90": 126600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 290,
+      "hourlyMedian": 37.34,
+      "soc": "17-1012"
+    },
+    "17-1021": {
+      "annualMedian": 88820,
+      "annualP10": 59160,
+      "annualP90": 117990,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 270,
+      "hourlyMedian": 42.7,
+      "soc": "17-1021"
+    },
+    "17-1022": {
+      "annualMedian": 79500,
+      "annualP10": 49180,
+      "annualP90": 121740,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 970,
+      "hourlyMedian": 38.22,
+      "soc": "17-1022"
+    },
+    "17-2011": {
+      "annualMedian": 130470,
+      "annualP10": 89150,
+      "annualP90": 232940,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1360,
+      "hourlyMedian": 62.73,
+      "soc": "17-2011"
+    },
+    "17-2031": {
+      "annualMedian": 141230,
+      "annualP10": 104440,
+      "annualP90": 170560,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 450,
+      "hourlyMedian": 67.9,
+      "soc": "17-2031"
+    },
+    "17-2051": {
+      "annualMedian": 90330,
+      "annualP10": 63740,
+      "annualP90": 139240,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4690,
+      "hourlyMedian": 43.43,
+      "soc": "17-2051"
+    },
+    "17-2061": {
+      "annualMedian": 167010,
+      "annualP10": 103450,
+      "annualP90": 218440,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2820,
+      "hourlyMedian": 80.3,
+      "soc": "17-2061"
+    },
+    "17-2071": {
+      "annualMedian": 99160,
+      "annualP10": 75560,
+      "annualP90": 165520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3420,
+      "hourlyMedian": 47.67,
+      "soc": "17-2071"
+    },
+    "17-2072": {
+      "annualMedian": 129540,
+      "annualP10": 76870,
+      "annualP90": 195550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1650,
+      "hourlyMedian": 62.28,
+      "soc": "17-2072"
+    },
+    "17-2081": {
+      "annualMedian": 94470,
+      "annualP10": 65720,
+      "annualP90": 133530,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 520,
+      "hourlyMedian": 45.42,
+      "soc": "17-2081"
+    },
+    "17-2111": {
+      "annualMedian": 114010,
+      "annualP10": 85620,
+      "annualP90": 161580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 54.81,
+      "soc": "17-2111"
+    },
+    "17-2112": {
+      "annualMedian": 109020,
+      "annualP10": 79740,
+      "annualP90": 171390,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5810,
+      "hourlyMedian": 52.42,
+      "soc": "17-2112"
+    },
+    "17-2131": {
+      "annualMedian": 124990,
+      "annualP10": 81990,
+      "annualP90": 169150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 310,
+      "hourlyMedian": 60.09,
+      "soc": "17-2131"
+    },
+    "17-2141": {
+      "annualMedian": 100980,
+      "annualP10": 69980,
+      "annualP90": 159920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3660,
+      "hourlyMedian": 48.55,
+      "soc": "17-2141"
+    },
+    "17-2151": {
+      "annualMedian": 114290,
+      "annualP10": 83340,
+      "annualP90": 194310,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 250,
+      "hourlyMedian": 54.95,
+      "soc": "17-2151"
+    },
+    "17-2199": {
+      "annualMedian": 102280,
+      "annualP10": 63240,
+      "annualP90": 169910,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1180,
+      "hourlyMedian": 49.17,
+      "soc": "17-2199"
+    },
+    "17-3011": {
+      "annualMedian": 65310,
+      "annualP10": 44930,
+      "annualP90": 100590,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1690,
+      "hourlyMedian": 31.4,
+      "soc": "17-3011"
+    },
+    "17-3012": {
+      "annualMedian": 68710,
+      "annualP10": 48860,
+      "annualP90": 116870,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 480,
+      "hourlyMedian": 33.03,
+      "soc": "17-3012"
+    },
+    "17-3013": {
+      "annualMedian": 67600,
+      "annualP10": 47990,
+      "annualP90": 105910,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 510,
+      "hourlyMedian": 32.5,
+      "soc": "17-3013"
+    },
+    "17-3019": {
+      "annualMedian": 70320,
+      "annualP10": 45960,
+      "annualP90": 104690,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 330,
+      "hourlyMedian": 33.81,
+      "soc": "17-3019"
+    },
+    "17-3021": {
+      "annualMedian": 79530,
+      "annualP10": 56780,
+      "annualP90": 100470,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 38.24,
+      "soc": "17-3021"
+    },
+    "17-3022": {
+      "annualMedian": 63560,
+      "annualP10": 43990,
+      "annualP90": 101120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 760,
+      "hourlyMedian": 30.56,
+      "soc": "17-3022"
+    },
+    "17-3023": {
+      "annualMedian": 79710,
+      "annualP10": 54480,
+      "annualP90": 103170,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1480,
+      "hourlyMedian": 38.32,
+      "soc": "17-3023"
+    },
+    "17-3024": {
+      "annualMedian": 80930,
+      "annualP10": 73320,
+      "annualP90": 105730,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": 38.91,
+      "soc": "17-3024"
+    },
+    "17-3025": {
+      "annualMedian": 67020,
+      "annualP10": 49060,
+      "annualP90": 96900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 32.22,
+      "soc": "17-3025"
+    },
+    "17-3026": {
+      "annualMedian": 65120,
+      "annualP10": 41850,
+      "annualP90": 103070,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1760,
+      "hourlyMedian": 31.31,
+      "soc": "17-3026"
+    },
+    "17-3027": {
+      "annualMedian": 77580,
+      "annualP10": 49280,
+      "annualP90": 101150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 400,
+      "hourlyMedian": 37.3,
+      "soc": "17-3027"
+    },
+    "17-3028": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 250,
+      "hourlyMedian": null,
+      "soc": "17-3028"
+    },
+    "17-3029": {
+      "annualMedian": 59190,
+      "annualP10": 45070,
+      "annualP90": 93370,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 610,
+      "hourlyMedian": 28.46,
+      "soc": "17-3029"
+    },
+    "17-3031": {
+      "annualMedian": 54870,
+      "annualP10": 42120,
+      "annualP90": 81950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 460,
+      "hourlyMedian": 26.38,
+      "soc": "17-3031"
+    },
+    "19-1013": {
+      "annualMedian": 82510,
+      "annualP10": 40250,
+      "annualP90": 124900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 180,
+      "hourlyMedian": 39.67,
+      "soc": "19-1013"
+    },
+    "19-1022": {
+      "annualMedian": 69880,
+      "annualP10": 54510,
+      "annualP90": 101580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 60,
+      "hourlyMedian": 33.6,
+      "soc": "19-1022"
+    },
+    "19-1023": {
+      "annualMedian": 67970,
+      "annualP10": 49970,
+      "annualP90": 95780,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 180,
+      "hourlyMedian": 32.68,
+      "soc": "19-1023"
+    },
+    "19-1029": {
+      "annualMedian": 95780,
+      "annualP10": 77330,
+      "annualP90": 114580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 360,
+      "hourlyMedian": 46.05,
+      "soc": "19-1029"
+    },
+    "19-1031": {
+      "annualMedian": 70300,
+      "annualP10": 54590,
+      "annualP90": 102630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 140,
+      "hourlyMedian": 33.8,
+      "soc": "19-1031"
+    },
+    "19-1041": {
+      "annualMedian": 67260,
+      "annualP10": 48010,
+      "annualP90": 84150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 250,
+      "hourlyMedian": 32.34,
+      "soc": "19-1041"
+    },
+    "19-1042": {
+      "annualMedian": 108390,
+      "annualP10": 74500,
+      "annualP90": 155380,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1700,
+      "hourlyMedian": 52.11,
+      "soc": "19-1042"
+    },
+    "19-1099": {
+      "annualMedian": 124260,
+      "annualP10": 107840,
+      "annualP90": 197620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 59.74,
+      "soc": "19-1099"
+    },
+    "19-2012": {
+      "annualMedian": 130500,
+      "annualP10": 110430,
+      "annualP90": 256600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": 62.74,
+      "soc": "19-2012"
+    },
+    "19-2031": {
+      "annualMedian": 78060,
+      "annualP10": 50710,
+      "annualP90": 139250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 570,
+      "hourlyMedian": 37.53,
+      "soc": "19-2031"
+    },
+    "19-2041": {
+      "annualMedian": 80600,
+      "annualP10": 57240,
+      "annualP90": 162040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1430,
+      "hourlyMedian": 38.75,
+      "soc": "19-2041"
+    },
+    "19-2042": {
+      "annualMedian": 81750,
+      "annualP10": 56930,
+      "annualP90": 143290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": 39.3,
+      "soc": "19-2042"
+    },
+    "19-2043": {
+      "annualMedian": 90000,
+      "annualP10": 70000,
+      "annualP90": 173470,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 260,
+      "hourlyMedian": 43.27,
+      "soc": "19-2043"
+    },
+    "19-2099": {
+      "annualMedian": 123750,
+      "annualP10": 95560,
+      "annualP90": 177980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 59.5,
+      "soc": "19-2099"
+    },
+    "19-3011": {
+      "annualMedian": 125160,
+      "annualP10": 75000,
+      "annualP90": 169260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 60.17,
+      "soc": "19-3011"
+    },
+    "19-3022": {
+      "annualMedian": 59210,
+      "annualP10": 31840,
+      "annualP90": 142980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 28.47,
+      "soc": "19-3022"
+    },
+    "19-3033": {
+      "annualMedian": 115570,
+      "annualP10": 61890,
+      "annualP90": 161810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 500,
+      "hourlyMedian": 55.56,
+      "soc": "19-3033"
+    },
+    "19-3034": {
+      "annualMedian": 93640,
+      "annualP10": 61240,
+      "annualP90": 123000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 840,
+      "hourlyMedian": 45.02,
+      "soc": "19-3034"
+    },
+    "19-3039": {
+      "annualMedian": 137650,
+      "annualP10": 62490,
+      "annualP90": 171850,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 170,
+      "hourlyMedian": 66.18,
+      "soc": "19-3039"
+    },
+    "19-3051": {
+      "annualMedian": 107470,
+      "annualP10": 64310,
+      "annualP90": 127660,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1000,
+      "hourlyMedian": 51.67,
+      "soc": "19-3051"
+    },
+    "19-3091": {
+      "annualMedian": 63010,
+      "annualP10": 49500,
+      "annualP90": 103180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 270,
+      "hourlyMedian": 30.29,
+      "soc": "19-3091"
+    },
+    "19-3094": {
+      "annualMedian": 114320,
+      "annualP10": 78390,
+      "annualP90": 199120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 30,
+      "hourlyMedian": 54.96,
+      "soc": "19-3094"
+    },
+    "19-3099": {
+      "annualMedian": 98520,
+      "annualP10": 67580,
+      "annualP90": 130430,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 200,
+      "hourlyMedian": 47.37,
+      "soc": "19-3099"
+    },
+    "19-4012": {
+      "annualMedian": 64750,
+      "annualP10": 48700,
+      "annualP90": 75950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 31.13,
+      "soc": "19-4012"
+    },
+    "19-4021": {
+      "annualMedian": 61280,
+      "annualP10": 47840,
+      "annualP90": 81960,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 570,
+      "hourlyMedian": 29.46,
+      "soc": "19-4021"
+    },
+    "19-4031": {
+      "annualMedian": 63790,
+      "annualP10": 46140,
+      "annualP90": 96220,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 210,
+      "hourlyMedian": 30.67,
+      "soc": "19-4031"
+    },
+    "19-4042": {
+      "annualMedian": 61050,
+      "annualP10": 46720,
+      "annualP90": 92260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 420,
+      "hourlyMedian": 29.35,
+      "soc": "19-4042"
+    },
+    "19-4061": {
+      "annualMedian": 64290,
+      "annualP10": 47140,
+      "annualP90": 85810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 570,
+      "hourlyMedian": 30.91,
+      "soc": "19-4061"
+    },
+    "19-4071": {
+      "annualMedian": 65690,
+      "annualP10": 43580,
+      "annualP90": 89500,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 150,
+      "hourlyMedian": 31.58,
+      "soc": "19-4071"
+    },
+    "19-4092": {
+      "annualMedian": 65220,
+      "annualP10": 51580,
+      "annualP90": 109850,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 620,
+      "hourlyMedian": 31.36,
+      "soc": "19-4092"
+    },
+    "19-4099": {
+      "annualMedian": 58240,
+      "annualP10": 40560,
+      "annualP90": 83100,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 270,
+      "hourlyMedian": 28,
+      "soc": "19-4099"
+    },
+    "19-5011": {
+      "annualMedian": 89480,
+      "annualP10": 60110,
+      "annualP90": 128710,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2340,
+      "hourlyMedian": 43.02,
+      "soc": "19-5011"
+    },
+    "19-5012": {
+      "annualMedian": 64870,
+      "annualP10": 49520,
+      "annualP90": 80260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": 31.19,
+      "soc": "19-5012"
+    },
+    "21-1012": {
+      "annualMedian": 60520,
+      "annualP10": 48900,
+      "annualP90": 90440,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4330,
+      "hourlyMedian": 29.1,
+      "soc": "21-1012"
+    },
+    "21-1013": {
+      "annualMedian": 61850,
+      "annualP10": 50270,
+      "annualP90": 100720,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 29.74,
+      "soc": "21-1013"
+    },
+    "21-1015": {
+      "annualMedian": 48820,
+      "annualP10": 37700,
+      "annualP90": 61600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1090,
+      "hourlyMedian": 23.47,
+      "soc": "21-1015"
+    },
+    "21-1019": {
+      "annualMedian": 56690,
+      "annualP10": 50320,
+      "annualP90": 78250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 90,
+      "hourlyMedian": 27.25,
+      "soc": "21-1019"
+    },
+    "21-1021": {
+      "annualMedian": 50150,
+      "annualP10": 43350,
+      "annualP90": 65900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5060,
+      "hourlyMedian": 24.11,
+      "soc": "21-1021"
+    },
+    "21-1022": {
+      "annualMedian": 67090,
+      "annualP10": 45650,
+      "annualP90": 98380,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2240,
+      "hourlyMedian": 32.26,
+      "soc": "21-1022"
+    },
+    "21-1023": {
+      "annualMedian": 46340,
+      "annualP10": 41460,
+      "annualP90": 67550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2870,
+      "hourlyMedian": 22.28,
+      "soc": "21-1023"
+    },
+    "21-1029": {
+      "annualMedian": 62150,
+      "annualP10": 47890,
+      "annualP90": 105060,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2040,
+      "hourlyMedian": 29.88,
+      "soc": "21-1029"
+    },
+    "21-1091": {
+      "annualMedian": 64980,
+      "annualP10": 43530,
+      "annualP90": 134630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 730,
+      "hourlyMedian": 31.24,
+      "soc": "21-1091"
+    },
+    "21-1092": {
+      "annualMedian": 61730,
+      "annualP10": 45790,
+      "annualP90": 83450,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 470,
+      "hourlyMedian": 29.68,
+      "soc": "21-1092"
+    },
+    "21-1093": {
+      "annualMedian": 43230,
+      "annualP10": 36340,
+      "annualP90": 50210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4940,
+      "hourlyMedian": 20.78,
+      "soc": "21-1093"
+    },
+    "21-1094": {
+      "annualMedian": 50550,
+      "annualP10": 40560,
+      "annualP90": 76600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 750,
+      "hourlyMedian": 24.3,
+      "soc": "21-1094"
+    },
+    "21-1099": {
+      "annualMedian": 55380,
+      "annualP10": 42620,
+      "annualP90": 80980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": 26.63,
+      "soc": "21-1099"
+    },
+    "21-2011": {
+      "annualMedian": 63000,
+      "annualP10": 45100,
+      "annualP90": 102290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 890,
+      "hourlyMedian": 30.29,
+      "soc": "21-2011"
+    },
+    "21-2021": {
+      "annualMedian": 57140,
+      "annualP10": 41830,
+      "annualP90": 124520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 27.47,
+      "soc": "21-2021"
+    },
+    "21-2099": {
+      "annualMedian": 61640,
+      "annualP10": 34640,
+      "annualP90": 78240,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 450,
+      "hourlyMedian": 29.63,
+      "soc": "21-2099"
+    },
+    "23-1011": {
+      "annualMedian": 135670,
+      "annualP10": 87170,
+      "annualP90": 291750,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8820,
+      "hourlyMedian": 65.23,
+      "soc": "23-1011"
+    },
+    "23-1012": {
+      "annualMedian": 60170,
+      "annualP10": 50430,
+      "annualP90": 77710,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 28.93,
+      "soc": "23-1012"
+    },
+    "23-1021": {
+      "annualMedian": 123240,
+      "annualP10": 76480,
+      "annualP90": 169330,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": 59.25,
+      "soc": "23-1021"
+    },
+    "23-1022": {
+      "annualMedian": 82150,
+      "annualP10": 67810,
+      "annualP90": 131710,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 39.49,
+      "soc": "23-1022"
+    },
+    "23-1023": {
+      "annualMedian": 113440,
+      "annualP10": 88150,
+      "annualP90": 212730,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 330,
+      "hourlyMedian": 54.54,
+      "soc": "23-1023"
+    },
+    "23-2011": {
+      "annualMedian": 62620,
+      "annualP10": 47720,
+      "annualP90": 97670,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6280,
+      "hourlyMedian": 30.11,
+      "soc": "23-2011"
+    },
+    "23-2093": {
+      "annualMedian": 49330,
+      "annualP10": 41480,
+      "annualP90": 83900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 940,
+      "hourlyMedian": 23.72,
+      "soc": "23-2093"
+    },
+    "23-2099": {
+      "annualMedian": 63680,
+      "annualP10": 50050,
+      "annualP90": 105370,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 30.61,
+      "soc": "23-2099"
+    },
+    "25-1011": {
+      "annualMedian": 80600,
+      "annualP10": 63470,
+      "annualP90": 162010,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 920,
+      "hourlyMedian": null,
+      "soc": "25-1011"
+    },
+    "25-1021": {
+      "annualMedian": 80000,
+      "annualP10": 71240,
+      "annualP90": 135160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 490,
+      "hourlyMedian": null,
+      "soc": "25-1021"
+    },
+    "25-1022": {
+      "annualMedian": 71230,
+      "annualP10": 66030,
+      "annualP90": 100180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 420,
+      "hourlyMedian": null,
+      "soc": "25-1022"
+    },
+    "25-1032": {
+      "annualMedian": 108540,
+      "annualP10": 72300,
+      "annualP90": 171980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 200,
+      "hourlyMedian": null,
+      "soc": "25-1032"
+    },
+    "25-1041": {
+      "annualMedian": 78910,
+      "annualP10": 61250,
+      "annualP90": 128940,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": null,
+      "soc": "25-1041"
+    },
+    "25-1042": {
+      "annualMedian": 83770,
+      "annualP10": 62760,
+      "annualP90": 217120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": null,
+      "soc": "25-1042"
+    },
+    "25-1051": {
+      "annualMedian": 110600,
+      "annualP10": 79550,
+      "annualP90": 175470,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 120,
+      "hourlyMedian": null,
+      "soc": "25-1051"
+    },
+    "25-1052": {
+      "annualMedian": 110100,
+      "annualP10": 73490,
+      "annualP90": 151440,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": null,
+      "soc": "25-1052"
+    },
+    "25-1054": {
+      "annualMedian": 73940,
+      "annualP10": 65730,
+      "annualP90": 139860,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 160,
+      "hourlyMedian": null,
+      "soc": "25-1054"
+    },
+    "25-1063": {
+      "annualMedian": 137250,
+      "annualP10": 102200,
+      "annualP90": 306620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 60,
+      "hourlyMedian": null,
+      "soc": "25-1063"
+    },
+    "25-1065": {
+      "annualMedian": 98260,
+      "annualP10": 55010,
+      "annualP90": 131800,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 100,
+      "hourlyMedian": null,
+      "soc": "25-1065"
+    },
+    "25-1066": {
+      "annualMedian": 77430,
+      "annualP10": 61620,
+      "annualP90": 132260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 690,
+      "hourlyMedian": null,
+      "soc": "25-1066"
+    },
+    "25-1067": {
+      "annualMedian": 92340,
+      "annualP10": 54080,
+      "annualP90": 147900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 140,
+      "hourlyMedian": null,
+      "soc": "25-1067"
+    },
+    "25-1069": {
+      "annualMedian": 71230,
+      "annualP10": 71230,
+      "annualP90": 81100,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 300,
+      "hourlyMedian": null,
+      "soc": "25-1069"
+    },
+    "25-1071": {
+      "annualMedian": 96660,
+      "annualP10": 66280,
+      "annualP90": 228280,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2420,
+      "hourlyMedian": null,
+      "soc": "25-1071"
+    },
+    "25-1072": {
+      "annualMedian": 71740,
+      "annualP10": 50400,
+      "annualP90": 128710,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1420,
+      "hourlyMedian": null,
+      "soc": "25-1072"
+    },
+    "25-1081": {
+      "annualMedian": 78520,
+      "annualP10": 49730,
+      "annualP90": 135140,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1180,
+      "hourlyMedian": null,
+      "soc": "25-1081"
+    },
+    "25-1111": {
+      "annualMedian": 71230,
+      "annualP10": 71230,
+      "annualP90": 136620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": null,
+      "soc": "25-1111"
+    },
+    "25-1112": {
+      "annualMedian": 129180,
+      "annualP10": 79420,
+      "annualP90": 213950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": null,
+      "soc": "25-1112"
+    },
+    "25-1113": {
+      "annualMedian": 71690,
+      "annualP10": 62670,
+      "annualP90": 138040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": null,
+      "soc": "25-1113"
+    },
+    "25-1121": {
+      "annualMedian": 71230,
+      "annualP10": 64400,
+      "annualP90": 135370,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 680,
+      "hourlyMedian": null,
+      "soc": "25-1121"
+    },
+    "25-1122": {
+      "annualMedian": 71230,
+      "annualP10": 71230,
+      "annualP90": 110870,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 470,
+      "hourlyMedian": null,
+      "soc": "25-1122"
+    },
+    "25-1123": {
+      "annualMedian": 71250,
+      "annualP10": 65790,
+      "annualP90": 137250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 580,
+      "hourlyMedian": null,
+      "soc": "25-1123"
+    },
+    "25-1124": {
+      "annualMedian": 71230,
+      "annualP10": 65140,
+      "annualP90": 130980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": null,
+      "soc": "25-1124"
+    },
+    "25-1125": {
+      "annualMedian": 97430,
+      "annualP10": 71230,
+      "annualP90": 163110,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": null,
+      "soc": "25-1125"
+    },
+    "25-1126": {
+      "annualMedian": 79250,
+      "annualP10": 48530,
+      "annualP90": 133980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 300,
+      "hourlyMedian": null,
+      "soc": "25-1126"
+    },
+    "25-1193": {
+      "annualMedian": 71230,
+      "annualP10": 49890,
+      "annualP90": 133920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": null,
+      "soc": "25-1193"
+    },
+    "25-1194": {
+      "annualMedian": 71230,
+      "annualP10": 48510,
+      "annualP90": 135560,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1340,
+      "hourlyMedian": 34.25,
+      "soc": "25-1194"
+    },
+    "25-1199": {
+      "annualMedian": 79260,
+      "annualP10": 38360,
+      "annualP90": 106980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1050,
+      "hourlyMedian": null,
+      "soc": "25-1199"
+    },
+    "25-2011": {
+      "annualMedian": 36500,
+      "annualP10": 33850,
+      "annualP90": 48770,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6880,
+      "hourlyMedian": 17.55,
+      "soc": "25-2011"
+    },
+    "25-2012": {
+      "annualMedian": 56920,
+      "annualP10": 47500,
+      "annualP90": 78020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2310,
+      "hourlyMedian": null,
+      "soc": "25-2012"
+    },
+    "25-2021": {
+      "annualMedian": 59180,
+      "annualP10": 47390,
+      "annualP90": 81520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 16560,
+      "hourlyMedian": null,
+      "soc": "25-2021"
+    },
+    "25-2022": {
+      "annualMedian": 61330,
+      "annualP10": 48000,
+      "annualP90": 84000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6550,
+      "hourlyMedian": null,
+      "soc": "25-2022"
+    },
+    "25-2031": {
+      "annualMedian": 59570,
+      "annualP10": 49020,
+      "annualP90": 104270,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 14730,
+      "hourlyMedian": null,
+      "soc": "25-2031"
+    },
+    "25-2032": {
+      "annualMedian": 74630,
+      "annualP10": 49720,
+      "annualP90": 109190,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 390,
+      "hourlyMedian": null,
+      "soc": "25-2032"
+    },
+    "25-2051": {
+      "annualMedian": 60400,
+      "annualP10": 47250,
+      "annualP90": 80680,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 250,
+      "hourlyMedian": null,
+      "soc": "25-2051"
+    },
+    "25-2057": {
+      "annualMedian": 62360,
+      "annualP10": 49690,
+      "annualP90": 77520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 410,
+      "hourlyMedian": null,
+      "soc": "25-2057"
+    },
+    "25-2058": {
+      "annualMedian": 64490,
+      "annualP10": 50280,
+      "annualP90": 110560,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1460,
+      "hourlyMedian": null,
+      "soc": "25-2058"
+    },
+    "25-2059": {
+      "annualMedian": 59500,
+      "annualP10": 45680,
+      "annualP90": 92350,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": null,
+      "soc": "25-2059"
+    },
+    "25-3011": {
+      "annualMedian": 62600,
+      "annualP10": 32570,
+      "annualP90": 91670,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 370,
+      "hourlyMedian": 30.1,
+      "soc": "25-3011"
+    },
+    "25-3021": {
+      "annualMedian": 44560,
+      "annualP10": 35100,
+      "annualP90": 69950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1610,
+      "hourlyMedian": 21.42,
+      "soc": "25-3021"
+    },
+    "25-3031": {
+      "annualMedian": 41590,
+      "annualP10": 32100,
+      "annualP90": 51470,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3220,
+      "hourlyMedian": 19.99,
+      "soc": "25-3031"
+    },
+    "25-3041": {
+      "annualMedian": 43880,
+      "annualP10": 30580,
+      "annualP90": 80170,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2040,
+      "hourlyMedian": 21.1,
+      "soc": "25-3041"
+    },
+    "25-3099": {
+      "annualMedian": 45120,
+      "annualP10": 36730,
+      "annualP90": 83580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 540,
+      "hourlyMedian": null,
+      "soc": "25-3099"
+    },
+    "25-4012": {
+      "annualMedian": 84150,
+      "annualP10": 40340,
+      "annualP90": 107990,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 40.46,
+      "soc": "25-4012"
+    },
+    "25-4013": {
+      "annualMedian": 45030,
+      "annualP10": 33970,
+      "annualP90": 68920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": 21.65,
+      "soc": "25-4013"
+    },
+    "25-4022": {
+      "annualMedian": 61070,
+      "annualP10": 35910,
+      "annualP90": 102310,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1210,
+      "hourlyMedian": 29.36,
+      "soc": "25-4022"
+    },
+    "25-4031": {
+      "annualMedian": 36370,
+      "annualP10": 30590,
+      "annualP90": 57890,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 420,
+      "hourlyMedian": 17.48,
+      "soc": "25-4031"
+    },
+    "25-9031": {
+      "annualMedian": 65340,
+      "annualP10": 46240,
+      "annualP90": 99290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4560,
+      "hourlyMedian": 31.41,
+      "soc": "25-9031"
+    },
+    "25-9044": {
+      "annualMedian": 49810,
+      "annualP10": 34580,
+      "annualP90": 80280,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4450,
+      "hourlyMedian": null,
+      "soc": "25-9044"
+    },
+    "25-9099": {
+      "annualMedian": 50610,
+      "annualP10": 37650,
+      "annualP90": 78830,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 370,
+      "hourlyMedian": 24.33,
+      "soc": "25-9099"
+    },
+    "27-1011": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": null,
+      "soc": "27-1011"
+    },
+    "27-1012": {
+      "annualMedian": 46300,
+      "annualP10": 31430,
+      "annualP90": 58840,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 22.26,
+      "soc": "27-1012"
+    },
+    "27-1013": {
+      "annualMedian": 68970,
+      "annualP10": 42730,
+      "annualP90": 98170,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 33.16,
+      "soc": "27-1013"
+    },
+    "27-1014": {
+      "annualMedian": 96670,
+      "annualP10": 65810,
+      "annualP90": 100230,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 150,
+      "hourlyMedian": 46.48,
+      "soc": "27-1014"
+    },
+    "27-1021": {
+      "annualMedian": 80440,
+      "annualP10": 50100,
+      "annualP90": 184040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 38.67,
+      "soc": "27-1021"
+    },
+    "27-1023": {
+      "annualMedian": 36990,
+      "annualP10": 35360,
+      "annualP90": 49550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 270,
+      "hourlyMedian": 17.78,
+      "soc": "27-1023"
+    },
+    "27-1024": {
+      "annualMedian": 59090,
+      "annualP10": 45760,
+      "annualP90": 89390,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2810,
+      "hourlyMedian": 28.41,
+      "soc": "27-1024"
+    },
+    "27-1025": {
+      "annualMedian": 61810,
+      "annualP10": 48880,
+      "annualP90": 98290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1320,
+      "hourlyMedian": 29.72,
+      "soc": "27-1025"
+    },
+    "27-1026": {
+      "annualMedian": 40100,
+      "annualP10": 35030,
+      "annualP90": 58180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2360,
+      "hourlyMedian": 19.28,
+      "soc": "27-1026"
+    },
+    "27-1027": {
+      "annualMedian": 46280,
+      "annualP10": 40210,
+      "annualP90": 110570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 22.25,
+      "soc": "27-1027"
+    },
+    "27-2011": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 270,
+      "hourlyMedian": 23.77,
+      "soc": "27-2011"
+    },
+    "27-2012": {
+      "annualMedian": 72740,
+      "annualP10": 36820,
+      "annualP90": 260360,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1140,
+      "hourlyMedian": 34.97,
+      "soc": "27-2012"
+    },
+    "27-2021": {
+      "annualMedian": 50070,
+      "annualP10": 31290,
+      "annualP90": 286690,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 870,
+      "hourlyMedian": null,
+      "soc": "27-2021"
+    },
+    "27-2022": {
+      "annualMedian": 58560,
+      "annualP10": 37670,
+      "annualP90": 103640,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3260,
+      "hourlyMedian": null,
+      "soc": "27-2022"
+    },
+    "27-2023": {
+      "annualMedian": 50250,
+      "annualP10": 31730,
+      "annualP90": 69630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 160,
+      "hourlyMedian": null,
+      "soc": "27-2023"
+    },
+    "27-2031": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 140,
+      "hourlyMedian": 26,
+      "soc": "27-2031"
+    },
+    "27-2091": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 22.15,
+      "soc": "27-2091"
+    },
+    "27-2099": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 120,
+      "hourlyMedian": 23.46,
+      "soc": "27-2099"
+    },
+    "27-3011": {
+      "annualMedian": 47820,
+      "annualP10": 32630,
+      "annualP90": 219300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 270,
+      "hourlyMedian": 22.99,
+      "soc": "27-3011"
+    },
+    "27-3023": {
+      "annualMedian": 41870,
+      "annualP10": 31630,
+      "annualP90": 86820,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 210,
+      "hourlyMedian": 20.13,
+      "soc": "27-3023"
+    },
+    "27-3031": {
+      "annualMedian": 70490,
+      "annualP10": 46430,
+      "annualP90": 116360,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3860,
+      "hourlyMedian": 33.89,
+      "soc": "27-3031"
+    },
+    "27-3041": {
+      "annualMedian": 64970,
+      "annualP10": 42370,
+      "annualP90": 110460,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 540,
+      "hourlyMedian": 31.23,
+      "soc": "27-3041"
+    },
+    "27-3042": {
+      "annualMedian": 83480,
+      "annualP10": 62100,
+      "annualP90": 124810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 490,
+      "hourlyMedian": 40.14,
+      "soc": "27-3042"
+    },
+    "27-3043": {
+      "annualMedian": 58870,
+      "annualP10": 45200,
+      "annualP90": 90980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 420,
+      "hourlyMedian": 28.31,
+      "soc": "27-3043"
+    },
+    "27-3091": {
+      "annualMedian": 50070,
+      "annualP10": 32280,
+      "annualP90": 102000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1720,
+      "hourlyMedian": 24.07,
+      "soc": "27-3091"
+    },
+    "27-4011": {
+      "annualMedian": 47150,
+      "annualP10": 37930,
+      "annualP90": 74440,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1010,
+      "hourlyMedian": 22.67,
+      "soc": "27-4011"
+    },
+    "27-4012": {
+      "annualMedian": 81640,
+      "annualP10": 44020,
+      "annualP90": 132820,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 370,
+      "hourlyMedian": 39.25,
+      "soc": "27-4012"
+    },
+    "27-4014": {
+      "annualMedian": 66360,
+      "annualP10": 34330,
+      "annualP90": 110570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 90,
+      "hourlyMedian": 31.9,
+      "soc": "27-4014"
+    },
+    "27-4021": {
+      "annualMedian": 36970,
+      "annualP10": 33830,
+      "annualP90": 84130,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1140,
+      "hourlyMedian": 17.77,
+      "soc": "27-4021"
+    },
+    "27-4031": {
+      "annualMedian": 71080,
+      "annualP10": 36770,
+      "annualP90": 162960,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 350,
+      "hourlyMedian": 34.17,
+      "soc": "27-4031"
+    },
+    "27-4032": {
+      "annualMedian": 45750,
+      "annualP10": 38430,
+      "annualP90": 82280,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 290,
+      "hourlyMedian": 22,
+      "soc": "27-4032"
+    },
+    "27-4099": {
+      "annualMedian": 67890,
+      "annualP10": 36120,
+      "annualP90": 169940,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": 32.64,
+      "soc": "27-4099"
+    },
+    "29-1011": {
+      "annualMedian": 102110,
+      "annualP10": 58810,
+      "annualP90": 120150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 830,
+      "hourlyMedian": 49.09,
+      "soc": "29-1011"
+    },
+    "29-1021": {
+      "annualMedian": 194180,
+      "annualP10": 62230,
+      "annualP90": 336950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2700,
+      "hourlyMedian": 93.36,
+      "soc": "29-1021"
+    },
+    "29-1023": {
+      "annualMedian": 272330,
+      "annualP10": 96880,
+      "annualP90": 345150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 100,
+      "hourlyMedian": 130.93,
+      "soc": "29-1023"
+    },
+    "29-1029": {
+      "annualMedian": 244170,
+      "annualP10": 129930,
+      "annualP90": 482250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": 117.39,
+      "soc": "29-1029"
+    },
+    "29-1031": {
+      "annualMedian": 64420,
+      "annualP10": 43150,
+      "annualP90": 93540,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1280,
+      "hourlyMedian": 30.97,
+      "soc": "29-1031"
+    },
+    "29-1041": {
+      "annualMedian": 115960,
+      "annualP10": 99570,
+      "annualP90": 172160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 860,
+      "hourlyMedian": 55.75,
+      "soc": "29-1041"
+    },
+    "29-1051": {
+      "annualMedian": 144490,
+      "annualP10": 105920,
+      "annualP90": 171160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5050,
+      "hourlyMedian": 69.46,
+      "soc": "29-1051"
+    },
+    "29-1071": {
+      "annualMedian": 134650,
+      "annualP10": 106860,
+      "annualP90": 173920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3050,
+      "hourlyMedian": 64.73,
+      "soc": "29-1071"
+    },
+    "29-1081": {
+      "annualMedian": 133210,
+      "annualP10": 63520,
+      "annualP90": 220210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 200,
+      "hourlyMedian": 64.04,
+      "soc": "29-1081"
+    },
+    "29-1122": {
+      "annualMedian": 105060,
+      "annualP10": 78160,
+      "annualP90": 133680,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2070,
+      "hourlyMedian": 50.51,
+      "soc": "29-1122"
+    },
+    "29-1123": {
+      "annualMedian": 103220,
+      "annualP10": 82840,
+      "annualP90": 134410,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3760,
+      "hourlyMedian": 49.63,
+      "soc": "29-1123"
+    },
+    "29-1124": {
+      "annualMedian": 108770,
+      "annualP10": 88400,
+      "annualP90": 135310,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 350,
+      "hourlyMedian": 52.29,
+      "soc": "29-1124"
+    },
+    "29-1125": {
+      "annualMedian": 62610,
+      "annualP10": 49710,
+      "annualP90": 90230,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 30.1,
+      "soc": "29-1125"
+    },
+    "29-1126": {
+      "annualMedian": 79760,
+      "annualP10": 64740,
+      "annualP90": 100360,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2600,
+      "hourlyMedian": 38.34,
+      "soc": "29-1126"
+    },
+    "29-1127": {
+      "annualMedian": 98040,
+      "annualP10": 69740,
+      "annualP90": 131270,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2640,
+      "hourlyMedian": 47.14,
+      "soc": "29-1127"
+    },
+    "29-1128": {
+      "annualMedian": 66210,
+      "annualP10": 52010,
+      "annualP90": 77630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 180,
+      "hourlyMedian": 31.83,
+      "soc": "29-1128"
+    },
+    "29-1129": {
+      "annualMedian": 63750,
+      "annualP10": 47620,
+      "annualP90": 132050,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 190,
+      "hourlyMedian": 30.65,
+      "soc": "29-1129"
+    },
+    "29-1131": {
+      "annualMedian": 161060,
+      "annualP10": 82580,
+      "annualP90": 304630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1480,
+      "hourlyMedian": 77.43,
+      "soc": "29-1131"
+    },
+    "29-1141": {
+      "annualMedian": 100830,
+      "annualP10": 70730,
+      "annualP90": 130930,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 53700,
+      "hourlyMedian": 48.48,
+      "soc": "29-1141"
+    },
+    "29-1151": {
+      "annualMedian": 237200,
+      "annualP10": 228390,
+      "annualP90": 313990,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 230,
+      "hourlyMedian": 114.04,
+      "soc": "29-1151"
+    },
+    "29-1161": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 30,
+      "hourlyMedian": null,
+      "soc": "29-1161"
+    },
+    "29-1171": {
+      "annualMedian": 136270,
+      "annualP10": 105510,
+      "annualP90": 173980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5450,
+      "hourlyMedian": 65.51,
+      "soc": "29-1171"
+    },
+    "29-1181": {
+      "annualMedian": 91160,
+      "annualP10": 81060,
+      "annualP90": 113300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 170,
+      "hourlyMedian": 43.83,
+      "soc": "29-1181"
+    },
+    "29-1215": {
+      "annualMedian": 341680,
+      "annualP10": 183290,
+      "annualP90": 425910,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2050,
+      "hourlyMedian": 164.27,
+      "soc": "29-1215"
+    },
+    "29-1216": {
+      "annualMedian": 259320,
+      "annualP10": 65610,
+      "annualP90": 391480,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1960,
+      "hourlyMedian": 124.67,
+      "soc": "29-1216"
+    },
+    "29-1217": {
+      "annualMedian": 409610,
+      "annualP10": 78270,
+      "annualP90": 429040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 196.93,
+      "soc": "29-1217"
+    },
+    "29-1218": {
+      "annualMedian": 369720,
+      "annualP10": 118600,
+      "annualP90": 455520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 177.75,
+      "soc": "29-1218"
+    },
+    "29-1221": {
+      "annualMedian": 233950,
+      "annualP10": 111020,
+      "annualP90": 408620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1080,
+      "hourlyMedian": 112.47,
+      "soc": "29-1221"
+    },
+    "29-1222": {
+      "annualMedian": 349470,
+      "annualP10": 127110,
+      "annualP90": 506410,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 220,
+      "hourlyMedian": 168.02,
+      "soc": "29-1222"
+    },
+    "29-1223": {
+      "annualMedian": 260330,
+      "annualP10": 128350,
+      "annualP90": 397930,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": 125.16,
+      "soc": "29-1223"
+    },
+    "29-1224": {
+      "annualMedian": 525930,
+      "annualP10": 79470,
+      "annualP90": 688200,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 252.85,
+      "soc": "29-1224"
+    },
+    "29-1229": {
+      "annualMedian": 301270,
+      "annualP10": 75570,
+      "annualP90": 518640,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5210,
+      "hourlyMedian": 144.84,
+      "soc": "29-1229"
+    },
+    "29-1242": {
+      "annualMedian": 558970,
+      "annualP10": 237990,
+      "annualP90": 826870,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 268.73,
+      "soc": "29-1242"
+    },
+    "29-1249": {
+      "annualMedian": 410100,
+      "annualP10": 232880,
+      "annualP90": 621650,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 197.16,
+      "soc": "29-1249"
+    },
+    "29-1292": {
+      "annualMedian": 102520,
+      "annualP10": 96010,
+      "annualP90": 121910,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3240,
+      "hourlyMedian": 49.29,
+      "soc": "29-1292"
+    },
+    "29-1299": {
+      "annualMedian": 102130,
+      "annualP10": 54920,
+      "annualP90": 150720,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 49.1,
+      "soc": "29-1299"
+    },
+    "29-2031": {
+      "annualMedian": 68330,
+      "annualP10": 44900,
+      "annualP90": 127020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 950,
+      "hourlyMedian": 32.85,
+      "soc": "29-2031"
+    },
+    "29-2032": {
+      "annualMedian": 102810,
+      "annualP10": 74000,
+      "annualP90": 128130,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1600,
+      "hourlyMedian": 49.43,
+      "soc": "29-2032"
+    },
+    "29-2033": {
+      "annualMedian": 100130,
+      "annualP10": 84580,
+      "annualP90": 122850,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 320,
+      "hourlyMedian": 48.14,
+      "soc": "29-2033"
+    },
+    "29-2034": {
+      "annualMedian": 94820,
+      "annualP10": 61870,
+      "annualP90": 124090,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3460,
+      "hourlyMedian": 45.59,
+      "soc": "29-2034"
+    },
+    "29-2035": {
+      "annualMedian": 97940,
+      "annualP10": 81440,
+      "annualP90": 124360,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 580,
+      "hourlyMedian": 47.09,
+      "soc": "29-2035"
+    },
+    "29-2036": {
+      "annualMedian": 142090,
+      "annualP10": 109710,
+      "annualP90": 173450,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 68.31,
+      "soc": "29-2036"
+    },
+    "29-2042": {
+      "annualMedian": 39500,
+      "annualP10": 33860,
+      "annualP90": 49660,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2840,
+      "hourlyMedian": 18.99,
+      "soc": "29-2042"
+    },
+    "29-2043": {
+      "annualMedian": 53400,
+      "annualP10": 46180,
+      "annualP90": 73150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1100,
+      "hourlyMedian": 25.67,
+      "soc": "29-2043"
+    },
+    "29-2051": {
+      "annualMedian": 47740,
+      "annualP10": 39370,
+      "annualP90": 55960,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": 22.95,
+      "soc": "29-2051"
+    },
+    "29-2052": {
+      "annualMedian": 47760,
+      "annualP10": 39410,
+      "annualP90": 60820,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9780,
+      "hourlyMedian": 22.96,
+      "soc": "29-2052"
+    },
+    "29-2053": {
+      "annualMedian": 46550,
+      "annualP10": 37000,
+      "annualP90": 59020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6630,
+      "hourlyMedian": 22.38,
+      "soc": "29-2053"
+    },
+    "29-2055": {
+      "annualMedian": 78050,
+      "annualP10": 52050,
+      "annualP90": 97040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1790,
+      "hourlyMedian": 37.53,
+      "soc": "29-2055"
+    },
+    "29-2056": {
+      "annualMedian": 46390,
+      "annualP10": 38530,
+      "annualP90": 58940,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2760,
+      "hourlyMedian": 22.3,
+      "soc": "29-2056"
+    },
+    "29-2057": {
+      "annualMedian": 48830,
+      "annualP10": 39440,
+      "annualP90": 55300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1150,
+      "hourlyMedian": 23.48,
+      "soc": "29-2057"
+    },
+    "29-2061": {
+      "annualMedian": 78080,
+      "annualP10": 62720,
+      "annualP90": 93750,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4450,
+      "hourlyMedian": 37.54,
+      "soc": "29-2061"
+    },
+    "29-2072": {
+      "annualMedian": 47450,
+      "annualP10": 36530,
+      "annualP90": 75950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2480,
+      "hourlyMedian": 22.81,
+      "soc": "29-2072"
+    },
+    "29-2081": {
+      "annualMedian": 48530,
+      "annualP10": 40890,
+      "annualP90": 75300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 990,
+      "hourlyMedian": 23.33,
+      "soc": "29-2081"
+    },
+    "29-2091": {
+      "annualMedian": 67350,
+      "annualP10": 50020,
+      "annualP90": 105480,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": 32.38,
+      "soc": "29-2091"
+    },
+    "29-2092": {
+      "annualMedian": null,
+      "annualP10": null,
+      "annualP90": null,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": null,
+      "soc": "29-2092"
+    },
+    "29-2099": {
+      "annualMedian": 59060,
+      "annualP10": 38930,
+      "annualP90": 104240,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2750,
+      "hourlyMedian": 28.39,
+      "soc": "29-2099"
+    },
+    "29-9021": {
+      "annualMedian": 51230,
+      "annualP10": 45210,
+      "annualP90": 106230,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 610,
+      "hourlyMedian": 24.63,
+      "soc": "29-9021"
+    },
+    "29-9091": {
+      "annualMedian": 61710,
+      "annualP10": 48980,
+      "annualP90": 104020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 460,
+      "hourlyMedian": null,
+      "soc": "29-9091"
+    },
+    "29-9092": {
+      "annualMedian": 102710,
+      "annualP10": 81190,
+      "annualP90": 138850,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 49.38,
+      "soc": "29-9092"
+    },
+    "29-9093": {
+      "annualMedian": 161710,
+      "annualP10": 78180,
+      "annualP90": 166860,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 77.75,
+      "soc": "29-9093"
+    },
+    "29-9099": {
+      "annualMedian": 62310,
+      "annualP10": 46720,
+      "annualP90": 97600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 520,
+      "hourlyMedian": 29.96,
+      "soc": "29-9099"
+    },
+    "31-1131": {
+      "annualMedian": 45290,
+      "annualP10": 37280,
+      "annualP90": 59040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 13550,
+      "hourlyMedian": 21.77,
+      "soc": "31-1131"
+    },
+    "31-1132": {
+      "annualMedian": 37380,
+      "annualP10": 35570,
+      "annualP90": 46360,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 900,
+      "hourlyMedian": 17.97,
+      "soc": "31-1132"
+    },
+    "31-2011": {
+      "annualMedian": 76080,
+      "annualP10": 63290,
+      "annualP90": 93230,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 800,
+      "hourlyMedian": 36.58,
+      "soc": "31-2011"
+    },
+    "31-2021": {
+      "annualMedian": 64720,
+      "annualP10": 36160,
+      "annualP90": 79880,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1440,
+      "hourlyMedian": 31.12,
+      "soc": "31-2021"
+    },
+    "31-2022": {
+      "annualMedian": 35010,
+      "annualP10": 32070,
+      "annualP90": 44080,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1070,
+      "hourlyMedian": 16.83,
+      "soc": "31-2022"
+    },
+    "31-9011": {
+      "annualMedian": 63080,
+      "annualP10": 37790,
+      "annualP90": 95490,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1890,
+      "hourlyMedian": 30.33,
+      "soc": "31-9011"
+    },
+    "31-9091": {
+      "annualMedian": 49760,
+      "annualP10": 40420,
+      "annualP90": 59380,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6270,
+      "hourlyMedian": 23.92,
+      "soc": "31-9091"
+    },
+    "31-9092": {
+      "annualMedian": 46830,
+      "annualP10": 38610,
+      "annualP90": 55100,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 15410,
+      "hourlyMedian": 22.51,
+      "soc": "31-9092"
+    },
+    "31-9093": {
+      "annualMedian": 47320,
+      "annualP10": 35280,
+      "annualP90": 61240,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1800,
+      "hourlyMedian": 22.75,
+      "soc": "31-9093"
+    },
+    "31-9094": {
+      "annualMedian": 36360,
+      "annualP10": 30850,
+      "annualP90": 50350,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 560,
+      "hourlyMedian": 17.48,
+      "soc": "31-9094"
+    },
+    "31-9095": {
+      "annualMedian": 43360,
+      "annualP10": 39350,
+      "annualP90": 56770,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 700,
+      "hourlyMedian": 20.85,
+      "soc": "31-9095"
+    },
+    "31-9096": {
+      "annualMedian": 38710,
+      "annualP10": 37350,
+      "annualP90": 47600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2390,
+      "hourlyMedian": 18.61,
+      "soc": "31-9096"
+    },
+    "31-9097": {
+      "annualMedian": 46260,
+      "annualP10": 38760,
+      "annualP90": 57160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2940,
+      "hourlyMedian": 22.24,
+      "soc": "31-9097"
+    },
+    "31-9099": {
+      "annualMedian": 47890,
+      "annualP10": 36660,
+      "annualP90": 72620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2240,
+      "hourlyMedian": 23.02,
+      "soc": "31-9099"
+    },
+    "33-1011": {
+      "annualMedian": 77190,
+      "annualP10": 67910,
+      "annualP90": 99490,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 510,
+      "hourlyMedian": 37.11,
+      "soc": "33-1011"
+    },
+    "33-1012": {
+      "annualMedian": 114520,
+      "annualP10": 86250,
+      "annualP90": 160840,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1540,
+      "hourlyMedian": 55.06,
+      "soc": "33-1012"
+    },
+    "33-1021": {
+      "annualMedian": 103010,
+      "annualP10": 72510,
+      "annualP90": 120340,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1580,
+      "hourlyMedian": 49.52,
+      "soc": "33-1021"
+    },
+    "33-1091": {
+      "annualMedian": 59700,
+      "annualP10": 39360,
+      "annualP90": 80380,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1150,
+      "hourlyMedian": 28.7,
+      "soc": "33-1091"
+    },
+    "33-1099": {
+      "annualMedian": 79910,
+      "annualP10": 39190,
+      "annualP90": 97950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 230,
+      "hourlyMedian": 38.42,
+      "soc": "33-1099"
+    },
+    "33-2011": {
+      "annualMedian": 61780,
+      "annualP10": 45510,
+      "annualP90": 91590,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4020,
+      "hourlyMedian": 29.7,
+      "soc": "33-2011"
+    },
+    "33-2021": {
+      "annualMedian": 75580,
+      "annualP10": 59740,
+      "annualP90": 94940,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 160,
+      "hourlyMedian": 36.34,
+      "soc": "33-2021"
+    },
+    "33-3011": {
+      "annualMedian": 47380,
+      "annualP10": 41770,
+      "annualP90": 60180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 150,
+      "hourlyMedian": 22.78,
+      "soc": "33-3011"
+    },
+    "33-3012": {
+      "annualMedian": 57280,
+      "annualP10": 47310,
+      "annualP90": 65030,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8920,
+      "hourlyMedian": 27.54,
+      "soc": "33-3012"
+    },
+    "33-3021": {
+      "annualMedian": 98860,
+      "annualP10": 64360,
+      "annualP90": 165340,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1140,
+      "hourlyMedian": 47.53,
+      "soc": "33-3021"
+    },
+    "33-3051": {
+      "annualMedian": 85050,
+      "annualP10": 64550,
+      "annualP90": 98560,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7860,
+      "hourlyMedian": 40.89,
+      "soc": "33-3051"
+    },
+    "33-9011": {
+      "annualMedian": 48830,
+      "annualP10": 40860,
+      "annualP90": 58720,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 90,
+      "hourlyMedian": 23.48,
+      "soc": "33-9011"
+    },
+    "33-9021": {
+      "annualMedian": 64400,
+      "annualP10": 39060,
+      "annualP90": 92160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 610,
+      "hourlyMedian": 30.96,
+      "soc": "33-9021"
+    },
+    "33-9032": {
+      "annualMedian": 38290,
+      "annualP10": 33190,
+      "annualP90": 55290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 23160,
+      "hourlyMedian": 18.41,
+      "soc": "33-9032"
+    },
+    "33-9091": {
+      "annualMedian": 37530,
+      "annualP10": 30580,
+      "annualP90": 45760,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1850,
+      "hourlyMedian": 18.04,
+      "soc": "33-9091"
+    },
+    "33-9092": {
+      "annualMedian": 34830,
+      "annualP10": 30970,
+      "annualP90": 39390,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2380,
+      "hourlyMedian": 16.75,
+      "soc": "33-9092"
+    },
+    "33-9093": {
+      "annualMedian": 63920,
+      "annualP10": 50130,
+      "annualP90": 72450,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1140,
+      "hourlyMedian": 30.73,
+      "soc": "33-9093"
+    },
+    "33-9094": {
+      "annualMedian": 35040,
+      "annualP10": 30580,
+      "annualP90": 42070,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1030,
+      "hourlyMedian": 16.85,
+      "soc": "33-9094"
+    },
+    "33-9099": {
+      "annualMedian": 51770,
+      "annualP10": 47320,
+      "annualP90": 76190,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 600,
+      "hourlyMedian": 24.89,
+      "soc": "33-9099"
+    },
+    "35-1011": {
+      "annualMedian": 61400,
+      "annualP10": 33970,
+      "annualP90": 97730,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2870,
+      "hourlyMedian": 29.52,
+      "soc": "35-1011"
+    },
+    "35-1012": {
+      "annualMedian": 42100,
+      "annualP10": 35910,
+      "annualP90": 66320,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 15410,
+      "hourlyMedian": 20.24,
+      "soc": "35-1012"
+    },
+    "35-2011": {
+      "annualMedian": 33190,
+      "annualP10": 30960,
+      "annualP90": 36690,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7900,
+      "hourlyMedian": 15.96,
+      "soc": "35-2011"
+    },
+    "35-2012": {
+      "annualMedian": 40120,
+      "annualP10": 35980,
+      "annualP90": 48570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4700,
+      "hourlyMedian": 19.29,
+      "soc": "35-2012"
+    },
+    "35-2014": {
+      "annualMedian": 39170,
+      "annualP10": 34940,
+      "annualP90": 46500,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 21780,
+      "hourlyMedian": 18.83,
+      "soc": "35-2014"
+    },
+    "35-2015": {
+      "annualMedian": 50180,
+      "annualP10": 32550,
+      "annualP90": 50180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 24.12,
+      "soc": "35-2015"
+    },
+    "35-2019": {
+      "annualMedian": 46960,
+      "annualP10": 37500,
+      "annualP90": 61110,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 400,
+      "hourlyMedian": 22.58,
+      "soc": "35-2019"
+    },
+    "35-2021": {
+      "annualMedian": 37580,
+      "annualP10": 31730,
+      "annualP90": 44640,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 11910,
+      "hourlyMedian": 18.07,
+      "soc": "35-2021"
+    },
+    "35-3011": {
+      "annualMedian": 46940,
+      "annualP10": 30970,
+      "annualP90": 91880,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 10580,
+      "hourlyMedian": 22.57,
+      "soc": "35-3011"
+    },
+    "35-3023": {
+      "annualMedian": 34540,
+      "annualP10": 30910,
+      "annualP90": 45170,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 54900,
+      "hourlyMedian": 16.61,
+      "soc": "35-3023"
+    },
+    "35-3031": {
+      "annualMedian": 47530,
+      "annualP10": 30850,
+      "annualP90": 79780,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 39920,
+      "hourlyMedian": 22.85,
+      "soc": "35-3031"
+    },
+    "35-3041": {
+      "annualMedian": 35690,
+      "annualP10": 33560,
+      "annualP90": 46370,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3230,
+      "hourlyMedian": 17.16,
+      "soc": "35-3041"
+    },
+    "35-9011": {
+      "annualMedian": 36960,
+      "annualP10": 31270,
+      "annualP90": 57530,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9850,
+      "hourlyMedian": 17.77,
+      "soc": "35-9011"
+    },
+    "35-9021": {
+      "annualMedian": 35780,
+      "annualP10": 33000,
+      "annualP90": 39550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7530,
+      "hourlyMedian": 17.2,
+      "soc": "35-9021"
+    },
+    "35-9031": {
+      "annualMedian": 35080,
+      "annualP10": 30800,
+      "annualP90": 47060,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8090,
+      "hourlyMedian": 16.87,
+      "soc": "35-9031"
+    },
+    "35-9099": {
+      "annualMedian": 38200,
+      "annualP10": 33030,
+      "annualP90": 52060,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 690,
+      "hourlyMedian": 18.36,
+      "soc": "35-9099"
+    },
+    "37-1011": {
+      "annualMedian": 48940,
+      "annualP10": 39190,
+      "annualP90": 74290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2140,
+      "hourlyMedian": 23.53,
+      "soc": "37-1011"
+    },
+    "37-1012": {
+      "annualMedian": 56700,
+      "annualP10": 46890,
+      "annualP90": 77890,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2010,
+      "hourlyMedian": 27.26,
+      "soc": "37-1012"
+    },
+    "37-2011": {
+      "annualMedian": 36280,
+      "annualP10": 31660,
+      "annualP90": 46070,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 26990,
+      "hourlyMedian": 17.44,
+      "soc": "37-2011"
+    },
+    "37-2012": {
+      "annualMedian": 36160,
+      "annualP10": 34360,
+      "annualP90": 44510,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 14250,
+      "hourlyMedian": 17.38,
+      "soc": "37-2012"
+    },
+    "37-2021": {
+      "annualMedian": 44690,
+      "annualP10": 37740,
+      "annualP90": 73460,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2180,
+      "hourlyMedian": 21.49,
+      "soc": "37-2021"
+    },
+    "37-3011": {
+      "annualMedian": 39140,
+      "annualP10": 36880,
+      "annualP90": 49420,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 16850,
+      "hourlyMedian": 18.82,
+      "soc": "37-3011"
+    },
+    "37-3012": {
+      "annualMedian": 48860,
+      "annualP10": 45630,
+      "annualP90": 59000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 170,
+      "hourlyMedian": 23.49,
+      "soc": "37-3012"
+    },
+    "37-3013": {
+      "annualMedian": 50680,
+      "annualP10": 37600,
+      "annualP90": 59360,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 24.36,
+      "soc": "37-3013"
+    },
+    "39-1013": {
+      "annualMedian": 72580,
+      "annualP10": 53650,
+      "annualP90": 88920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 410,
+      "hourlyMedian": 34.89,
+      "soc": "39-1013"
+    },
+    "39-1014": {
+      "annualMedian": 44990,
+      "annualP10": 36070,
+      "annualP90": 65540,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1760,
+      "hourlyMedian": 21.63,
+      "soc": "39-1014"
+    },
+    "39-1022": {
+      "annualMedian": 48380,
+      "annualP10": 38370,
+      "annualP90": 63340,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1260,
+      "hourlyMedian": 23.26,
+      "soc": "39-1022"
+    },
+    "39-2011": {
+      "annualMedian": 33340,
+      "annualP10": 31880,
+      "annualP90": 41330,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 16.03,
+      "soc": "39-2011"
+    },
+    "39-2021": {
+      "annualMedian": 39030,
+      "annualP10": 34650,
+      "annualP90": 77080,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4480,
+      "hourlyMedian": 18.77,
+      "soc": "39-2021"
+    },
+    "39-3012": {
+      "annualMedian": 37000,
+      "annualP10": 33850,
+      "annualP90": 38760,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 190,
+      "hourlyMedian": 17.79,
+      "soc": "39-3012"
+    },
+    "39-3019": {
+      "annualMedian": 45700,
+      "annualP10": 36130,
+      "annualP90": 97070,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 140,
+      "hourlyMedian": 21.97,
+      "soc": "39-3019"
+    },
+    "39-3031": {
+      "annualMedian": 32510,
+      "annualP10": 31390,
+      "annualP90": 37210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2790,
+      "hourlyMedian": 15.63,
+      "soc": "39-3031"
+    },
+    "39-3091": {
+      "annualMedian": 33660,
+      "annualP10": 30870,
+      "annualP90": 45760,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5200,
+      "hourlyMedian": 16.18,
+      "soc": "39-3091"
+    },
+    "39-3092": {
+      "annualMedian": 41440,
+      "annualP10": 36180,
+      "annualP90": 63300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": 19.92,
+      "soc": "39-3092"
+    },
+    "39-3093": {
+      "annualMedian": 38570,
+      "annualP10": 34150,
+      "annualP90": 50540,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 480,
+      "hourlyMedian": 18.54,
+      "soc": "39-3093"
+    },
+    "39-4031": {
+      "annualMedian": 43330,
+      "annualP10": 37200,
+      "annualP90": 55920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": 20.83,
+      "soc": "39-4031"
+    },
+    "39-5012": {
+      "annualMedian": 36810,
+      "annualP10": 31340,
+      "annualP90": 56890,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6440,
+      "hourlyMedian": 17.7,
+      "soc": "39-5012"
+    },
+    "39-5092": {
+      "annualMedian": 35520,
+      "annualP10": 33200,
+      "annualP90": 51810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1790,
+      "hourlyMedian": 17.08,
+      "soc": "39-5092"
+    },
+    "39-5094": {
+      "annualMedian": 51180,
+      "annualP10": 39260,
+      "annualP90": 104090,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1340,
+      "hourlyMedian": 24.6,
+      "soc": "39-5094"
+    },
+    "39-6011": {
+      "annualMedian": 37040,
+      "annualP10": 31720,
+      "annualP90": 45840,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": 17.81,
+      "soc": "39-6011"
+    },
+    "39-6012": {
+      "annualMedian": 38210,
+      "annualP10": 34300,
+      "annualP90": 47560,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": 18.37,
+      "soc": "39-6012"
+    },
+    "39-9011": {
+      "annualMedian": 35760,
+      "annualP10": 30900,
+      "annualP90": 46030,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4230,
+      "hourlyMedian": 17.19,
+      "soc": "39-9011"
+    },
+    "39-9031": {
+      "annualMedian": 48300,
+      "annualP10": 30860,
+      "annualP90": 83200,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5730,
+      "hourlyMedian": 23.22,
+      "soc": "39-9031"
+    },
+    "39-9032": {
+      "annualMedian": 36190,
+      "annualP10": 31280,
+      "annualP90": 53180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9200,
+      "hourlyMedian": 17.4,
+      "soc": "39-9032"
+    },
+    "39-9041": {
+      "annualMedian": 42340,
+      "annualP10": 31200,
+      "annualP90": 61350,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 850,
+      "hourlyMedian": 20.36,
+      "soc": "39-9041"
+    },
+    "39-9099": {
+      "annualMedian": 48900,
+      "annualP10": 33700,
+      "annualP90": 50070,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 23.51,
+      "soc": "39-9099"
+    },
+    "41-1011": {
+      "annualMedian": 48990,
+      "annualP10": 37490,
+      "annualP90": 70610,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 13980,
+      "hourlyMedian": 23.55,
+      "soc": "41-1011"
+    },
+    "41-1012": {
+      "annualMedian": 83840,
+      "annualP10": 46270,
+      "annualP90": 157660,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2010,
+      "hourlyMedian": 40.31,
+      "soc": "41-1012"
+    },
+    "41-2011": {
+      "annualMedian": 34920,
+      "annualP10": 31140,
+      "annualP90": 42430,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 48660,
+      "hourlyMedian": 16.79,
+      "soc": "41-2011"
+    },
+    "41-2021": {
+      "annualMedian": 44760,
+      "annualP10": 36790,
+      "annualP90": 74630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8100,
+      "hourlyMedian": 21.52,
+      "soc": "41-2021"
+    },
+    "41-2022": {
+      "annualMedian": 46860,
+      "annualP10": 34740,
+      "annualP90": 73380,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2720,
+      "hourlyMedian": 22.53,
+      "soc": "41-2022"
+    },
+    "41-2031": {
+      "annualMedian": 35960,
+      "annualP10": 31090,
+      "annualP90": 47660,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 69060,
+      "hourlyMedian": 17.29,
+      "soc": "41-2031"
+    },
+    "41-3011": {
+      "annualMedian": 63470,
+      "annualP10": 44190,
+      "annualP90": 103370,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 790,
+      "hourlyMedian": 30.51,
+      "soc": "41-3011"
+    },
+    "41-3021": {
+      "annualMedian": 61570,
+      "annualP10": 42880,
+      "annualP90": 105090,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9020,
+      "hourlyMedian": 29.6,
+      "soc": "41-3021"
+    },
+    "41-3031": {
+      "annualMedian": 77780,
+      "annualP10": 48940,
+      "annualP90": 151200,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 12220,
+      "hourlyMedian": 37.39,
+      "soc": "41-3031"
+    },
+    "41-3041": {
+      "annualMedian": 51800,
+      "annualP10": 34610,
+      "annualP90": 80770,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 890,
+      "hourlyMedian": 24.9,
+      "soc": "41-3041"
+    },
+    "41-3091": {
+      "annualMedian": 74910,
+      "annualP10": 43950,
+      "annualP90": 131440,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 19810,
+      "hourlyMedian": 36.01,
+      "soc": "41-3091"
+    },
+    "41-4011": {
+      "annualMedian": 101030,
+      "annualP10": 48950,
+      "annualP90": 188520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7150,
+      "hourlyMedian": 48.57,
+      "soc": "41-4011"
+    },
+    "41-4012": {
+      "annualMedian": 74790,
+      "annualP10": 39760,
+      "annualP90": 145860,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 14870,
+      "hourlyMedian": 35.96,
+      "soc": "41-4012"
+    },
+    "41-9011": {
+      "annualMedian": 39780,
+      "annualP10": 32180,
+      "annualP90": 60490,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2580,
+      "hourlyMedian": 19.13,
+      "soc": "41-9011"
+    },
+    "41-9021": {
+      "annualMedian": 74260,
+      "annualP10": 52040,
+      "annualP90": 97560,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 35.7,
+      "soc": "41-9021"
+    },
+    "41-9022": {
+      "annualMedian": 60890,
+      "annualP10": 35660,
+      "annualP90": 116240,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3930,
+      "hourlyMedian": 29.28,
+      "soc": "41-9022"
+    },
+    "41-9031": {
+      "annualMedian": 135050,
+      "annualP10": 73310,
+      "annualP90": 232080,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 850,
+      "hourlyMedian": 64.93,
+      "soc": "41-9031"
+    },
+    "41-9041": {
+      "annualMedian": 38540,
+      "annualP10": 31140,
+      "annualP90": 78650,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 970,
+      "hourlyMedian": 18.53,
+      "soc": "41-9041"
+    },
+    "41-9099": {
+      "annualMedian": 47440,
+      "annualP10": 38520,
+      "annualP90": 85540,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 530,
+      "hourlyMedian": 22.81,
+      "soc": "41-9099"
+    },
+    "43-1011": {
+      "annualMedian": 65470,
+      "annualP10": 47150,
+      "annualP90": 97260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 23940,
+      "hourlyMedian": 31.48,
+      "soc": "43-1011"
+    },
+    "43-2011": {
+      "annualMedian": 40540,
+      "annualP10": 35070,
+      "annualP90": 50200,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 230,
+      "hourlyMedian": 19.49,
+      "soc": "43-2011"
+    },
+    "43-3011": {
+      "annualMedian": 47740,
+      "annualP10": 38360,
+      "annualP90": 62010,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5140,
+      "hourlyMedian": 22.95,
+      "soc": "43-3011"
+    },
+    "43-3021": {
+      "annualMedian": 48380,
+      "annualP10": 38360,
+      "annualP90": 63190,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6250,
+      "hourlyMedian": 23.26,
+      "soc": "43-3021"
+    },
+    "43-3031": {
+      "annualMedian": 51980,
+      "annualP10": 39250,
+      "annualP90": 71240,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 16280,
+      "hourlyMedian": 24.99,
+      "soc": "43-3031"
+    },
+    "43-3041": {
+      "annualMedian": 44540,
+      "annualP10": 36120,
+      "annualP90": 55540,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 540,
+      "hourlyMedian": 21.42,
+      "soc": "43-3041"
+    },
+    "43-3051": {
+      "annualMedian": 50350,
+      "annualP10": 33870,
+      "annualP90": 71840,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2650,
+      "hourlyMedian": 24.21,
+      "soc": "43-3051"
+    },
+    "43-3061": {
+      "annualMedian": 47970,
+      "annualP10": 37440,
+      "annualP90": 64570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 910,
+      "hourlyMedian": 23.06,
+      "soc": "43-3061"
+    },
+    "43-3071": {
+      "annualMedian": 46040,
+      "annualP10": 39290,
+      "annualP90": 58480,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2500,
+      "hourlyMedian": 22.14,
+      "soc": "43-3071"
+    },
+    "43-3099": {
+      "annualMedian": 63420,
+      "annualP10": 48450,
+      "annualP90": 82550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 330,
+      "hourlyMedian": 30.49,
+      "soc": "43-3099"
+    },
+    "43-4011": {
+      "annualMedian": 61990,
+      "annualP10": 53210,
+      "annualP90": 78250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 840,
+      "hourlyMedian": 29.8,
+      "soc": "43-4011"
+    },
+    "43-4031": {
+      "annualMedian": 48700,
+      "annualP10": 41870,
+      "annualP90": 61580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2280,
+      "hourlyMedian": 23.41,
+      "soc": "43-4031"
+    },
+    "43-4041": {
+      "annualMedian": 42510,
+      "annualP10": 42500,
+      "annualP90": 80980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 110,
+      "hourlyMedian": 20.44,
+      "soc": "43-4041"
+    },
+    "43-4051": {
+      "annualMedian": 46410,
+      "annualP10": 35350,
+      "annualP90": 64150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 68930,
+      "hourlyMedian": 22.31,
+      "soc": "43-4051"
+    },
+    "43-4061": {
+      "annualMedian": 41690,
+      "annualP10": 38720,
+      "annualP90": 59330,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2130,
+      "hourlyMedian": 20.05,
+      "soc": "43-4061"
+    },
+    "43-4071": {
+      "annualMedian": 44460,
+      "annualP10": 34820,
+      "annualP90": 59120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1530,
+      "hourlyMedian": 21.38,
+      "soc": "43-4071"
+    },
+    "43-4081": {
+      "annualMedian": 36860,
+      "annualP10": 31750,
+      "annualP90": 45360,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2960,
+      "hourlyMedian": 17.72,
+      "soc": "43-4081"
+    },
+    "43-4111": {
+      "annualMedian": 46000,
+      "annualP10": 37330,
+      "annualP90": 72010,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1860,
+      "hourlyMedian": 22.12,
+      "soc": "43-4111"
+    },
+    "43-4121": {
+      "annualMedian": 39460,
+      "annualP10": 33270,
+      "annualP90": 48480,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 860,
+      "hourlyMedian": 18.97,
+      "soc": "43-4121"
+    },
+    "43-4131": {
+      "annualMedian": 50970,
+      "annualP10": 38120,
+      "annualP90": 75580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3930,
+      "hourlyMedian": 24.51,
+      "soc": "43-4131"
+    },
+    "43-4151": {
+      "annualMedian": 48920,
+      "annualP10": 40430,
+      "annualP90": 61110,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 620,
+      "hourlyMedian": 23.52,
+      "soc": "43-4151"
+    },
+    "43-4161": {
+      "annualMedian": 50140,
+      "annualP10": 40200,
+      "annualP90": 61570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1080,
+      "hourlyMedian": 24.1,
+      "soc": "43-4161"
+    },
+    "43-4171": {
+      "annualMedian": 39340,
+      "annualP10": 33670,
+      "annualP90": 48750,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 16850,
+      "hourlyMedian": 18.92,
+      "soc": "43-4171"
+    },
+    "43-4181": {
+      "annualMedian": 46800,
+      "annualP10": 36570,
+      "annualP90": 77980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2490,
+      "hourlyMedian": 22.5,
+      "soc": "43-4181"
+    },
+    "43-4199": {
+      "annualMedian": 46530,
+      "annualP10": 35210,
+      "annualP90": 66460,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2400,
+      "hourlyMedian": 22.37,
+      "soc": "43-4199"
+    },
+    "43-5011": {
+      "annualMedian": 50240,
+      "annualP10": 36980,
+      "annualP90": 70650,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1470,
+      "hourlyMedian": 24.15,
+      "soc": "43-5011"
+    },
+    "43-5021": {
+      "annualMedian": 39100,
+      "annualP10": 31220,
+      "annualP90": 46970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 610,
+      "hourlyMedian": 18.8,
+      "soc": "43-5021"
+    },
+    "43-5031": {
+      "annualMedian": 59710,
+      "annualP10": 49350,
+      "annualP90": 83610,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1000,
+      "hourlyMedian": 28.71,
+      "soc": "43-5031"
+    },
+    "43-5032": {
+      "annualMedian": 48280,
+      "annualP10": 38020,
+      "annualP90": 69220,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4200,
+      "hourlyMedian": 23.21,
+      "soc": "43-5032"
+    },
+    "43-5041": {
+      "annualMedian": 49410,
+      "annualP10": 40270,
+      "annualP90": 66030,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 140,
+      "hourlyMedian": 23.76,
+      "soc": "43-5041"
+    },
+    "43-5051": {
+      "annualMedian": 62610,
+      "annualP10": 42600,
+      "annualP90": 75030,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 630,
+      "hourlyMedian": 30.1,
+      "soc": "43-5051"
+    },
+    "43-5052": {
+      "annualMedian": 64250,
+      "annualP10": 43120,
+      "annualP90": 81040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3630,
+      "hourlyMedian": 30.89,
+      "soc": "43-5052"
+    },
+    "43-5053": {
+      "annualMedian": 54330,
+      "annualP10": 42600,
+      "annualP90": 75280,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1940,
+      "hourlyMedian": 26.12,
+      "soc": "43-5053"
+    },
+    "43-5061": {
+      "annualMedian": 59110,
+      "annualP10": 41550,
+      "annualP90": 82340,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7370,
+      "hourlyMedian": 28.42,
+      "soc": "43-5061"
+    },
+    "43-5071": {
+      "annualMedian": 45840,
+      "annualP10": 36670,
+      "annualP90": 62170,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 15790,
+      "hourlyMedian": 22.04,
+      "soc": "43-5071"
+    },
+    "43-5111": {
+      "annualMedian": 46520,
+      "annualP10": 38050,
+      "annualP90": 57720,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 450,
+      "hourlyMedian": 22.36,
+      "soc": "43-5111"
+    },
+    "43-6011": {
+      "annualMedian": 74010,
+      "annualP10": 53930,
+      "annualP90": 104790,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5000,
+      "hourlyMedian": 35.58,
+      "soc": "43-6011"
+    },
+    "43-6012": {
+      "annualMedian": 58990,
+      "annualP10": 46820,
+      "annualP90": 78600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1920,
+      "hourlyMedian": 28.36,
+      "soc": "43-6012"
+    },
+    "43-6013": {
+      "annualMedian": 46600,
+      "annualP10": 33860,
+      "annualP90": 60320,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 13570,
+      "hourlyMedian": 22.4,
+      "soc": "43-6013"
+    },
+    "43-6014": {
+      "annualMedian": 48800,
+      "annualP10": 37690,
+      "annualP90": 73840,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 22010,
+      "hourlyMedian": 23.46,
+      "soc": "43-6014"
+    },
+    "43-9021": {
+      "annualMedian": 44160,
+      "annualP10": 34470,
+      "annualP90": 54900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2650,
+      "hourlyMedian": 21.23,
+      "soc": "43-9021"
+    },
+    "43-9041": {
+      "annualMedian": 50620,
+      "annualP10": 40760,
+      "annualP90": 59370,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6770,
+      "hourlyMedian": 24.34,
+      "soc": "43-9041"
+    },
+    "43-9051": {
+      "annualMedian": 38260,
+      "annualP10": 33280,
+      "annualP90": 47230,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 600,
+      "hourlyMedian": 18.4,
+      "soc": "43-9051"
+    },
+    "43-9061": {
+      "annualMedian": 47680,
+      "annualP10": 35810,
+      "annualP90": 67970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 34540,
+      "hourlyMedian": 22.92,
+      "soc": "43-9061"
+    },
+    "43-9071": {
+      "annualMedian": 32060,
+      "annualP10": 31970,
+      "annualP90": 46240,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 15.41,
+      "soc": "43-9071"
+    },
+    "43-9111": {
+      "annualMedian": 57830,
+      "annualP10": 46200,
+      "annualP90": 69580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 27.8,
+      "soc": "43-9111"
+    },
+    "43-9199": {
+      "annualMedian": 44400,
+      "annualP10": 31190,
+      "annualP90": 65450,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3090,
+      "hourlyMedian": 21.35,
+      "soc": "43-9199"
+    },
+    "45-1011": {
+      "annualMedian": 59740,
+      "annualP10": 44510,
+      "annualP90": 92760,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 200,
+      "hourlyMedian": 28.72,
+      "soc": "45-1011"
+    },
+    "45-2011": {
+      "annualMedian": 52820,
+      "annualP10": 44100,
+      "annualP90": 60320,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 25.39,
+      "soc": "45-2011"
+    },
+    "45-2091": {
+      "annualMedian": 36600,
+      "annualP10": 33940,
+      "annualP90": 51780,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 140,
+      "hourlyMedian": 17.6,
+      "soc": "45-2091"
+    },
+    "45-2092": {
+      "annualMedian": 35250,
+      "annualP10": 34000,
+      "annualP90": 41970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1980,
+      "hourlyMedian": 16.95,
+      "soc": "45-2092"
+    },
+    "45-2093": {
+      "annualMedian": 38610,
+      "annualP10": 34050,
+      "annualP90": 48670,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 350,
+      "hourlyMedian": 18.56,
+      "soc": "45-2093"
+    },
+    "45-2099": {
+      "annualMedian": 46790,
+      "annualP10": 37720,
+      "annualP90": 85020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 22.49,
+      "soc": "45-2099"
+    },
+    "47-1011": {
+      "annualMedian": 79840,
+      "annualP10": 59350,
+      "annualP90": 103620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 16770,
+      "hourlyMedian": 38.38,
+      "soc": "47-1011"
+    },
+    "47-2021": {
+      "annualMedian": 59390,
+      "annualP10": 49520,
+      "annualP90": 75470,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 930,
+      "hourlyMedian": 28.55,
+      "soc": "47-2021"
+    },
+    "47-2031": {
+      "annualMedian": 60320,
+      "annualP10": 39820,
+      "annualP90": 77790,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 12710,
+      "hourlyMedian": 29,
+      "soc": "47-2031"
+    },
+    "47-2041": {
+      "annualMedian": 47920,
+      "annualP10": 46100,
+      "annualP90": 53880,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 170,
+      "hourlyMedian": 23.04,
+      "soc": "47-2041"
+    },
+    "47-2042": {
+      "annualMedian": 44740,
+      "annualP10": 31200,
+      "annualP90": 65350,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 21.51,
+      "soc": "47-2042"
+    },
+    "47-2044": {
+      "annualMedian": 53500,
+      "annualP10": 37290,
+      "annualP90": 69290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 780,
+      "hourlyMedian": 25.72,
+      "soc": "47-2044"
+    },
+    "47-2051": {
+      "annualMedian": 59260,
+      "annualP10": 48880,
+      "annualP90": 78440,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6120,
+      "hourlyMedian": 28.49,
+      "soc": "47-2051"
+    },
+    "47-2061": {
+      "annualMedian": 46910,
+      "annualP10": 36770,
+      "annualP90": 62250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 29230,
+      "hourlyMedian": 22.56,
+      "soc": "47-2061"
+    },
+    "47-2071": {
+      "annualMedian": 55690,
+      "annualP10": 49140,
+      "annualP90": 75740,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 26.77,
+      "soc": "47-2071"
+    },
+    "47-2073": {
+      "annualMedian": 62540,
+      "annualP10": 48660,
+      "annualP90": 81220,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7980,
+      "hourlyMedian": 30.07,
+      "soc": "47-2073"
+    },
+    "47-2081": {
+      "annualMedian": 52270,
+      "annualP10": 37470,
+      "annualP90": 69880,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1930,
+      "hourlyMedian": 25.13,
+      "soc": "47-2081"
+    },
+    "47-2082": {
+      "annualMedian": 60430,
+      "annualP10": 41460,
+      "annualP90": 76620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 610,
+      "hourlyMedian": 29.06,
+      "soc": "47-2082"
+    },
+    "47-2111": {
+      "annualMedian": 61210,
+      "annualP10": 46920,
+      "annualP90": 86800,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 17240,
+      "hourlyMedian": 29.43,
+      "soc": "47-2111"
+    },
+    "47-2121": {
+      "annualMedian": 57170,
+      "annualP10": 46050,
+      "annualP90": 70700,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2000,
+      "hourlyMedian": 27.49,
+      "soc": "47-2121"
+    },
+    "47-2131": {
+      "annualMedian": 42320,
+      "annualP10": 37090,
+      "annualP90": 61500,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 550,
+      "hourlyMedian": 20.35,
+      "soc": "47-2131"
+    },
+    "47-2132": {
+      "annualMedian": 80410,
+      "annualP10": 46570,
+      "annualP90": 91740,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 38.66,
+      "soc": "47-2132"
+    },
+    "47-2141": {
+      "annualMedian": 48860,
+      "annualP10": 40780,
+      "annualP90": 64610,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3920,
+      "hourlyMedian": 23.49,
+      "soc": "47-2141"
+    },
+    "47-2151": {
+      "annualMedian": 63010,
+      "annualP10": 48800,
+      "annualP90": 73820,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 400,
+      "hourlyMedian": 30.29,
+      "soc": "47-2151"
+    },
+    "47-2152": {
+      "annualMedian": 63750,
+      "annualP10": 46530,
+      "annualP90": 100710,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9270,
+      "hourlyMedian": 30.65,
+      "soc": "47-2152"
+    },
+    "47-2161": {
+      "annualMedian": 49700,
+      "annualP10": 38010,
+      "annualP90": 79800,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1310,
+      "hourlyMedian": 23.9,
+      "soc": "47-2161"
+    },
+    "47-2171": {
+      "annualMedian": 58240,
+      "annualP10": 43970,
+      "annualP90": 66140,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": 28,
+      "soc": "47-2171"
+    },
+    "47-2181": {
+      "annualMedian": 47760,
+      "annualP10": 33550,
+      "annualP90": 62620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2700,
+      "hourlyMedian": 22.96,
+      "soc": "47-2181"
+    },
+    "47-2211": {
+      "annualMedian": 51230,
+      "annualP10": 36440,
+      "annualP90": 81600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2550,
+      "hourlyMedian": 24.63,
+      "soc": "47-2211"
+    },
+    "47-2221": {
+      "annualMedian": 59540,
+      "annualP10": 47980,
+      "annualP90": 92270,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3470,
+      "hourlyMedian": 28.63,
+      "soc": "47-2221"
+    },
+    "47-2231": {
+      "annualMedian": 51200,
+      "annualP10": 38770,
+      "annualP90": 78790,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1000,
+      "hourlyMedian": 24.61,
+      "soc": "47-2231"
+    },
+    "47-3011": {
+      "annualMedian": 34230,
+      "annualP10": 31490,
+      "annualP90": 47390,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 16.46,
+      "soc": "47-3011"
+    },
+    "47-3012": {
+      "annualMedian": 43860,
+      "annualP10": 38600,
+      "annualP90": 44970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 21.09,
+      "soc": "47-3012"
+    },
+    "47-3013": {
+      "annualMedian": 46580,
+      "annualP10": 39660,
+      "annualP90": 56160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 930,
+      "hourlyMedian": 22.39,
+      "soc": "47-3013"
+    },
+    "47-3014": {
+      "annualMedian": 39200,
+      "annualP10": 32000,
+      "annualP90": 48140,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 90,
+      "hourlyMedian": 18.85,
+      "soc": "47-3014"
+    },
+    "47-3015": {
+      "annualMedian": 49660,
+      "annualP10": 37760,
+      "annualP90": 60960,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 320,
+      "hourlyMedian": 23.88,
+      "soc": "47-3015"
+    },
+    "47-3019": {
+      "annualMedian": 47840,
+      "annualP10": 37370,
+      "annualP90": 59710,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 750,
+      "hourlyMedian": 23,
+      "soc": "47-3019"
+    },
+    "47-4011": {
+      "annualMedian": 76650,
+      "annualP10": 56620,
+      "annualP90": 115920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2460,
+      "hourlyMedian": 36.85,
+      "soc": "47-4011"
+    },
+    "47-4031": {
+      "annualMedian": 46390,
+      "annualP10": 40040,
+      "annualP90": 57600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 22.3,
+      "soc": "47-4031"
+    },
+    "47-4041": {
+      "annualMedian": 50530,
+      "annualP10": 37730,
+      "annualP90": 60680,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 680,
+      "hourlyMedian": 24.29,
+      "soc": "47-4041"
+    },
+    "47-4051": {
+      "annualMedian": 51110,
+      "annualP10": 42570,
+      "annualP90": 64300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 610,
+      "hourlyMedian": 24.57,
+      "soc": "47-4051"
+    },
+    "47-4071": {
+      "annualMedian": 50350,
+      "annualP10": 36580,
+      "annualP90": 73820,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 330,
+      "hourlyMedian": 24.21,
+      "soc": "47-4071"
+    },
+    "47-5022": {
+      "annualMedian": 64580,
+      "annualP10": 53420,
+      "annualP90": 113540,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": 31.05,
+      "soc": "47-5022"
+    },
+    "47-5023": {
+      "annualMedian": 58750,
+      "annualP10": 49920,
+      "annualP90": 76160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 650,
+      "hourlyMedian": 28.25,
+      "soc": "47-5023"
+    },
+    "47-5041": {
+      "annualMedian": 63250,
+      "annualP10": 52770,
+      "annualP90": 88270,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 710,
+      "hourlyMedian": 30.41,
+      "soc": "47-5041"
+    },
+    "49-1011": {
+      "annualMedian": 77000,
+      "annualP10": 45640,
+      "annualP90": 123710,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 9150,
+      "hourlyMedian": 37.02,
+      "soc": "49-1011"
+    },
+    "49-2011": {
+      "annualMedian": 52030,
+      "annualP10": 39000,
+      "annualP90": 61600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 720,
+      "hourlyMedian": 25.02,
+      "soc": "49-2011"
+    },
+    "49-2021": {
+      "annualMedian": 105240,
+      "annualP10": 58800,
+      "annualP90": 113800,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 50.59,
+      "soc": "49-2021"
+    },
+    "49-2022": {
+      "annualMedian": 62200,
+      "annualP10": 39010,
+      "annualP90": 95210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2390,
+      "hourlyMedian": 29.9,
+      "soc": "49-2022"
+    },
+    "49-2091": {
+      "annualMedian": 78690,
+      "annualP10": 57320,
+      "annualP90": 102070,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": 37.83,
+      "soc": "49-2091"
+    },
+    "49-2092": {
+      "annualMedian": 52540,
+      "annualP10": 42240,
+      "annualP90": 71290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 25.26,
+      "soc": "49-2092"
+    },
+    "49-2094": {
+      "annualMedian": 77110,
+      "annualP10": 63640,
+      "annualP90": 89920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 350,
+      "hourlyMedian": 37.07,
+      "soc": "49-2094"
+    },
+    "49-2097": {
+      "annualMedian": 47460,
+      "annualP10": 40780,
+      "annualP90": 63950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": 22.82,
+      "soc": "49-2097"
+    },
+    "49-2098": {
+      "annualMedian": 60750,
+      "annualP10": 38630,
+      "annualP90": 82050,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1730,
+      "hourlyMedian": 29.21,
+      "soc": "49-2098"
+    },
+    "49-3011": {
+      "annualMedian": 76610,
+      "annualP10": 48810,
+      "annualP90": 122120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3810,
+      "hourlyMedian": 36.83,
+      "soc": "49-3011"
+    },
+    "49-3021": {
+      "annualMedian": 56680,
+      "annualP10": 37820,
+      "annualP90": 84410,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2010,
+      "hourlyMedian": 27.25,
+      "soc": "49-3021"
+    },
+    "49-3022": {
+      "annualMedian": 46060,
+      "annualP10": 41050,
+      "annualP90": 68410,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 450,
+      "hourlyMedian": 22.15,
+      "soc": "49-3022"
+    },
+    "49-3023": {
+      "annualMedian": 50090,
+      "annualP10": 36120,
+      "annualP90": 82570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 11340,
+      "hourlyMedian": 24.08,
+      "soc": "49-3023"
+    },
+    "49-3031": {
+      "annualMedian": 63330,
+      "annualP10": 48150,
+      "annualP90": 86000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3550,
+      "hourlyMedian": 30.45,
+      "soc": "49-3031"
+    },
+    "49-3041": {
+      "annualMedian": 63760,
+      "annualP10": 36240,
+      "annualP90": 104260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 340,
+      "hourlyMedian": 30.65,
+      "soc": "49-3041"
+    },
+    "49-3042": {
+      "annualMedian": 63440,
+      "annualP10": 48020,
+      "annualP90": 84390,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4460,
+      "hourlyMedian": 30.5,
+      "soc": "49-3042"
+    },
+    "49-3051": {
+      "annualMedian": 59800,
+      "annualP10": 46320,
+      "annualP90": 74120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 240,
+      "hourlyMedian": 28.75,
+      "soc": "49-3051"
+    },
+    "49-3053": {
+      "annualMedian": 47880,
+      "annualP10": 32920,
+      "annualP90": 62120,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 810,
+      "hourlyMedian": 23.02,
+      "soc": "49-3053"
+    },
+    "49-3092": {
+      "annualMedian": 49440,
+      "annualP10": 46280,
+      "annualP90": 99260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 580,
+      "hourlyMedian": 23.77,
+      "soc": "49-3092"
+    },
+    "49-3093": {
+      "annualMedian": 38600,
+      "annualP10": 36220,
+      "annualP90": 59580,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2040,
+      "hourlyMedian": 18.56,
+      "soc": "49-3093"
+    },
+    "49-9011": {
+      "annualMedian": 54330,
+      "annualP10": 48730,
+      "annualP90": 80140,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1260,
+      "hourlyMedian": 26.12,
+      "soc": "49-9011"
+    },
+    "49-9012": {
+      "annualMedian": 51970,
+      "annualP10": 49940,
+      "annualP90": 120520,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 620,
+      "hourlyMedian": 24.99,
+      "soc": "49-9012"
+    },
+    "49-9021": {
+      "annualMedian": 61170,
+      "annualP10": 38210,
+      "annualP90": 83180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8070,
+      "hourlyMedian": 29.41,
+      "soc": "49-9021"
+    },
+    "49-9031": {
+      "annualMedian": 47990,
+      "annualP10": 36800,
+      "annualP90": 70720,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 740,
+      "hourlyMedian": 23.07,
+      "soc": "49-9031"
+    },
+    "49-9041": {
+      "annualMedian": 75850,
+      "annualP10": 51710,
+      "annualP90": 100810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3720,
+      "hourlyMedian": 36.46,
+      "soc": "49-9041"
+    },
+    "49-9043": {
+      "annualMedian": 56130,
+      "annualP10": 43730,
+      "annualP90": 82780,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 330,
+      "hourlyMedian": 26.98,
+      "soc": "49-9043"
+    },
+    "49-9044": {
+      "annualMedian": 57380,
+      "annualP10": 39770,
+      "annualP90": 108050,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 380,
+      "hourlyMedian": 27.59,
+      "soc": "49-9044"
+    },
+    "49-9051": {
+      "annualMedian": 75420,
+      "annualP10": 47900,
+      "annualP90": 132280,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2810,
+      "hourlyMedian": 36.26,
+      "soc": "49-9051"
+    },
+    "49-9052": {
+      "annualMedian": 61420,
+      "annualP10": 44360,
+      "annualP90": 82210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 620,
+      "hourlyMedian": 29.53,
+      "soc": "49-9052"
+    },
+    "49-9061": {
+      "annualMedian": 59080,
+      "annualP10": 52270,
+      "annualP90": 75160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 28.41,
+      "soc": "49-9061"
+    },
+    "49-9062": {
+      "annualMedian": 63060,
+      "annualP10": 36090,
+      "annualP90": 95260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2140,
+      "hourlyMedian": 30.32,
+      "soc": "49-9062"
+    },
+    "49-9071": {
+      "annualMedian": 48930,
+      "annualP10": 36610,
+      "annualP90": 78300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 26350,
+      "hourlyMedian": 23.52,
+      "soc": "49-9071"
+    },
+    "49-9091": {
+      "annualMedian": 60160,
+      "annualP10": 35950,
+      "annualP90": 62830,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 700,
+      "hourlyMedian": 28.92,
+      "soc": "49-9091"
+    },
+    "49-9094": {
+      "annualMedian": 44460,
+      "annualP10": 38050,
+      "annualP90": 68810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 180,
+      "hourlyMedian": 21.37,
+      "soc": "49-9094"
+    },
+    "49-9096": {
+      "annualMedian": 56470,
+      "annualP10": 51000,
+      "annualP90": 77040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 210,
+      "hourlyMedian": 27.15,
+      "soc": "49-9096"
+    },
+    "49-9098": {
+      "annualMedian": 46060,
+      "annualP10": 36700,
+      "annualP90": 66560,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1030,
+      "hourlyMedian": 22.15,
+      "soc": "49-9098"
+    },
+    "49-9099": {
+      "annualMedian": 51060,
+      "annualP10": 39260,
+      "annualP90": 63700,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3140,
+      "hourlyMedian": 24.55,
+      "soc": "49-9099"
+    },
+    "51-1011": {
+      "annualMedian": 75810,
+      "annualP10": 49830,
+      "annualP90": 103640,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6450,
+      "hourlyMedian": 36.45,
+      "soc": "51-1011"
+    },
+    "51-2011": {
+      "annualMedian": 79850,
+      "annualP10": 60400,
+      "annualP90": 85970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 600,
+      "hourlyMedian": 38.39,
+      "soc": "51-2011"
+    },
+    "51-2041": {
+      "annualMedian": 48150,
+      "annualP10": 39430,
+      "annualP90": 60970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 870,
+      "hourlyMedian": 23.15,
+      "soc": "51-2041"
+    },
+    "51-3011": {
+      "annualMedian": 37800,
+      "annualP10": 35050,
+      "annualP90": 48040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2970,
+      "hourlyMedian": 18.17,
+      "soc": "51-3011"
+    },
+    "51-3021": {
+      "annualMedian": 46040,
+      "annualP10": 35970,
+      "annualP90": 57300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1410,
+      "hourlyMedian": 22.14,
+      "soc": "51-3021"
+    },
+    "51-3022": {
+      "annualMedian": 48550,
+      "annualP10": 39620,
+      "annualP90": 48550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 550,
+      "hourlyMedian": 23.34,
+      "soc": "51-3022"
+    },
+    "51-3091": {
+      "annualMedian": 43830,
+      "annualP10": 33080,
+      "annualP90": 55110,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": 21.07,
+      "soc": "51-3091"
+    },
+    "51-3092": {
+      "annualMedian": 40550,
+      "annualP10": 34870,
+      "annualP90": 58590,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1910,
+      "hourlyMedian": 19.49,
+      "soc": "51-3092"
+    },
+    "51-3093": {
+      "annualMedian": 49220,
+      "annualP10": 34660,
+      "annualP90": 51970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 460,
+      "hourlyMedian": 23.66,
+      "soc": "51-3093"
+    },
+    "51-3099": {
+      "annualMedian": 45330,
+      "annualP10": 36750,
+      "annualP90": 50690,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 500,
+      "hourlyMedian": 21.79,
+      "soc": "51-3099"
+    },
+    "51-4021": {
+      "annualMedian": 45960,
+      "annualP10": 35550,
+      "annualP90": 52100,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 670,
+      "hourlyMedian": 22.1,
+      "soc": "51-4021"
+    },
+    "51-4022": {
+      "annualMedian": 48730,
+      "annualP10": 47510,
+      "annualP90": 62350,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 30,
+      "hourlyMedian": 23.43,
+      "soc": "51-4022"
+    },
+    "51-4023": {
+      "annualMedian": 48180,
+      "annualP10": 38170,
+      "annualP90": 65860,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 23.16,
+      "soc": "51-4023"
+    },
+    "51-4031": {
+      "annualMedian": 46640,
+      "annualP10": 37830,
+      "annualP90": 62550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 910,
+      "hourlyMedian": 22.42,
+      "soc": "51-4031"
+    },
+    "51-4032": {
+      "annualMedian": 48140,
+      "annualP10": 38890,
+      "annualP90": 48160,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 60,
+      "hourlyMedian": 23.15,
+      "soc": "51-4032"
+    },
+    "51-4033": {
+      "annualMedian": 44960,
+      "annualP10": 37590,
+      "annualP90": 57050,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 520,
+      "hourlyMedian": 21.61,
+      "soc": "51-4033"
+    },
+    "51-4034": {
+      "annualMedian": 55850,
+      "annualP10": 54300,
+      "annualP90": 80300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 90,
+      "hourlyMedian": 26.85,
+      "soc": "51-4034"
+    },
+    "51-4041": {
+      "annualMedian": 61270,
+      "annualP10": 40800,
+      "annualP90": 76090,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3230,
+      "hourlyMedian": 29.46,
+      "soc": "51-4041"
+    },
+    "51-4051": {
+      "annualMedian": 49660,
+      "annualP10": 38370,
+      "annualP90": 61920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 23.88,
+      "soc": "51-4051"
+    },
+    "51-4072": {
+      "annualMedian": 47050,
+      "annualP10": 33330,
+      "annualP90": 61620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 990,
+      "hourlyMedian": 22.62,
+      "soc": "51-4072"
+    },
+    "51-4081": {
+      "annualMedian": 43900,
+      "annualP10": 33990,
+      "annualP90": 60020,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1470,
+      "hourlyMedian": 21.11,
+      "soc": "51-4081"
+    },
+    "51-4111": {
+      "annualMedian": 61370,
+      "annualP10": 39170,
+      "annualP90": 87200,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 250,
+      "hourlyMedian": 29.51,
+      "soc": "51-4111"
+    },
+    "51-4121": {
+      "annualMedian": 56540,
+      "annualP10": 43760,
+      "annualP90": 81290,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5440,
+      "hourlyMedian": 27.18,
+      "soc": "51-4121"
+    },
+    "51-4122": {
+      "annualMedian": 75200,
+      "annualP10": 47420,
+      "annualP90": 96720,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 230,
+      "hourlyMedian": 36.15,
+      "soc": "51-4122"
+    },
+    "51-4191": {
+      "annualMedian": 51430,
+      "annualP10": 39740,
+      "annualP90": 73920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 120,
+      "hourlyMedian": 24.73,
+      "soc": "51-4191"
+    },
+    "51-4193": {
+      "annualMedian": 47200,
+      "annualP10": 38120,
+      "annualP90": 51060,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 550,
+      "hourlyMedian": 22.69,
+      "soc": "51-4193"
+    },
+    "51-4199": {
+      "annualMedian": 47540,
+      "annualP10": 41580,
+      "annualP90": 66510,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 22.86,
+      "soc": "51-4199"
+    },
+    "51-5111": {
+      "annualMedian": 38830,
+      "annualP10": 35460,
+      "annualP90": 66150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 180,
+      "hourlyMedian": 18.67,
+      "soc": "51-5111"
+    },
+    "51-5112": {
+      "annualMedian": 42950,
+      "annualP10": 36140,
+      "annualP90": 61470,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1900,
+      "hourlyMedian": 20.65,
+      "soc": "51-5112"
+    },
+    "51-5113": {
+      "annualMedian": 48150,
+      "annualP10": 35470,
+      "annualP90": 55310,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 160,
+      "hourlyMedian": 23.15,
+      "soc": "51-5113"
+    },
+    "51-6011": {
+      "annualMedian": 36700,
+      "annualP10": 33570,
+      "annualP90": 38210,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3220,
+      "hourlyMedian": 17.64,
+      "soc": "51-6011"
+    },
+    "51-6021": {
+      "annualMedian": 37170,
+      "annualP10": 32050,
+      "annualP90": 44250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 290,
+      "hourlyMedian": 17.87,
+      "soc": "51-6021"
+    },
+    "51-6031": {
+      "annualMedian": 40910,
+      "annualP10": 35620,
+      "annualP90": 47460,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1200,
+      "hourlyMedian": 19.67,
+      "soc": "51-6031"
+    },
+    "51-6052": {
+      "annualMedian": 43420,
+      "annualP10": 38340,
+      "annualP90": 47110,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 20.88,
+      "soc": "51-6052"
+    },
+    "51-6062": {
+      "annualMedian": 37460,
+      "annualP10": 33830,
+      "annualP90": 44450,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": 18.01,
+      "soc": "51-6062"
+    },
+    "51-6093": {
+      "annualMedian": 42900,
+      "annualP10": 36840,
+      "annualP90": 61250,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 20.63,
+      "soc": "51-6093"
+    },
+    "51-7011": {
+      "annualMedian": 45690,
+      "annualP10": 39650,
+      "annualP90": 59790,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1200,
+      "hourlyMedian": 21.97,
+      "soc": "51-7011"
+    },
+    "51-7021": {
+      "annualMedian": 39660,
+      "annualP10": 33920,
+      "annualP90": 64850,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 310,
+      "hourlyMedian": 19.07,
+      "soc": "51-7021"
+    },
+    "51-7041": {
+      "annualMedian": 43620,
+      "annualP10": 37960,
+      "annualP90": 57980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 190,
+      "hourlyMedian": 20.97,
+      "soc": "51-7041"
+    },
+    "51-7042": {
+      "annualMedian": 40440,
+      "annualP10": 37080,
+      "annualP90": 49530,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1250,
+      "hourlyMedian": 19.44,
+      "soc": "51-7042"
+    },
+    "51-7099": {
+      "annualMedian": 36970,
+      "annualP10": 32120,
+      "annualP90": 62970,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 17.78,
+      "soc": "51-7099"
+    },
+    "51-8012": {
+      "annualMedian": 86300,
+      "annualP10": 86300,
+      "annualP90": 102530,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 50,
+      "hourlyMedian": 41.49,
+      "soc": "51-8012"
+    },
+    "51-8013": {
+      "annualMedian": 67580,
+      "annualP10": 63910,
+      "annualP90": 107640,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 150,
+      "hourlyMedian": 32.49,
+      "soc": "51-8013"
+    },
+    "51-8021": {
+      "annualMedian": 83350,
+      "annualP10": 70000,
+      "annualP90": 140440,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 40.07,
+      "soc": "51-8021"
+    },
+    "51-8031": {
+      "annualMedian": 63660,
+      "annualP10": 49780,
+      "annualP90": 80040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2570,
+      "hourlyMedian": 30.61,
+      "soc": "51-8031"
+    },
+    "51-8093": {
+      "annualMedian": 70220,
+      "annualP10": 41130,
+      "annualP90": 132140,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 80,
+      "hourlyMedian": 33.76,
+      "soc": "51-8093"
+    },
+    "51-8099": {
+      "annualMedian": 68850,
+      "annualP10": 42220,
+      "annualP90": 92790,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 40,
+      "hourlyMedian": 33.1,
+      "soc": "51-8099"
+    },
+    "51-9011": {
+      "annualMedian": 45800,
+      "annualP10": 34840,
+      "annualP90": 72490,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1080,
+      "hourlyMedian": 22.02,
+      "soc": "51-9011"
+    },
+    "51-9012": {
+      "annualMedian": 58970,
+      "annualP10": 40400,
+      "annualP90": 74810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 740,
+      "hourlyMedian": 28.35,
+      "soc": "51-9012"
+    },
+    "51-9021": {
+      "annualMedian": 48290,
+      "annualP10": 40000,
+      "annualP90": 60100,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 23.22,
+      "soc": "51-9021"
+    },
+    "51-9022": {
+      "annualMedian": 38280,
+      "annualP10": 38270,
+      "annualP90": 60190,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 490,
+      "hourlyMedian": 18.4,
+      "soc": "51-9022"
+    },
+    "51-9023": {
+      "annualMedian": 48500,
+      "annualP10": 38520,
+      "annualP90": 74900,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1160,
+      "hourlyMedian": 23.32,
+      "soc": "51-9023"
+    },
+    "51-9032": {
+      "annualMedian": 46780,
+      "annualP10": 37670,
+      "annualP90": 58950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 590,
+      "hourlyMedian": 22.49,
+      "soc": "51-9032"
+    },
+    "51-9041": {
+      "annualMedian": 46440,
+      "annualP10": 37370,
+      "annualP90": 60890,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 560,
+      "hourlyMedian": 22.33,
+      "soc": "51-9041"
+    },
+    "51-9051": {
+      "annualMedian": 46260,
+      "annualP10": 40190,
+      "annualP90": 47260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 100,
+      "hourlyMedian": 22.24,
+      "soc": "51-9051"
+    },
+    "51-9061": {
+      "annualMedian": 52000,
+      "annualP10": 39470,
+      "annualP90": 77720,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 8080,
+      "hourlyMedian": 25,
+      "soc": "51-9061"
+    },
+    "51-9071": {
+      "annualMedian": 44450,
+      "annualP10": 36400,
+      "annualP90": 75920,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 310,
+      "hourlyMedian": 21.37,
+      "soc": "51-9071"
+    },
+    "51-9081": {
+      "annualMedian": 49260,
+      "annualP10": 37450,
+      "annualP90": 80300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 690,
+      "hourlyMedian": 23.68,
+      "soc": "51-9081"
+    },
+    "51-9082": {
+      "annualMedian": 81600,
+      "annualP10": 48960,
+      "annualP90": 82960,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 190,
+      "hourlyMedian": 39.23,
+      "soc": "51-9082"
+    },
+    "51-9083": {
+      "annualMedian": 38940,
+      "annualP10": 35780,
+      "annualP90": 51890,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 90,
+      "hourlyMedian": 18.72,
+      "soc": "51-9083"
+    },
+    "51-9111": {
+      "annualMedian": 42450,
+      "annualP10": 35420,
+      "annualP90": 60810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 6100,
+      "hourlyMedian": 20.41,
+      "soc": "51-9111"
+    },
+    "51-9124": {
+      "annualMedian": 48430,
+      "annualP10": 34750,
+      "annualP90": 78540,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1850,
+      "hourlyMedian": 23.29,
+      "soc": "51-9124"
+    },
+    "51-9141": {
+      "annualMedian": 78940,
+      "annualP10": 38410,
+      "annualP90": 102180,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2260,
+      "hourlyMedian": 37.95,
+      "soc": "51-9141"
+    },
+    "51-9151": {
+      "annualMedian": 38860,
+      "annualP10": 34920,
+      "annualP90": 43490,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 18.69,
+      "soc": "51-9151"
+    },
+    "51-9161": {
+      "annualMedian": 48680,
+      "annualP10": 40400,
+      "annualP90": 65620,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1430,
+      "hourlyMedian": 23.4,
+      "soc": "51-9161"
+    },
+    "51-9162": {
+      "annualMedian": 75500,
+      "annualP10": 51980,
+      "annualP90": 98070,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 370,
+      "hourlyMedian": 36.3,
+      "soc": "51-9162"
+    },
+    "51-9191": {
+      "annualMedian": 44240,
+      "annualP10": 36750,
+      "annualP90": 49950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 70,
+      "hourlyMedian": 21.27,
+      "soc": "51-9191"
+    },
+    "51-9192": {
+      "annualMedian": 37500,
+      "annualP10": 36400,
+      "annualP90": 53680,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 320,
+      "hourlyMedian": 18.03,
+      "soc": "51-9192"
+    },
+    "51-9194": {
+      "annualMedian": 64630,
+      "annualP10": 37440,
+      "annualP90": 71030,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 31.07,
+      "soc": "51-9194"
+    },
+    "51-9195": {
+      "annualMedian": 49080,
+      "annualP10": 40040,
+      "annualP90": 51000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 390,
+      "hourlyMedian": 23.59,
+      "soc": "51-9195"
+    },
+    "51-9196": {
+      "annualMedian": 49160,
+      "annualP10": 37300,
+      "annualP90": 58300,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1120,
+      "hourlyMedian": 23.63,
+      "soc": "51-9196"
+    },
+    "51-9198": {
+      "annualMedian": 39720,
+      "annualP10": 34730,
+      "annualP90": 49480,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1010,
+      "hourlyMedian": 19.1,
+      "soc": "51-9198"
+    },
+    "51-9199": {
+      "annualMedian": 40550,
+      "annualP10": 37440,
+      "annualP90": 60910,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1380,
+      "hourlyMedian": 19.5,
+      "soc": "51-9199"
+    },
+    "53-1041": {
+      "annualMedian": 75810,
+      "annualP10": 55150,
+      "annualP90": 100550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 210,
+      "hourlyMedian": 36.45,
+      "soc": "53-1041"
+    },
+    "53-2011": {
+      "annualMedian": 228040,
+      "annualP10": 96380,
+      "annualP90": 344080,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2100,
+      "hourlyMedian": null,
+      "soc": "53-2011"
+    },
+    "53-2012": {
+      "annualMedian": 105770,
+      "annualP10": 71650,
+      "annualP90": 219760,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1020,
+      "hourlyMedian": null,
+      "soc": "53-2012"
+    },
+    "53-2021": {
+      "annualMedian": 161220,
+      "annualP10": 94620,
+      "annualP90": 204980,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 220,
+      "hourlyMedian": 77.51,
+      "soc": "53-2021"
+    },
+    "53-2022": {
+      "annualMedian": 88420,
+      "annualP10": 50350,
+      "annualP90": 101960,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 42.51,
+      "soc": "53-2022"
+    },
+    "53-2031": {
+      "annualMedian": 61780,
+      "annualP10": 32390,
+      "annualP90": 81860,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4510,
+      "hourlyMedian": null,
+      "soc": "53-2031"
+    },
+    "53-3031": {
+      "annualMedian": 39640,
+      "annualP10": 30580,
+      "annualP90": 57510,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 7640,
+      "hourlyMedian": 19.06,
+      "soc": "53-3031"
+    },
+    "53-3032": {
+      "annualMedian": 59770,
+      "annualP10": 43500,
+      "annualP90": 76550,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 30480,
+      "hourlyMedian": 28.74,
+      "soc": "53-3032"
+    },
+    "53-3033": {
+      "annualMedian": 45790,
+      "annualP10": 35400,
+      "annualP90": 93650,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 13820,
+      "hourlyMedian": 22.01,
+      "soc": "53-3033"
+    },
+    "53-3051": {
+      "annualMedian": 46760,
+      "annualP10": 38270,
+      "annualP90": 55150,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3020,
+      "hourlyMedian": 22.48,
+      "soc": "53-3051"
+    },
+    "53-3052": {
+      "annualMedian": 57020,
+      "annualP10": 45620,
+      "annualP90": 96000,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2180,
+      "hourlyMedian": 27.41,
+      "soc": "53-3052"
+    },
+    "53-3053": {
+      "annualMedian": 37520,
+      "annualP10": 31600,
+      "annualP90": 47570,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 3920,
+      "hourlyMedian": 18.04,
+      "soc": "53-3053"
+    },
+    "53-3099": {
+      "annualMedian": 56880,
+      "annualP10": 35360,
+      "annualP90": 89600,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": null,
+      "hourlyMedian": 27.35,
+      "soc": "53-3099"
+    },
+    "53-6021": {
+      "annualMedian": 35100,
+      "annualP10": 30580,
+      "annualP90": 43310,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 2460,
+      "hourlyMedian": 16.88,
+      "soc": "53-6021"
+    },
+    "53-6031": {
+      "annualMedian": 35840,
+      "annualP10": 31600,
+      "annualP90": 45860,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1170,
+      "hourlyMedian": 17.23,
+      "soc": "53-6031"
+    },
+    "53-6032": {
+      "annualMedian": 47110,
+      "annualP10": 37090,
+      "annualP90": 55040,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 380,
+      "hourlyMedian": 22.65,
+      "soc": "53-6032"
+    },
+    "53-6041": {
+      "annualMedian": 65190,
+      "annualP10": 49820,
+      "annualP90": 98590,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 170,
+      "hourlyMedian": 31.34,
+      "soc": "53-6041"
+    },
+    "53-6051": {
+      "annualMedian": 51990,
+      "annualP10": 34800,
+      "annualP90": 135950,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 690,
+      "hourlyMedian": 25,
+      "soc": "53-6051"
+    },
+    "53-6061": {
+      "annualMedian": 36810,
+      "annualP10": 36780,
+      "annualP90": 40090,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 210,
+      "hourlyMedian": 17.7,
+      "soc": "53-6061"
+    },
+    "53-7011": {
+      "annualMedian": 39270,
+      "annualP10": 39250,
+      "annualP90": 47480,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 310,
+      "hourlyMedian": 18.88,
+      "soc": "53-7011"
+    },
+    "53-7021": {
+      "annualMedian": 72580,
+      "annualP10": 50930,
+      "annualP90": 89450,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 630,
+      "hourlyMedian": 34.89,
+      "soc": "53-7021"
+    },
+    "53-7051": {
+      "annualMedian": 48770,
+      "annualP10": 39240,
+      "annualP90": 63110,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 10250,
+      "hourlyMedian": 23.45,
+      "soc": "53-7051"
+    },
+    "53-7061": {
+      "annualMedian": 35620,
+      "annualP10": 31420,
+      "annualP90": 47630,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 4800,
+      "hourlyMedian": 17.12,
+      "soc": "53-7061"
+    },
+    "53-7062": {
+      "annualMedian": 44950,
+      "annualP10": 35220,
+      "annualP90": 57810,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 56420,
+      "hourlyMedian": 21.61,
+      "soc": "53-7062"
+    },
+    "53-7063": {
+      "annualMedian": 40900,
+      "annualP10": 37980,
+      "annualP90": 45800,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 130,
+      "hourlyMedian": 19.67,
+      "soc": "53-7063"
+    },
+    "53-7064": {
+      "annualMedian": 37840,
+      "annualP10": 32040,
+      "annualP90": 50260,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 5140,
+      "hourlyMedian": 18.19,
+      "soc": "53-7064"
+    },
+    "53-7065": {
+      "annualMedian": 37730,
+      "annualP10": 31640,
+      "annualP90": 58500,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 42650,
+      "hourlyMedian": 18.14,
+      "soc": "53-7065"
+    },
+    "53-7081": {
+      "annualMedian": 47460,
+      "annualP10": 33860,
+      "annualP90": 77430,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 1780,
+      "hourlyMedian": 22.82,
+      "soc": "53-7081"
+    },
+    "53-7199": {
+      "annualMedian": 48400,
+      "annualP10": 45160,
+      "annualP90": 69880,
+      "area": "Phoenix–Mesa–Chandler, AZ MSA",
+      "employment": 210,
+      "hourlyMedian": 23.27,
+      "soc": "53-7199"
+    }
+  },
+  "oewsFetchedAt": "2026-11-13T19:29:17.082489+00:00",
+  "oewsPeriod": "2025",
+  "schemaVersion": 1,
   "sources": {
-    "bls_lau": {"status":"pending","note":"Run the scheduled updater to retrieve published county unemployment data."},
-    "bls_ces": {"status":"pending","note":"Run the scheduled updater to retrieve published Phoenix metro jobs data."},
-    "bls_industry": {"status":"pending","note":"Monthly industry employment feed pending."},
-    "bls_oews": {"status":"pending","note":"Run the scheduled updater to retrieve BLS metro occupation wage data."},
-    "census": {"status":"pending","note":"Optional: configure CENSUS_API_KEY to retrieve ACS county indicators."}
+    "bls_ces": {
+      "fetchedAt": "2026-11-13T19:29:17.082489+00:00",
+      "note": "Latest published monthly observation; subject to BLS revision.",
+      "period": "Sep 2026",
+      "status": "ok"
+    },
+    "bls_industry": {
+      "note": "6/6 metro industry series refreshed; industry observations are not seasonally adjusted.",
+      "period": "Sep 2026",
+      "status": "ok"
+    },
+    "bls_lau": {
+      "fetchedAt": "2026-11-13T19:29:17.082489+00:00",
+      "note": "Latest published monthly observation; subject to BLS revision.",
+      "period": "Sep 2026",
+      "status": "ok"
+    },
+    "bls_oews": {
+      "fetchedAt": "2026-11-13T19:29:17.082489+00:00",
+      "note": "643 selected Phoenix–Mesa–Chandler metro occupation rows fetched from official OEWS May 2025.",
+      "period": "May 2025",
+      "status": "ok"
+    },
+    "census": {
+      "note": "Optional ACS feed is disabled until CENSUS_API_KEY is configured.",
+      "status": "skipped"
+    }
+  },
+  "trends": {
+    "jobs": [
+      {
+        "period": "2025-09",
+        "periodLabel": "Sep 2025",
+        "value": 2456.2
+      },
+      {
+        "period": "2025-10",
+        "periodLabel": "Oct 2025",
+        "value": 2456.6
+      },
+      {
+        "period": "2025-11",
+        "periodLabel": "Nov 2025",
+        "value": 2459
+      },
+      {
+        "period": "2025-12",
+        "periodLabel": "Dec 2025",
+        "value": 2461.2
+      },
+      {
+        "period": "2026-01",
+        "periodLabel": "Jan 2026",
+        "value": 2466.7
+      },
+      {
+        "period": "2026-02",
+        "periodLabel": "Feb 2026",
+        "value": 2478.8
+      },
+      {
+        "period": "2026-03",
+        "periodLabel": "Mar 2026",
+        "value": 2477.8
+      },
+      {
+        "period": "2026-04",
+        "periodLabel": "Apr 2026",
+        "value": 2482.2
+      },
+      {
+        "period": "2026-05",
+        "periodLabel": "May 2026",
+        "value": 2481.9
+      },
+      {
+        "period": "2026-06",
+        "periodLabel": "Jun 2026",
+        "value": 2483.5
+      },
+      {
+        "period": "2026-07",
+        "periodLabel": "Jul 2026",
+        "value": 2484.1
+      },
+      {
+        "period": "2026-08",
+        "periodLabel": "Aug 2026",
+        "value": 2480.7
+      },
+      {
+        "period": "2026-09",
+        "periodLabel": "Sep 2026",
+        "value": 2480.6
+      }
+    ],
+    "unemployment": [
+      {
+        "period": "2025-08",
+        "periodLabel": "Aug 2025",
+        "value": 4.2
+      },
+      {
+        "period": "2025-09",
+        "periodLabel": "Sep 2025",
+        "value": 4.1
+      },
+      {
+        "period": "2025-11",
+        "periodLabel": "Nov 2025",
+        "value": 3.7
+      },
+      {
+        "period": "2025-12",
+        "periodLabel": "Dec 2025",
+        "value": 3.5
+      },
+      {
+        "period": "2026-01",
+        "periodLabel": "Jan 2026",
+        "value": 4.3
+      },
+      {
+        "period": "2026-02",
+        "periodLabel": "Feb 2026",
+        "value": 4.2
+      },
+      {
+        "period": "2026-03",
+        "periodLabel": "Mar 2026",
+        "value": 3.9
+      },
+      {
+        "period": "2026-04",
+        "periodLabel": "Apr 2026",
+        "value": 3.7
+      },
+      {
+        "period": "2026-05",
+        "periodLabel": "May 2026",
+        "value": 4.1
+      },
+      {
+        "period": "2026-06",
+        "periodLabel": "Jun 2026",
+        "value": 4.8
+      },
+      {
+        "period": "2026-07",
+        "periodLabel": "Jul 2026",
+        "value": 4.7
+      },
+      {
+        "period": "2026-08",
+        "periodLabel": "Aug 2026",
+        "value": 4.8
+      },
+      {
+        "period": "2026-09",
+        "periodLabel": "Sep 2026",
+        "value": 4.1
+      }
+    ]
   }
 }
