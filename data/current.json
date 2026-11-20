@@ -5,64 +5,64 @@
     "population": 4689558,
     "year": 2025
   },
-  "generatedAt": "2026-11-19T22:10:33.576302+00:00",
+  "generatedAt": "2026-11-20T21:50:43.205846+00:00",
   "industryMetrics": {
     "Construction": {
-      "period": "2026-09",
-      "periodLabel": "Sep 2026",
+      "period": "2026-10",
+      "periodLabel": "Oct 2026",
       "seriesId": "SMU04380602000000001",
       "unit": "thousands",
-      "value": 183.9,
-      "yoyPercent": 3.3
+      "value": 187.4,
+      "yoyPercent": 4.5
     },
     "Financial activities": {
-      "period": "2026-09",
-      "periodLabel": "Sep 2026",
+      "period": "2026-10",
+      "periodLabel": "Oct 2026",
       "seriesId": "SMU04380605500000001",
       "unit": "thousands",
-      "value": 205.6,
-      "yoyPercent": -2.5
+      "value": 206.2,
+      "yoyPercent": -2.4
     },
     "Health care and social assistance": {
-      "period": "2026-09",
-      "periodLabel": "Sep 2026",
+      "period": "2026-10",
+      "periodLabel": "Oct 2026",
       "seriesId": "SMU04380606562000001",
       "unit": "thousands",
-      "value": 367.9,
-      "yoyPercent": 3.4
+      "value": 372,
+      "yoyPercent": 3.9
     },
     "Leisure and hospitality": {
-      "period": "2026-09",
-      "periodLabel": "Sep 2026",
+      "period": "2026-10",
+      "periodLabel": "Oct 2026",
       "seriesId": "SMU04380607000000001",
       "unit": "thousands",
-      "value": 255.9,
-      "yoyPercent": -1.8
+      "value": 261.1,
+      "yoyPercent": -1.9
     },
     "Manufacturing": {
-      "period": "2026-09",
-      "periodLabel": "Sep 2026",
+      "period": "2026-10",
+      "periodLabel": "Oct 2026",
       "seriesId": "SMU04380603000000001",
       "unit": "thousands",
-      "value": 147.5,
-      "yoyPercent": -0.3
+      "value": 148.8,
+      "yoyPercent": 0.3
     },
     "Professional and business services": {
-      "period": "2026-09",
-      "periodLabel": "Sep 2026",
+      "period": "2026-10",
+      "periodLabel": "Oct 2026",
       "seriesId": "SMU04380606000000001",
       "unit": "thousands",
-      "value": 388.3,
-      "yoyPercent": 2.2
+      "value": 391.9,
+      "yoyPercent": 1.5
     }
   },
   "metrics": {
     "jobs": {
-      "period": "2026-09",
-      "periodLabel": "Sep 2026",
+      "period": "2026-10",
+      "periodLabel": "Oct 2026",
       "seriesId": "SMS04380600000000001",
       "unit": "thousands",
-      "value": 2480.6
+      "value": 2484.5
     },
     "unemployment": {
       "period": "2026-09",
@@ -5866,18 +5866,18 @@
   "schemaVersion": 1,
   "sources": {
     "bls_ces": {
-      "fetchedAt": "2026-11-19T22:10:33.576302+00:00",
+      "fetchedAt": "2026-11-20T21:50:43.205846+00:00",
       "note": "Latest published monthly observation; subject to BLS revision.",
-      "period": "Sep 2026",
+      "period": "Oct 2026",
       "status": "ok"
     },
     "bls_industry": {
       "note": "6/6 metro industry series refreshed; industry observations are not seasonally adjusted.",
-      "period": "Sep 2026",
+      "period": "Oct 2026",
       "status": "ok"
     },
     "bls_lau": {
-      "fetchedAt": "2026-11-19T22:10:33.576302+00:00",
+      "fetchedAt": "2026-11-20T21:50:43.205846+00:00",
       "note": "Latest published monthly observation; subject to BLS revision.",
       "period": "Sep 2026",
       "status": "ok"
@@ -5889,7 +5889,7 @@
       "status": "ok"
     },
     "census": {
-      "fetchedAt": "2026-11-19T22:10:33.576302+00:00",
+      "fetchedAt": "2026-11-20T21:50:43.205846+00:00",
       "note": "ACS 1-year county estimates; household income is not individual worker pay.",
       "period": "2025",
       "status": "ok"
@@ -5897,11 +5897,6 @@
   },
   "trends": {
     "jobs": [
-      {
-        "period": "2025-09",
-        "periodLabel": "Sep 2025",
-        "value": 2456.2
-      },
       {
         "period": "2025-10",
         "periodLabel": "Oct 2025",
@@ -5960,7 +5955,12 @@
       {
         "period": "2026-09",
         "periodLabel": "Sep 2026",
-        "value": 2480.6
+        "value": 2477.4
+      },
+      {
+        "period": "2026-10",
+        "periodLabel": "Oct 2026",
+        "value": 2484.5
       }
     ],
     "unemployment": [
