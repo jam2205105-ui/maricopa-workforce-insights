@@ -5,7 +5,7 @@
     "population": 4689558,
     "year": 2025
   },
-  "generatedAt": "2026-11-25T23:06:38.192713+00:00",
+  "generatedAt": "2026-11-26T23:00:05.059265+00:00",
   "industryMetrics": {
     "Construction": {
       "period": "2026-10",
@@ -5866,7 +5866,7 @@
   "schemaVersion": 1,
   "sources": {
     "bls_ces": {
-      "fetchedAt": "2026-11-25T23:06:38.192713+00:00",
+      "fetchedAt": "2026-11-26T23:00:05.059265+00:00",
       "note": "Latest published monthly observation; subject to BLS revision.",
       "period": "Oct 2026",
       "status": "ok"
@@ -5877,7 +5877,7 @@
       "status": "ok"
     },
     "bls_lau": {
-      "fetchedAt": "2026-11-25T23:06:38.192713+00:00",
+      "fetchedAt": "2026-11-26T23:00:05.059265+00:00",
       "note": "Latest published monthly observation; subject to BLS revision.",
       "period": "Sep 2026",
       "status": "ok"
@@ -5889,7 +5889,7 @@
       "status": "ok"
     },
     "census": {
-      "fetchedAt": "2026-11-25T23:06:38.192713+00:00",
+      "fetchedAt": "2026-11-26T23:00:05.059265+00:00",
       "note": "ACS 1-year county estimates; household income is not individual worker pay.",
       "period": "2025",
       "status": "ok"
